@@ -1,5 +1,5 @@
 import pandas as pd
-from sklearn.preprocessing import LabelEncoder
+from sklearn.preprocessing import LabelEncoder, OneHotEncoder
 
 data = {
     'size': ['XL', 'L', 'M', 'L', 'M'],
@@ -38,3 +38,18 @@ le.fit(df['bought'])
 le.transform(df['bought'])
 # print(le.classes_)
 df['bought'] = le.fit_transform(df['bought'])
+
+'''
+---One Hot Encoder zmiana na macierz
+                '''
+encoder = OneHotEncoder(drop='first', sparse_output=False)
+encoder.fit(df[['size']])
+encoder.transform(df[['size']])
+# print(encoder.categories_)
+
+'''
+Pandas - get dummies()
+'''
+pd.get_dummies(data=df, drop_first=True)
+
+print((df['price'] - df['price'].mean()) / df['price'].std())
