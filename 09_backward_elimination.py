@@ -6,6 +6,8 @@ import plotly.express as px
 from sklearn.metrics import mean_absolute_error
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
+import statsmodels.api as sm
+
 
 
 sns.set()
@@ -95,7 +97,7 @@ print(y_pred[:10])
 
 y_true = y_test.copy()
 predictions = pd.DataFrame(data={'y_true': y_true, 'y_pred': y_pred})
-predictions['error'] = predictions['y_true'] -  predictions['y_pred']
+predictions['error'] = predictions['y_true'] - predictions['y_pred']
 print(predictions.head())
 
 predictions.error.plot(kind='hist', bins=30)
@@ -107,3 +109,7 @@ print(f'MAE wynosi: {mae:.2f}')
 print(regressor.intercept_)
 print(regressor.coef_)
 print(data.columns)
+
+
+# Dobór cech modelu - eliminacja wsteczna
+
