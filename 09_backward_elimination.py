@@ -62,7 +62,7 @@ corr = df_dummies.corr()
 print(corr)
 
 sns.set(style="white")
-mask = np.zeros_like(corr, dtype=np.bool)
+mask = np.zeros_like(corr, dtype=np.bool_)
 mask[np.triu_indices_from(mask)] = True
 f, ax = plt.subplots(figsize=(8, 6))
 cmap = sns.diverging_palette(220, 10, as_cmap=True)
@@ -113,3 +113,42 @@ print(data.columns)
 
 # Dobór cech modelu - eliminacja wsteczna
 
+X_train_ols = X_train.copy()
+X_train_ols = X_train_ols.values
+X_train_ols = sm.add_constant(X_train_ols)
+print('X_train_ols:')
+print(X_train_ols)
+
+ols = sm.OLS(endog=y_train, exog=X_train_ols).fit()
+predictors = ['const'] + list(X_train.columns)
+print('ols.summary(xname=predictors):')
+print(ols.summary(xname=predictors))
+
+X_selected = X_train_ols[:, [0, 1, 2, 3, 5, 6, 7, 8]]
+predictors.remove('sex_male')
+
+ols = sm.OLS(endog=y_train, exog=X_selected).fit()
+print('ols.summary(xname=predictors): remove_sex_male')
+print(ols.summary(xname=predictors))
+
+X_selected = X_train_ols[:, [0, 1, 2, 3, 5, 7, 8]]
+predictors.remove('region_northwest')
+
+ols = sm.OLS(endog=y_train, exog=X_selected).fit()
+print('ols.summary(xname=predictors): remove_region_northwest')
+print(ols.summary(xname=predictors))
+
+
+X_selected = X_train_ols[:, [0, 1, 2, 3, 5, 7]]
+predictors.remove('region_southwest')
+
+ols = sm.OLS(endog=y_train, exog=X_selected).fit()
+print('ols.summary(xname=predictors): remove_region_southwest')
+print(ols.summary(xname=predictors))
+
+X_selected = X_train_ols[:, [0, 1, 2, 3, 5]]
+predictors.remove('region_southeast')
+
+ols = sm.OLS(endog=y_train, exog=X_selected).fit()
+print('ols.summary(xname=predictors): remove_region_southeast')
+print(ols.summary(xname=predictors))
