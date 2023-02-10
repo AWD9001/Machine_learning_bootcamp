@@ -52,8 +52,8 @@ plt.show()
 p = px.histogram(df, x='charges', width=700, height=400, nbins=50, facet_col='smoker',
                  facet_row='sex')
 q = px.histogram(df, x='smoker', facet_col='sex', color='sex', width=700, height=400)
-#p.show()
-#q.show()
+p.show()
+q.show()
 
 df_dummies = pd.get_dummies(df, drop_first=True)
 print(df_dummies)
