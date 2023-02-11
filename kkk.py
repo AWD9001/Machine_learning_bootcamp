@@ -44,12 +44,16 @@ class DoListy:
             self.i += 1
             return self.to_read[self.i - 1]
 
+    def __repr__(self):
+        return 'repozytorium'
+
 
 def main():
     lista = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
     odczytaj = DoListy(lista)
     for x in odczytaj:
         print(x)
+    print(odczytaj)
 
 
 if __name__ == '__main__':
