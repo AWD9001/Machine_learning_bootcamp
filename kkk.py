@@ -45,7 +45,7 @@ class DoListy:
             return self.to_read[self.i - 1]
 
     def __repr__(self):
-        return 'repozytorium'
+        return str(self.to_read)
 
 
 def main():
