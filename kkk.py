@@ -42,14 +42,14 @@ class DoListy:
             raise StopIteration
         else:
             self.i += 1
-            return self.to_read[self.i - 1]
+            return f'{self.i}) {self.to_read[self.i - 1]}'
 
     def __repr__(self):
         return str(self.to_read)
 
 
 def main():
-    lista = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
+    lista = [i**2 for i in range(1000000)]
     odczytaj = DoListy(lista)
     for x in odczytaj:
         print(x)
