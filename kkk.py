@@ -49,7 +49,7 @@ class DoListy:
 
 
 def main():
-    lista = [i**2 for i in range(1000000)]
+    lista = [i**2 for i in range(100000000)]
     odczytaj = DoListy(lista)
     for x in odczytaj:
         print(x)
