@@ -26,6 +26,7 @@ def main():
 if __name__ == '__main__':
     main()
 """
+from threading import Thread
 
 
 class DoListy:
@@ -52,7 +53,7 @@ def main():
     lista = [i**2 for i in range(100000000)]
     odczytaj = DoListy(lista)
     for x in odczytaj:
-        print(x)
+        print(Thread(target=x))
     print(odczytaj)
 
 
