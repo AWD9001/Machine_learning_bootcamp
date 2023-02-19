@@ -53,7 +53,7 @@ def main():
     lista = [i**2 for i in range(100000000)]
     odczytaj = DoListy(lista)
     for x in odczytaj:
-        print(Thread(target=x))
+        print(x)
     print(odczytaj)
 
 
