@@ -51,9 +51,9 @@ class DoListy:
 
 def main():
     lista = [i**2 for i in range(100000000)]
-    odczytaj = DoListy(lista)
-    for x in odczytaj:
-        print(x)
+    odczytaj = Thread(target=DoListy, args=(lista))
+    for x in lista:
+        print(odczytaj)
     print(odczytaj)
 
 
