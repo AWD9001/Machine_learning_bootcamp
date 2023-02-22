@@ -1,11 +1,11 @@
 class FibroNumbers:
     def __init__(self, numbers):
         self.numbers = numbers
+
+    def __iter__(self):
         self.i = 0
         self.a = 1
         self.b = 0
-
-    def __iter__(self):
         return self
 
     def __next__(self):
@@ -17,7 +17,7 @@ class FibroNumbers:
 
 
 def main():
-    for i, j in FibroNumbers(18):
+    for i, j in FibroNumbers(100):
         print(f'{i}) {j}')
 
 
