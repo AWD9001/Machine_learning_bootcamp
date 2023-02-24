@@ -17,7 +17,7 @@ class FibroNumbers:
 
 
 def main():
-    for i, j in FibroNumbers(9):
+    for i, j in FibroNumbers(10):
         print(f'{i}) {j}')
 
 
