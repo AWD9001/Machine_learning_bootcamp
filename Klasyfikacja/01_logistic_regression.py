@@ -101,10 +101,10 @@ plot_confusion_matrix(cm)
 print(f'Accuracy: {accuracy_score(y_test, y_pred)}')
 
 
-def plot_confusion_matrix(cm):
+def plot_confusion_matrix(cmx):
     # klasyfikacja binarna
-    cm = cm[::-1]
-    cm = pd.DataFrame(cm, columns=['pred_0', 'pred_1'], index=['true_1', 'true_0'])
+    cmx = cmx[::-1]
+    cmx = pd.DataFrame(cm, columns=['pred_0', 'pred_1'], index=['true_1', 'true_0'])
 
     fig = ff.create_annotated_heatmap(z=cm.values, x=list(cm.columns), y=list(cm.index),
                                       colorscale='ice', showscale=True, reversescale=True)
