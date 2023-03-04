@@ -3,7 +3,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import plotly.figure_factory as ff
 import seaborn as sns
-import sklearn
 
 sns.set(font_scale=1.3)
 np.set_printoptions(precision=6, suppress=True, edgeitems=10, linewidth=100000,
@@ -104,9 +103,9 @@ print(f'Accuracy: {accuracy_score(y_test, y_pred)}')
 def plot_confusion_matrix(cmx):
     # klasyfikacja binarna
     cmx = cmx[::-1]
-    cmx = pd.DataFrame(cm, columns=['pred_0', 'pred_1'], index=['true_1', 'true_0'])
+    cmx = pd.DataFrame(cmx, columns=['pred_0', 'pred_1'], index=['true_1', 'true_0'])
 
-    fig = ff.create_annotated_heatmap(z=cm.values, x=list(cm.columns), y=list(cm.index),
+    fig = ff.create_annotated_heatmap(z=cmx.values, x=list(cmx.columns), y=list(cmx.index),
                                       colorscale='ice', showscale=True, reversescale=True)
     fig.update_layout(width=500, height=500, title='Confusion Matrix', font_size=16)
     fig.show()
