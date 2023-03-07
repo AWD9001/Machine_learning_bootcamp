@@ -92,22 +92,22 @@ plt.show()
 
 
 def plot_decision_boundries(n_neighbors=1):
-    classifier = KNeighborsClassifier(n_neighbors=n_neighbors)
-    classifier.fit(data, target)
+    KN = KNeighborsClassifier(n_neighbors=n_neighbors)
+    KN.fit(data, target)
 
-    x_min, x_max = data[:, 0].min() - 0.5, data[:, 0].max() + 0.5
-    y_min, y_max = data[:, 1].min() - 0.5, data[:, 1].max() + 0.5
+    # x_mini, x_maxi = data[:, 0].min() - 0.5, data[:, 0].max() + 0.5
+    # y_mins, y_maxs = data[:, 1].min() - 0.5, data[:, 1].max() + 0.5
 
-    xx, yy = np.meshgrid(np.arange(x_min, x_max, 0.01), np.arange(y_min, y_max, 0.01))
-    mesh = np.c_[xx.ravel(), yy.ravel()]
-    Z = classifier.predict(mesh)
-    Z = Z.reshape(xx.shape)
+    xxx, yyy = np.meshgrid(np.arange(x_min, x_max, 0.01), np.arange(y_min, y_max, 0.01))
+    # meshs = np.c_[xxx.ravel(), yyy.ravel()]
+    ZZ = KN.predict(mesh)
+    ZZ = ZZ.reshape(xx.shape)
 
     plt.figure(figsize=(10, 8))
-    plt.pcolormesh(xx, yy, Z, cmap='gnuplot', alpha=0.1)
+    plt.pcolormesh(xxx, yyy, ZZ, cmap='gnuplot', alpha=0.1)
     plt.scatter(data[:, 0], data[:, 1], c=target, cmap='gnuplot', edgecolors='r')
-    plt.xlim(xx.min(), xx.max())
-    plt.ylim(yy.min(), yy.max())
+    plt.xlim(xxx.min(), xxx.max())
+    plt.ylim(yyy.min(), yyy.max())
     plt.title(f'3-class classification k={n_neighbors}')
     plt.show()
 
