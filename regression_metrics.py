@@ -86,9 +86,9 @@ from sklearn.metrics import r2_score
 r2_score(y_true, y_pred)
 
 
-def r2_score(y_true, y_pred):
-    numerator = ((y_true - y_pred) ** 2).sum()
-    denominator = ((y_true - y_true.mean()) ** 2).sum()
+def r2_score(y_tru, y_predi):
+    numerator = ((y_tru - y_predi) ** 2).sum()
+    denominator = ((y_tru - y_tru.mean()) ** 2).sum()
     try:
         r2 = 1 - numerator / denominator
     except ZeroDivisionError:
