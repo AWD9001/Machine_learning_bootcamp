@@ -1,5 +1,3 @@
-import numpy as np
-import sklearn
 import pandas as pd
 import pandas_datareader.data as web
 
@@ -37,7 +35,8 @@ df['height_cat'] = pd.cut(x=df.height, bins=(160, 175, 180, 195))
 print('\n', df)
 
 
-df['height_cat'] = pd.cut(x=df.height, bins=(160, 175, 180, 195), labels=['small', 'medium', 'high'])
+df['height_cat'] = pd.cut(x=df.height, bins=(160, 175, 180, 195),
+                          labels=['small', 'medium', 'high'])
 print('\n', df)
 
 print('\n', pd.get_dummies(df, drop_first=True, prefix='height'))
