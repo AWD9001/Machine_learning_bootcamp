@@ -35,7 +35,7 @@ regressor = LinearRegression()
 # metoda fit() dopasowuje model liniowy do danych
 regressor.fit(data, target)
 
-LinearRegression(copy_X=True, fit_intercept=True, n_jobs=None, normalize=False)
+LinearRegression(copy_X=True, fit_intercept=True, n_jobs=None)
 
 # metoda score() dokonuje oceny modelu na przekazanych danych (wynik R2 score)
 regressor.score(data, target)
