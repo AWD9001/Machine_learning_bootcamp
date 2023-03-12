@@ -2,7 +2,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.datasets import make_regression
-import sklearn
 
 sns.set(font_scale=1.3)
 np.random.seed(42)
@@ -80,23 +79,23 @@ Image(graph.create_png(), width=600)
 # Model drzewa decyzyjnego - budowa funkcji
 
 
-def make_dt_regression(max_depth=2):
-    regressor = DecisionTreeRegressor(max_depth=max_depth)
-    regressor.fit(data, target)
+def make_dt_regression(max_dept=2):
+    regressors = DecisionTreeRegressor(max_depth=max_dept)
+    regressors.fit(data, target)
 
     plt.figure(figsize=(8, 6))
-    plt.plot(plot_data, regressor.predict(plot_data), c='red')
+    plt.plot(plot_data, regressors.predict(plot_data), c='red')
     plt.scatter(data, target)
 
-    dot_data = StringIO()
-    export_graphviz(regressor, out_file=dot_data,
+    dot_datas = StringIO()
+    export_graphviz(regressors, out_file=dot_datas,
                     filled=True, rounded=True,
                     special_characters=True,
                     feature_names=['cecha x'])
-    graph = pydotplus.graph_from_dot_data(dot_data.getvalue())
-    graph.write_png('graph.png')
+    graphs = pydotplus.graph_from_dot_data(dot_data.getvalue())
+    graphs.write_png('graph.png')
 
-    return Image(graph.create_png(), width=300 + max_depth * 100)
+    return Image(graphs.create_png(), width=300 + max_depth * 100)
 
 
-make_dt_regression(max_depth=2)
+make_dt_regression(2)
