@@ -9,7 +9,6 @@ from sklearn.linear_model import LinearRegression
 import statsmodels.api as sm
 
 
-
 sns.set()
 np.random.seed(42)
 np.set_printoptions(precision=4, suppress=True)
