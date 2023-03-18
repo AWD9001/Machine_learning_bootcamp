@@ -62,7 +62,7 @@ plt.show()
 # Graf drzewa decyzyjnego
 
 from sklearn.tree import export_graphviz
-from sklearn.externals.six import StringIO
+from io import StringIO
 from IPython.display import Image
 import pydotplus
 
