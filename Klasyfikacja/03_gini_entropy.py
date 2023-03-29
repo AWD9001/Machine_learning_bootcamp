@@ -2,7 +2,7 @@
 
 import numpy as np
 # import pandas as pd
-# import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 import seaborn as sns
 # from IPython.display import Image
 
@@ -31,3 +31,23 @@ from scipy.stats import entropy
 print(entropy([0.5, 0.5], base=2))
 print(entropy([0.8, 0.2], base=2))
 print(entropy([0.95, 0.05], base=2))
+
+
+def entropy(x):
+    return -np.sum(x * np.log2(x))
+
+
+print(entropy([0.5, 0.5]))
+print(entropy([0.8, 0.2]))
+print(entropy([0.95, 0.05]))
+
+p = np.arange(0.01, 1.0, 0.01)
+q = 1 - p
+pq = np.c_[p, q]
+print(pq[:10])
+
+entropies = [entropy(pair) for pair in pq]
+print(entropies[:10])
+
+plt.plot(p, entropies)
+plt.show()
