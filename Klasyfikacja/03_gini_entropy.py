@@ -51,3 +51,18 @@ print(entropies[:10])
 
 plt.plot(p, entropies)
 plt.show()
+
+entropia = -(6/10 * np.log2(6/10) + (4/10) * np.log2(4/10))
+entropia
+
+entropia_wiarygodnosc = 5/10 * 0 + 2/10 * 1 + 3/10 * 0
+entropia_wiarygodnosc
+
+entropia_dochod = 3/10 * 0 + 4/10 * 1 + 3/10 * 0.9183
+entropia_dochod
+
+ig_wiarygodnosc = entropia - entropia_wiarygodnosc
+ig_dochod = entropia - entropia_dochod
+
+print('Zysk informacyjny (IG): wiarygodność:', ig_wiarygodnosc)
+print('Zysk informacyjny (IG): dochód:', ig_dochod)
