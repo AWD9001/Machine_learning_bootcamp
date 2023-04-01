@@ -53,13 +53,13 @@ plt.plot(p, entropies)
 plt.show()
 
 entropia = -(6/10 * np.log2(6/10) + (4/10) * np.log2(4/10))
-entropia
+print(entropia)
 
 entropia_wiarygodnosc = 5/10 * 0 + 2/10 * 1 + 3/10 * 0
-entropia_wiarygodnosc
+print(entropia_wiarygodnosc)
 
 entropia_dochod = 3/10 * 0 + 4/10 * 1 + 3/10 * 0.9183
-entropia_dochod
+print(entropia_dochod)
 
 ig_wiarygodnosc = entropia - entropia_wiarygodnosc
 ig_dochod = entropia - entropia_dochod
