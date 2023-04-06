@@ -22,3 +22,22 @@ print(f'Liczba próbek: {len(data)}')
 print(f'Kształt danych: {data.shape}')
 print(f'Nazwy zmiennych objaśniających: {feature_names}')
 print(f'Nazwy kategorii kosaćca: {target_names}')
+
+# Eksploracja danych
+
+Image(url='https://ml-repository-krakers.s3-eu-west-1.amazonaws.com/decision_tree_course/'
+          'graphs/Iris_setosa.jpg', width=200)
+Image(url='https://ml-repository-krakers.s3-eu-west-1.amazonaws.com/decision_tree_course/'
+          'graphs/Iris_versicolor.jpg', width=200)
+Image(url='https://ml-repository-krakers.s3-eu-west-1.amazonaws.com/decision_tree_course/'
+          'graphs/Iris_virginica.jpg', width=200)
+
+df = pd.DataFrame(data=np.c_[data, target], columns=feature_names + ['target'])
+print(df.head())
+
+plt.figure(figsize=(8, 6))
+_ = sns.scatterplot('sepal_length', 'sepal_width', hue='target', data=df, legend='full',
+                    palette=sns.color_palette()[:3])
+plt.show()
+
+print(df['target'].value_counts())
