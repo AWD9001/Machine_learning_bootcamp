@@ -41,3 +41,14 @@ _ = sns.scatterplot('sepal_length', 'sepal_width', hue='target', data=df, legend
 plt.show()
 
 print(df['target'].value_counts())
+
+# Przygotowanie danych do modelu
+data = df.copy()
+data = data[['sepal_length', 'sepal_width', 'target']]
+target = data.pop('target')
+
+print(data.head())
+print(target.head())
+
+data = data.values
+target = target.values.astype('int16')
