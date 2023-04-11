@@ -62,7 +62,7 @@ classifier.fit(data, target)
 # Wykreślenie granic decyzyjnych
 from mlxtend.plotting import plot_decision_regions
 
-colors='#f1865b,#31c30f,#64647F,#d62728,#9467bd,#8c564b,#e377c2,#7f7f7f,#bcbd22,#17becf'
+colors = '#f1865b,#31c30f,#64647F,#d62728,#9467bd,#8c564b,#e377c2,#7f7f7f,#bcbd22,#17becf'
 
 acc = classifier.score(data, target)
 
@@ -73,3 +73,18 @@ plt.ylabel('sepal width (cm)')
 plt.title(f'Drzewo decyzyjne: max_depth=1, accuracy: {acc * 100:.2f}%')
 plt.show()
 
+# Graf drzewa decyzyjnego
+from sklearn.externals.six import StringIO
+from sklearn.tree import export_graphviz
+import pydotplus
+
+dot_data = StringIO()
+export_graphviz(classifier,
+                out_file=dot_data,
+                feature_names=feature_names[:2],
+                class_names=target_names,
+                special_characters=True,
+                rounded=True, filled=True)
+graph = pydotplus.graph_from_dot_data(dot_data.getvalue())
+graph.write_png('graph.png')
+Image(graph.create_png(), width=300)
