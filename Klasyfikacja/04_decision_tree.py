@@ -88,3 +88,38 @@ export_graphviz(classifier,
 graph = pydotplus.graph_from_dot_data(dot_data.getvalue())
 graph.write_png('graph.png')
 Image(graph.create_png(), width=300)
+
+# Budowa funkcji dla modelu drzewa decyzyjnego
+
+
+def make_decision_tree(max_depth=1):
+    # trenowanie modelu
+    classifier2 = DecisionTreeClassifier(max_depth=max_depth, random_state=42)
+    classifier2.fit(data, target)
+
+    # eksport grafu drzewa
+    dot_data2 = StringIO()
+    export_graphviz(classifier,
+                    out_file=dot_data2,
+                    feature_names=feature_names[:2],
+                    class_names=target_names,
+                    special_characters=True,
+                    rounded=True,
+                    filled=True)
+    graph2 = pydotplus.graph_from_dot_data(dot_data2.getvalue())
+    graph2.write_png('graph.png')
+
+    # obliczenie dokładności
+    acc2 = classifier2.score(data, target)
+
+    # wykreślenie granic decyzyjnych
+    colors2 = '#f1865b,#31c30f,#64647F,#d62728,#9467bd,#8c564b,#e377c2,#7f7f7f,#bcbd22,#17becf'
+    plt.figure(figsize=(8, 6))
+    ax = plot_decision_regions(data, target, classifier2, legend=0, colors=colors2)
+    handles, labels = ax.get_legend_handles_labels()
+    ax.legend(handles, ['setosa', 'versicolor', 'virginica'], framealpha=0.3)
+    plt.xlabel('sepal length (cm)')
+    plt.ylabel('sepal width (cm)')
+    plt.title(f'Drzewo decyzyjne: max_depth={max_depth}, accuracy={acc2 * 100:.2f}')
+
+    return Image(graph.create_png(), width=200 + max_depth * 120)
