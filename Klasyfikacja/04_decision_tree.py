@@ -123,3 +123,10 @@ def make_decision_tree(max_depth=1):
     plt.title(f'Drzewo decyzyjne: max_depth={max_depth}, accuracy={acc2 * 100:.2f}')
 
     return Image(graph.create_png(), width=200 + max_depth * 120)
+
+
+make_decision_tree(max_depth=2)
+make_decision_tree(max_depth=3)
+make_decision_tree(max_depth=4)
+make_decision_tree(max_depth=5)
+make_decision_tree(max_depth=15)
