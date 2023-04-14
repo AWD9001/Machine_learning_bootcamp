@@ -74,7 +74,7 @@ plt.title(f'Drzewo decyzyjne: max_depth=1, accuracy: {acc * 100:.2f}%')
 plt.show()
 
 # Graf drzewa decyzyjnego
-from sklearn.externals.six import StringIO
+from six import StringIO
 from sklearn.tree import export_graphviz
 import pydotplus
 
