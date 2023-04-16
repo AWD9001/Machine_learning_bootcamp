@@ -1,10 +1,15 @@
 # import bibliotek
 from IPython.display import Image
 import matplotlib.pyplot as plt
+from mlxtend.plotting import plot_decision_regions
 import numpy as np
 import pandas as pd
+import pydotplus
 import seaborn as sns
+from six import StringIO
 from sklearn.datasets import load_iris
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.tree import export_graphviz
 
 sns.set(font_scale=1.3)
 np.random.seed(42)
@@ -54,14 +59,10 @@ data = data.values
 target = target.values.astype('int16')
 
 # Budowa klasyfikatora drzewa decyzyjnego
-from sklearn.tree import DecisionTreeClassifier
-
 classifier = DecisionTreeClassifier(max_depth=1, random_state=42)
 classifier.fit(data, target)
 
 # Wykreślenie granic decyzyjnych
-from mlxtend.plotting import plot_decision_regions
-
 colors = '#f1865b,#31c30f,#64647F,#d62728,#9467bd,#8c564b,#e377c2,#7f7f7f,#bcbd22,#17becf'
 
 acc = classifier.score(data, target)
@@ -74,10 +75,6 @@ plt.title(f'Drzewo decyzyjne: max_depth=1, accuracy: {acc * 100:.2f}%')
 plt.show()
 
 # Graf drzewa decyzyjnego
-from six import StringIO
-from sklearn.tree import export_graphviz
-import pydotplus
-
 dot_data = StringIO()
 export_graphviz(classifier,
                 out_file=dot_data,
