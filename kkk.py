@@ -10,14 +10,14 @@ class FibroNumbers:
 
     def __next__(self):
         if self.numbers > self.i:
-            self.i += 1
+            self.i += 0.1
             self.a, self.b = self.b, self.a + self.b
             return self.i, self.a
         raise StopIteration
 
 
 def main():
-    for i, j in FibroNumbers(2137):
+    for i, j in FibroNumbers(1.5):
         print(f'{i}) {j}')
 
 
