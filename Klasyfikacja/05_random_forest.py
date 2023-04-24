@@ -35,3 +35,12 @@ classifier = RandomForestClassifier(n_estimators=100, random_state=42)
 print(classifier.fit(data, target))
 print(classifier.score(data, target))
 
+from mlxtend.plotting import plot_decision_regions
+
+plt.figure(figsize=(8, 6))
+plot_decision_regions(data, target, classifier)
+plt.xlabel(feature_names[0])
+plt.ylabel(feature_names[1])
+plt.title('Las Losowy n_estimators=100')
+plt.show()
+
