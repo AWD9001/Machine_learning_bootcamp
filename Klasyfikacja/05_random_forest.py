@@ -44,3 +44,18 @@ plt.ylabel(feature_names[1])
 plt.title('Las Losowy n_estimators=100')
 plt.show()
 
+# Wszystkie cechy
+data = all_data['data']
+targets = all_data['target']
+
+from sklearn.model_selection import train_test_split
+
+X_train, X_test, y_train, y_test = train_test_split(data, targets)
+
+print('X_train shape:', X_train.shape)
+print('X_test shape:', X_test.shape)
+print('y_train shape:', y_train.shape)
+print('y_test shape:', y_test.shape)
+
+classifier = RandomForestClassifier(n_estimators=100, random_state=42)
+classifier.fit(X_train, y_train)
