@@ -3,14 +3,13 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
-import plotly.express as px
+from sklearn.datasets import load_iris
+from sklearn.ensemble import RandomForestClassifier
 
 sns.set(font_scale=1.3)
 np.random.seed(42)
 
 # Załadowanie danych
-from sklearn.datasets import load_iris
-
 raw_data = load_iris()
 all_data = raw_data.copy()
 
@@ -28,8 +27,6 @@ print(f'{data[:5]}\n')
 print(f'{target[:5]}')
 
 # Las losowy
-from sklearn.ensemble import RandomForestClassifier
-
 classifier = RandomForestClassifier(n_estimators=100, random_state=42)
 
 print(classifier.fit(data, target))
