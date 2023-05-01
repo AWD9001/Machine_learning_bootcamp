@@ -18,5 +18,17 @@ feature_names = all_data['feature_names']
 target_names = all_data['target_names']
 
 df = pd.DataFrame(np.c_[data, target], columns=feature_names + ['target'])
+
 # df = df[(df['target'] == 0.0) | (df['target'] == 1.0)]
-df.head()
+print(df.head())
+
+data = df.iloc[:, [2, 1]].values
+target = df['target'].apply(int).values
+
+print(f'{data[:5]}\n')
+print(f'{target[:5]}')
+
+# Podział na zbiór treningowy i testowy
+from sklearn.model_selection import train_test_split
+
+X_train, X_test, y_train, y_test = train_test_split(data, target)
