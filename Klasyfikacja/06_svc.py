@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-# import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 import seaborn as sns
 
 sns.set(font_scale=1.3)
@@ -65,3 +65,8 @@ plt.ylabel(feature_names[1])
 plt.title(f'SVC: test accuracy: {classifier.score(X_test, y_test):.4f}')
 plt.show()
 
+# Klasyfikator SVM - rbf
+classifier = SVC(C=1.0, kernel='rbf')
+
+classifier.fit(X_train, y_train)
+classifier.score(X_test, y_test)
