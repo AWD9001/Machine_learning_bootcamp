@@ -50,3 +50,33 @@ def plot_confusion_matrix(cmm):
 
 
 plot_confusion_matrix(cm)
+
+cm = confusion_matrix(y_true, y_pred)
+cm_df = pd.DataFrame(cm, columns=['pred_0', 'pred_1'], index=['true_0', 'true_1'])
+print(cm_df)
+
+tn, fp, fn, tp = cm.ravel()
+print(f'TN - True Negative: {tn}')
+print(f'FP - False Positive: {fp}')
+print(f'FN - False Negative: {fn}')
+print(f'TP - True Positive: {tp}')
+
+# False Positive Rate - Type I error
+fpr = fp / (fp + tn)
+print(fpr)
+
+# False Negative Rate - Type II error
+fnr = fn / (fn + tp)
+print(fnr)
+
+# Precision - ile obserwacji przewidywanych jako pozytywne są w rzeczywistości pozytywne
+precision = tp / (tp + fp)
+print(precision)
+
+# Recall - jak wiele obserwacji z wzystkich poytywnych sklasyfikowaliśmy jako pozytywne
+recall = tp / (tp + fn)
+print(recall)
+
+# raport klasyfikacji
+from sklearn.metrics import classification_report
+print(classification_report(y_true, y_pred))
