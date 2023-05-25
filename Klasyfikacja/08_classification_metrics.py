@@ -80,3 +80,36 @@ print(recall)
 # raport klasyfikacji
 from sklearn.metrics import classification_report
 print(classification_report(y_true, y_pred))
+
+# Krzywa ROC
+from sklearn.metrics import roc_curve
+
+fpr, tpr, tresh = roc_curve(y_true, y_pred, pos_label=1)
+
+roc = pd.DataFrame({'fpr': fpr, 'tpr': tpr})
+print(roc)
+
+
+def plot_roc_curve(y_true, y_pred):
+    # Binary classification
+    from sklearn.metrics import roc_curve
+    fpr, tpr, tresh = roc_curve(y_true, y_pred, pos_label=1)
+
+    fig = go.Figure(
+        data=[
+            go.Scatter(x=roc['fpr'], y=roc['tpr'],
+                    line_color='red',
+                    name='ROC Curve'),
+            go.Scatter(x=[0, 1], y=[0, 1],
+                    mode='lines',
+                    line_dash='dash',
+                    line_color='navy')
+        ],
+        layout=go.Layout(xaxis_title='False Positive Rate', yaxis_title='True Positive Rate',
+                         title='ROC Curve',
+                         showlegend=False,
+                         width=700))
+    fig.show()
+
+
+plot_roc_curve(y_true, y_pred)
