@@ -113,3 +113,13 @@ def plot_roc_curve(y_true, y_pred):
 
 
 plot_roc_curve(y_true, y_pred)
+
+# Metryki - Klasyfikacja wieloklasowa
+# Accuracy - Dokładność klasyfikacji
+
+y_true = np.array([1, 0, 1, 2, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 2, 1, 1, 2, 2, 1, 0, 1, 1, 0, 2, 1, 1, 2, 2])
+y_pred = np.array([0, 0, 1, 2, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 2, 1, 2, 1, 2, 1, 0, 2, 1, 0, 1, 1, 1, 2, 2])
+
+from sklearn.metrics import accuracy_score
+
+accuracy_score(y_true, y_pred)
