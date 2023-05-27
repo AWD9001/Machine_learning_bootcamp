@@ -123,3 +123,20 @@ y_pred = np.array([0, 0, 1, 2, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 2, 1, 2, 1, 2, 1, 0
 from sklearn.metrics import accuracy_score
 
 accuracy_score(y_true, y_pred)
+
+# Macierz konfuzji/pomyłek
+cm = confusion_matrix(y_true, y_pred)
+print(cm)
+
+
+def plot_confusion_matrix(cm):
+    cm = cm[::-1]
+    cm = pd.DataFrame(cm, columns=['pred_0', 'pred_1', 'pred_2'], index=['true_2','true_1', 'true_0'])
+
+    fig = ff.create_annotated_heatmap(z=cm.values, x=list(cm.columns), y=list(cm.index),
+                                      colorscale='ice', showscale=True, reversescale=True)
+    fig.update_layout(width=400, height=400, title='Confusion Matrix', font_size=16)
+    fig.show()
+
+
+plot_confusion_matrix(cm)
