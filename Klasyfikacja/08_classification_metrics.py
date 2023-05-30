@@ -117,8 +117,10 @@ plot_roc_curve(y_true, y_pred)
 # Metryki - Klasyfikacja wieloklasowa
 # Accuracy - Dokładność klasyfikacji
 
-y_true = np.array([1, 0, 1, 2, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 2, 1, 1, 2, 2, 1, 0, 1, 1, 0, 2, 1, 1, 2, 2])
-y_pred = np.array([0, 0, 1, 2, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 2, 1, 2, 1, 2, 1, 0, 2, 1, 0, 1, 1, 1, 2, 2])
+y_true = np.array([1, 0, 1, 2, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 2, 1, 1, 2, 2, 1, 0, 1, 1, 0, 2, 1, 1,
+                   2, 2])
+y_pred = np.array([0, 0, 1, 2, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 2, 1, 2, 1, 2, 1, 0, 2, 1, 0, 1, 1, 1,
+                   2, 2])
 
 from sklearn.metrics import accuracy_score
 
@@ -129,14 +131,15 @@ cm = confusion_matrix(y_true, y_pred)
 print(cm)
 
 
-def plot_confusion_matrix(cm):
-    cm = cm[::-1]
-    cm = pd.DataFrame(cm, columns=['pred_0', 'pred_1', 'pred_2'], index=['true_2','true_1', 'true_0'])
+def plot_confusion_matrix(cms):
+    cms = cms[::-1]
+    cms = pd.DataFrame(cms, columns=['pred_0', 'pred_1', 'pred_2'], index=['true_2', 'true_1',
+                                                                           'true_0'])
 
-    fig = ff.create_annotated_heatmap(z=cm.values, x=list(cm.columns), y=list(cm.index),
-                                      colorscale='ice', showscale=True, reversescale=True)
-    fig.update_layout(width=400, height=400, title='Confusion Matrix', font_size=16)
-    fig.show()
+    figs = ff.create_annotated_heatmap(z=cms.values, x=list(cms.columns), y=list(cms.index),
+                                       colorscale='ice', showscale=True, reversescale=True)
+    figs.update_layout(width=400, height=400, title='Confusion Matrix', font_size=16)
+    figs.show()
 
 
 plot_confusion_matrix(cm)
