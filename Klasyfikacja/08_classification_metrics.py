@@ -90,12 +90,12 @@ roc = pd.DataFrame({'fpr': fpr, 'tpr': tpr})
 print(roc)
 
 
-def plot_roc_curve(y_true, y_pred):
+def plot_roc_curve(y_t, y_p):
     # Binary classification
     from sklearn.metrics import roc_curve
-    fpr, tpr, tresh = roc_curve(y_true, y_pred, pos_label=1)
+    fprs, tprs, treshs = roc_curve(y_t, y_p, pos_label=1)
 
-    fig = go.Figure(
+    figu = go.Figure(
         data=[
             go.Scatter(x=roc['fpr'], y=roc['tpr'],
                     line_color='red',
