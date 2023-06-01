@@ -97,9 +97,7 @@ def plot_roc_curve(y_t, y_p):
 
     figu = go.Figure(
         data=[
-            go.Scatter(x=roc['fpr'], y=roc['tpr'],
-                    line_color='red',
-                    name='ROC Curve'),
+            go.Scatter(x=roc['fprs'], y=roc['tprs'], line_color='red', name='ROC Curve'),
             go.Scatter(x=[0, 1], y=[0, 1],
                     mode='lines',
                     line_dash='dash',
