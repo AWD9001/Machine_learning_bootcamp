@@ -2,8 +2,8 @@
 import numpy as np
 import pandas as pd
 import plotly.graph_objects as go
-# import plotly.express as px
 from plotly.subplots import make_subplots
+from sklearn.metrics import roc_curve
 
 # Metryki - Klasyfikacja binarna
 y_true = np.array([1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1,
@@ -92,7 +92,6 @@ print(roc)
 
 def plot_roc_curve(y_t, y_p):
     # Binary classification
-    from sklearn.metrics import roc_curve
     fprs, tprs, treshs = roc_curve(y_t, y_p, pos_label=1)
 
     figu = go.Figure(
