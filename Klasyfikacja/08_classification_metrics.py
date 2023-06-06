@@ -118,8 +118,6 @@ y_true = np.array([1, 0, 1, 2, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 2, 1, 1, 2, 2, 1, 0
 y_pred = np.array([0, 0, 1, 2, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 2, 1, 2, 1, 2, 1, 0, 2, 1, 0, 1, 1, 1,
                    2, 2])
 
-from sklearn.metrics import accuracy_score
-
 accuracy_score(y_true, y_pred)
 
 # Macierz konfuzji/pomyłek
