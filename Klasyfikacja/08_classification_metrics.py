@@ -139,6 +139,5 @@ def plot_confusion_matrix(cms):
 plot_confusion_matrix(cm)
 
 # Raport klasyfikacji
-from sklearn.metrics import classification_report
 print(classification_report(y_true, y_pred))
 print(classification_report(y_true, y_pred, target_names=['label_1', 'label_2', 'label_3']))
