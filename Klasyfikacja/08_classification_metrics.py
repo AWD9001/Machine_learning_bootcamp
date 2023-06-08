@@ -1,8 +1,13 @@
 # Import bibliotek
 import numpy as np
 import pandas as pd
+import plotly.figure_factory as ff
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
+from sklearn.metrics import accuracy_score
+from sklearn.metrics import confusion_matrix
+from sklearn.metrics import classification_report
+from sklearn.metrics import roc_curve
 
 # Metryki - Klasyfikacja binarna
 y_true = np.array([1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1,
@@ -10,7 +15,6 @@ y_true = np.array([1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1
 y_pred = np.array([0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1,
                    1, 0, 1])
 
-from sklearn.metrics import accuracy_score
 accuracy_score(y_true, y_pred)
 
 results = pd.DataFrame({'y_true': y_true, 'y_pred': y_pred})
@@ -30,12 +34,8 @@ fig.update_layout(width=800, height=600, title='Klasyfikator binarny')
 fig.show()
 
 # Macierz konfuzji/pomyłek
-from sklearn.metrics import confusion_matrix
-
 cm = confusion_matrix(y_true, y_pred)
 print(cm)
-
-import plotly.figure_factory as ff
 
 
 def plot_confusion_matrix(cmm):
@@ -77,12 +77,9 @@ recall = tp / (tp + fn)
 print(recall)
 
 # raport klasyfikacji
-from sklearn.metrics import classification_report
 print(classification_report(y_true, y_pred))
 
 # Krzywa ROC
-from sklearn.metrics import roc_curve
-
 fpr, tpr, tresh = roc_curve(y_true, y_pred, pos_label=1)
 
 roc = pd.DataFrame({'fpr': fpr, 'tpr': tpr})
