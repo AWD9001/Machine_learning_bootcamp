@@ -18,3 +18,20 @@ data = {
 
 df_raw = pd.DataFrame(data=data)
 print(df_raw)
+
+# Utworzenie kopii danych
+df = df_raw.copy()
+print(df.info())
+
+# Zmiana typu danych i wstępna eksploracja
+for col in ['size', 'color', 'gender', 'bought']:
+    df[col] = df[col].astype('category')
+
+df['weight'] = df['weight'].astype('float')
+
+print("Info:\n", df.info(), "\n")
+print("Opis:\n", df.describe(), "\n")
+print("Transpozycja:\n", df.describe().T, "\n")
+
+print("Podział na kategorie:\n", df.describe(include=['category']).T, "\n")
+print(df)
