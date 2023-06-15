@@ -34,3 +34,9 @@ print("Transpozycja:\n", df.describe().T, "\n")
 
 print("Podział na kategorie:\n", df.describe(include=['category']).T, "\n")
 print(df)
+
+# LabelEncoder
+from sklearn.preprocessing import LabelEncoder
+le = LabelEncoder()
+le.fit(df['bought'])
+le.transform(df['bought'])
