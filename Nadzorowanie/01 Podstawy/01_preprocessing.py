@@ -40,3 +40,14 @@ from sklearn.preprocessing import LabelEncoder
 le = LabelEncoder()
 le.fit(df['bought'])
 le.transform(df['bought'])
+
+le.fit_transform(df['bought'])
+print(le.classes_)
+
+df['bought'] = le.fit_transform(df['bought'])
+print(df)
+
+le.inverse_transform(df['bought'])
+
+df['bought'] = le.inverse_transform(df['bought'])
+print(df)
