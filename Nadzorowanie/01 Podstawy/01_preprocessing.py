@@ -51,3 +51,16 @@ le.inverse_transform(df['bought'])
 
 df['bought'] = le.inverse_transform(df['bought'])
 print(df)
+
+# OneHotEncoder
+from sklearn.preprocessing import OneHotEncoder
+encoder = OneHotEncoder(sparse=False)
+encoder.fit(df[['size']])
+
+encoder.transform(df[['size']])
+print(encoder.categories_)
+
+encoder = OneHotEncoder(drop='first', sparse=False)
+encoder.fit(df[['size']])
+encoder.transform(df[['size']])
+print(df)
