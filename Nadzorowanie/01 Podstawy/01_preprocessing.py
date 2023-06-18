@@ -1,9 +1,9 @@
 # Import bibliotek
 
 import pandas as pd
-import sklearn
+from sklearn.preprocessing import LabelEncoder
+from sklearn.preprocessing import OneHotEncoder
 
-print(sklearn.__version__)
 
 # Wygenerowanie danych
 data = {
@@ -36,7 +36,6 @@ print("Podział na kategorie:\n", df.describe(include=['category']).T, "\n")
 print(df)
 
 # LabelEncoder
-from sklearn.preprocessing import LabelEncoder
 le = LabelEncoder()
 le.fit(df['bought'])
 le.transform(df['bought'])
@@ -53,7 +52,6 @@ df['bought'] = le.inverse_transform(df['bought'])
 print(df)
 
 # OneHotEncoder
-from sklearn.preprocessing import OneHotEncoder
 encoder = OneHotEncoder(sparse=False)
 encoder.fit(df[['size']])
 
