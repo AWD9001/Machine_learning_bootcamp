@@ -4,7 +4,6 @@ import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 from sklearn.preprocessing import OneHotEncoder
 
-
 # Wygenerowanie danych
 data = {
     'size': ['XL', 'L', 'M', 'L', 'M'],
