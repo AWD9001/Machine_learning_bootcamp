@@ -68,3 +68,26 @@ print(pd.get_dummies(data=df, drop_first=True))
 print(pd.get_dummies(data=df, drop_first=True, prefix='new'))
 print(pd.get_dummies(data=df, drop_first=True, prefix_sep='-'))
 print(pd.get_dummies(data=df, drop_first=True, columns=['size']))
+
+# Standaryzacja - StandardScaler
+
+print((df['price'] - df['price'].mean()) / df['price'].std())
+
+
+def standardize(x):
+    return (x - x.mean()) / x.std()
+
+
+standardize(df['price'])
+
+from sklearn.preprocessing import scale
+scale(df['price'])
+
+from sklearn.preprocessing import StandardScaler
+scaler = StandardScaler()
+scaler.fit(df[['price']])
+scaler.transform(df[['price']])
+
+scaler = StandardScaler()
+df[['price', 'weight']] = scaler.fit_transform(df[['price', 'weight']])
+print(df)
