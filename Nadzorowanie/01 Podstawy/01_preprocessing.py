@@ -2,7 +2,8 @@
 
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
-from sklearn.preprocessing import OneHotEncoder
+from sklearn.preprocessing import OneHotEncode
+from sklearn.preprocessing import scaler
 
 # Wygenerowanie danych
 data = {
@@ -80,7 +81,6 @@ def standardize(x):
 
 standardize(df['price'])
 
-from sklearn.preprocessing import scale
 scale(df['price'])
 
 from sklearn.preprocessing import StandardScaler
