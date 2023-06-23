@@ -71,6 +71,8 @@ print(pd.get_dummies(data=df, drop_first=True, prefix_sep='-'))
 print(pd.get_dummies(data=df, drop_first=True, columns=['size']))
 
 # Standaryzacja - StandardScaler
+# std() - pandas nieobciążony
+# std() - numpy obciążony
 
 print((df['price'] - df['price'].mean()) / df['price'].std())
 
