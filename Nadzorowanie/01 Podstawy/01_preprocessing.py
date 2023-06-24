@@ -2,8 +2,8 @@
 
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
-from sklearn.preprocessing import OneHotEncode
-from sklearn.preprocessing import scaler
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.preprocessing import scale
 
 # Wygenerowanie danych
 data = {
@@ -92,4 +92,18 @@ scaler.transform(df[['price']])
 
 scaler = StandardScaler()
 df[['price', 'weight']] = scaler.fit_transform(df[['price', 'weight']])
+print(df)
+
+# Przygotowanie danych do modelu
+df = df_raw.copy()
+print(df)
+
+le = LabelEncoder()
+
+df['bought'] = le.fit_transform(df['bought'])
+
+scaler = StandardScaler()
+df[['price', 'weight']] = scaler.fit_transform(df[['price', 'weight']])
+
+df = pd.get_dummies(data=df, drop_first=True)
 print(df)
