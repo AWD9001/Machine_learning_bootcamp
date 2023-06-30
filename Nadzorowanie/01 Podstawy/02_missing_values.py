@@ -17,3 +17,7 @@ data = {
 
 df_raw = pd.DataFrame(data=data)
 print(df_raw)
+
+# Utworzenie kopii danych
+df = df_raw.copy()
+df.info()
