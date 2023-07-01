@@ -21,3 +21,9 @@ print(df_raw)
 # Utworzenie kopii danych
 df = df_raw.copy()
 df.info()
+
+# Sprawdzenie braków
+print(df.isnull())
+print(df.isnull().sum())
+print(df.isnull().sum().sum())
+print(df.isnull().sum() / len(df))
