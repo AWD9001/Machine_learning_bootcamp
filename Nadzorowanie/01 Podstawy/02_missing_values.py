@@ -27,3 +27,11 @@ print(df.isnull())
 print(df.isnull().sum())
 print(df.isnull().sum().sum())
 print(df.isnull().sum() / len(df))
+
+# Uzupełnienie braków - SimpleImputer
+print(df[['weight']])
+from sklearn.impute import SimpleImputer
+
+# strategy: 'mean', 'median', 'most_frequent', 'constant'
+imputer = SimpleImputer(missing_values=np.nan, strategy='mean')
+imputer.fit(df[['weight']])
