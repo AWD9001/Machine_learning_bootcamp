@@ -35,3 +35,10 @@ from sklearn.impute import SimpleImputer
 # strategy: 'mean', 'median', 'most_frequent', 'constant'
 imputer = SimpleImputer(missing_values=np.nan, strategy='mean')
 imputer.fit(df[['weight']])
+
+print(imputer.statistics_)
+
+imputer.transform(df[['weight']])
+
+df['weight'] = imputer.transform(df[['weight']])
+print(df)
