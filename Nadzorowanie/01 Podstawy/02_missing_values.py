@@ -42,3 +42,11 @@ imputer.transform(df[['weight']])
 
 df['weight'] = imputer.transform(df[['weight']])
 print(df)
+
+imputer = SimpleImputer(missing_values=np.nan, strategy='constant', fill_value=99.0)
+print(imputer.fit_transform(df[['price']]))
+
+imputer = SimpleImputer(missing_values=np.nan, strategy='constant', fill_value='L')
+print(imputer.fit_transform(df[['size']]))
+
+print(df)
