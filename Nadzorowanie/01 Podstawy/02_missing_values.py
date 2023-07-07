@@ -50,3 +50,9 @@ imputer = SimpleImputer(missing_values=np.nan, strategy='constant', fill_value='
 print(imputer.fit_transform(df[['size']]))
 
 print(df)
+
+imputer = SimpleImputer(missing_values=np.nan, strategy='most_frequent')
+imputer.fit_transform(df[['size']])
+
+df = df_raw.copy()
+print(df)
