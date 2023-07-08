@@ -56,3 +56,8 @@ imputer.fit_transform(df[['size']])
 
 df = df_raw.copy()
 print(df)
+
+print(df.isnull().sum())
+print(pd.isnull(df['weight']))
+print(df[pd.isnull(df['weight'])])
+print(df[~pd.isnull(df['weight'])])
