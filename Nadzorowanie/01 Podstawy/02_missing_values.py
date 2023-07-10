@@ -61,3 +61,22 @@ print(df.isnull().sum())
 print(pd.isnull(df['weight']))
 print(df[pd.isnull(df['weight'])])
 print(df[~pd.isnull(df['weight'])])
+
+pd.notnull(df['weight'])
+
+print(df[pd.notnull(df['weight'])])
+
+print(df)
+
+df.fillna(value='brak')
+df.fillna(value=0.0)
+
+print(df['size'])
+
+df['size'].fillna(value='L', inplace=True)
+print(df)
+
+df.dropna()
+
+df = df.dropna()
+print(df)
