@@ -80,3 +80,10 @@ df.dropna()
 
 df = df.dropna()
 print(df)
+
+# Braki danych w szeregach czasowych
+data = {'price': [108, 109, 110, 110, 109, np.nan, np.nan, 112, 111, 111]}
+date_range = pd.date_range(start='01-01-2020 09:00', end='01-01-2020 18:00', periods=10)
+
+df = pd.DataFrame(data=data, index=date_range)
+print(df)
