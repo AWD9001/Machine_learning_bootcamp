@@ -97,3 +97,9 @@ sns.set()
 plt.figure(figsize=(10, 4))
 plt.title('Braki danych')
 _ = plt.plot(df.price)
+
+import plotly.express as px
+
+df_plotly = df.reset_index()
+px.line(df_plotly, 'index', 'price', width=600, height=400,
+        title='Szeregi czasowe - braki danych')
