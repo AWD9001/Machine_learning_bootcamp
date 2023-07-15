@@ -103,3 +103,9 @@ import plotly.express as px
 df_plotly = df.reset_index()
 px.line(df_plotly, 'index', 'price', width=600, height=400,
         title='Szeregi czasowe - braki danych')
+# Usunięcie braków
+
+
+df_plotly = df_plotly.dropna()
+px.line(df_plotly, 'index', 'price', width=600, height=400,
+        title='Szeregi czasowe - braki danych')
