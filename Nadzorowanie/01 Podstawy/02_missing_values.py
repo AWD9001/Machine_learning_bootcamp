@@ -111,8 +111,13 @@ px.line(df_plotly, 'index', 'price', width=600, height=400,
         title='Szeregi czasowe - braki danych')
 # Wypełnienie braków stałą wartością 0
 
-
 df_plotly = df.reset_index()
 df_plotly['price_fill'] = df_plotly['price'].fillna(0)
 px.line(df_plotly, 'index', 'price_fill', width=600, height=400,
         title='Szeregi czasowe - braki danych - wstawienie 0')
+# Wypełnienie braków średnią
+
+df_plotly = df.reset_index()
+df_plotly['price_fill'] = df_plotly['price'].fillna(df_plotly['price'].mean())
+px.line(df_plotly, 'index', 'price_fill', width=600, height=400,
+        title='Szeregi czasowe - braki danych - wstawienie średniej')
