@@ -121,3 +121,9 @@ df_plotly = df.reset_index()
 df_plotly['price_fill'] = df_plotly['price'].fillna(df_plotly['price'].mean())
 px.line(df_plotly, 'index', 'price_fill', width=600, height=400,
         title='Szeregi czasowe - braki danych - wstawienie średniej')
+# Zastosowanie interpolacji
+
+df_plotly = df.reset_index()
+df_plotly['price_fill'] = df_plotly['price'].interpolate()
+px.line(df_plotly, 'index', 'price_fill', width=600, height=400,
+        title='Szeregi czasowe - braki danych - interpolacja')
