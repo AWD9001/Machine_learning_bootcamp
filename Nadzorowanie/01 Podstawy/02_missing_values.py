@@ -133,3 +133,10 @@ df_plotly = df.reset_index()
 df_plotly['price_fill'] = df_plotly['price'].fillna(method='ffill')
 px.line(df_plotly, 'index', 'price_fill', width=600, height=400,
         title='Szeregi czasowe - braki danych - forward fill')
+# Wypełnienie braków metodą backward fill
+
+
+df_plotly = df.reset_index()
+df_plotly['price_fill'] = df_plotly['price'].fillna(method='bfill')
+px.line(df_plotly, 'index', 'price_fill', width=600, height=400,
+        title='Szeregi czasowe - braki danych')
