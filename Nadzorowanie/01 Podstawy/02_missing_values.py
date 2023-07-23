@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 import plotly.express as px
 import sklearn
+from sklearn.impute import SimpleImputer
 
 print(sklearn.__version__)
 
@@ -31,7 +32,6 @@ print(df.isnull().sum() / len(df))
 
 # Uzupełnienie braków - SimpleImputer
 print(df[['weight']])
-from sklearn.impute import SimpleImputer
 
 # strategy: 'mean', 'median', 'most_frequent', 'constant'
 imputer = SimpleImputer(missing_values=np.nan, strategy='mean')
