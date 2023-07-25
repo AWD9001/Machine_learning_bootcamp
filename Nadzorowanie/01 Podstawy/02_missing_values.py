@@ -1,4 +1,5 @@
 # Import bibliotek
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from pandas.plotting import register_matplotlib_converters
@@ -90,7 +91,6 @@ date_range = pd.date_range(start='01-01-2020 09:00', end='01-01-2020 18:00', per
 df = pd.DataFrame(data=data, index=date_range)
 print(df)
 
-import matplotlib.pyplot as plt
 import seaborn as sns
 register_matplotlib_converters()
 sns.set()
