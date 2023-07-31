@@ -15,4 +15,9 @@ def fetch_financial_data(company='AMZN'):
 
 
 df_raw = fetch_financial_data()
-df_raw.head()
+print(df_raw.head())
+
+# Utworzenie kopii danych
+df = df_raw.copy()
+df = df[:5]
+print(df.info())
