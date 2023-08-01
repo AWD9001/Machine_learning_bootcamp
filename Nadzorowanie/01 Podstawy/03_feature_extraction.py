@@ -21,3 +21,10 @@ print(df_raw.head())
 df = df_raw.copy()
 df = df[:5]
 print(df.info())
+
+# Generowanie nowych zmiennych
+print(df.index.month)
+df['day'] = df.index.day
+df['month'] = df.index.month
+df['year'] = df.index.year
+print(df)
