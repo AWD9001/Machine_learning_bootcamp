@@ -28,3 +28,21 @@ df['day'] = df.index.day
 df['month'] = df.index.month
 df['year'] = df.index.year
 print(df)
+
+# Dyskretyzacja zmiennej ciągłej
+
+df = pd.DataFrame(data={'height': [175., 178.5, 185., 191., 184.5, 183., 168.]})
+print(df)
+
+df['height_cat'] = pd.cut(x=df.height, bins=3)
+print(df)
+
+df['height_cat'] = pd.cut(x=df.height, bins=(160, 175, 180, 195))
+print(df)
+
+df['height_cat'] = pd.cut(x=df.height, bins=(160, 175, 180, 195), labels=['small', 'medium', 'high']
+                          )
+print(df)
+
+pd.get_dummies(df, drop_first=True, prefix='height')
+print(df)
