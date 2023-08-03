@@ -46,3 +46,22 @@ print(df)
 
 pd.get_dummies(df, drop_first=True, prefix='height')
 print(df)
+
+# Ekstrakcja cech
+
+df = pd.DataFrame(data={'lang': [['PL', 'ENG'], ['GER', 'ENG', 'PL', 'FRA'], ['RUS']]})
+print(df)
+
+df['lang_number'] = df['lang'].apply(len)
+print(df)
+
+df['PL_flag'] = df['lang'].apply(lambda x: 1 if 'PL' in x else 0)
+print(df)
+
+df = pd.DataFrame(data={'website': ['wp.pl', 'onet.pl', 'google.com']})
+print(df)
+
+new = df.website.str.split('.', expand=True)
+df['portal'] = new[0]
+df['extension'] = new[1]
+print(df)
