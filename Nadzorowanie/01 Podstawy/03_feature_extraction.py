@@ -30,7 +30,6 @@ df['year'] = df.index.year
 print(df)
 
 # Dyskretyzacja zmiennej ciągłej
-
 df = pd.DataFrame(data={'height': [175., 178.5, 185., 191., 184.5, 183., 168.]})
 print(df)
 
@@ -48,7 +47,6 @@ pd.get_dummies(df, drop_first=True, prefix='height')
 print(df)
 
 # Ekstrakcja cech
-
 df = pd.DataFrame(data={'lang': [['PL', 'ENG'], ['GER', 'ENG', 'PL', 'FRA'], ['RUS']]})
 print(df)
 
