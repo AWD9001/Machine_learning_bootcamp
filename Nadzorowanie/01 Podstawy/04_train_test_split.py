@@ -25,3 +25,7 @@ target = raw_data_copy['target']
 
 print(f'{data[:5]}\n')
 print(target[:5])
+
+# połączenie atrybutów ze zmienną docelową
+all_data = np.c_[data, target]
+print(all_data[:5])
