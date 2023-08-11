@@ -29,3 +29,7 @@ print(target[:5])
 # połączenie atrybutów ze zmienną docelową
 all_data = np.c_[data, target]
 print(all_data[:5])
+
+# budowa obiektu DataFrame
+df = pd.DataFrame(data=all_data, columns=raw_data.feature_names + ['target'])
+print(df.head())
