@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 import sklearn
 import seaborn as sns
+from sklearn.datasets import load_breast_cancer
 
 np.random.seed(42)
 np.set_printoptions(edgeitems=30, linewidth=100000,
@@ -90,7 +91,6 @@ print(f'\ny_train:\n{y_train.value_counts()}')
 print(f'\ny_test:\n{y_test.value_counts()}')
 
 # Podział danych na zbiór treningowy i testowy - breast cancer data
-from sklearn.datasets import load_breast_cancer
 
 raw_data = load_breast_cancer()
 raw_data_copy = raw_data.copy()
