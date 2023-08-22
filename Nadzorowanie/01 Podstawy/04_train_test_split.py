@@ -97,3 +97,9 @@ raw_data_copy = raw_data.copy()
 raw_data_copy.keys()
 
 print(raw_data_copy['DESCR'])
+
+data = raw_data_copy['data']
+target = raw_data_copy['target']
+
+print(f'{data[:5]}\n')
+print(target[:5])
