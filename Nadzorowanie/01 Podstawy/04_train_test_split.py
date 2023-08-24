@@ -103,3 +103,6 @@ target = raw_data_copy['target']
 
 print(f'{data[:5]}\n')
 print(target[:5])
+
+all_data = np.c_[data, target]
+print(all_data[:5])
