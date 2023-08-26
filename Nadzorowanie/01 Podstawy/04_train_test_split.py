@@ -109,3 +109,5 @@ print(all_data[:5])
 
 df = pd.DataFrame(data=all_data, columns=list(raw_data['feature_names']) + ['target'])
 df.head()
+
+df.target.value_counts()
