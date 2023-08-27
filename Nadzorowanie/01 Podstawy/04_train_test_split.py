@@ -111,3 +111,7 @@ df = pd.DataFrame(data=all_data, columns=list(raw_data['feature_names']) + ['tar
 df.head()
 
 df.target.value_counts()
+
+data = df.copy()
+target = data.pop('target')
+data.head()
