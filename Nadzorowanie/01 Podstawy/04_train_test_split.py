@@ -114,4 +114,6 @@ df.target.value_counts()
 
 data = df.copy()
 target = data.pop('target')
-data.head()
+print(data.head())
+
+print(target.head())
