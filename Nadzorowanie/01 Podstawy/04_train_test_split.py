@@ -4,6 +4,7 @@ import pandas as pd
 import sklearn
 import seaborn as sns
 from sklearn.datasets import load_breast_cancer
+from sklearn.datasets import load_iris
 
 np.random.seed(42)
 np.set_printoptions(edgeitems=30, linewidth=100000,
@@ -12,7 +13,6 @@ sns.set()
 print(sklearn.__version__)
 
 # Załadowanie danych
-from sklearn.datasets import load_iris
 
 raw_data = load_iris()
 raw_data_copy = raw_data.copy()
