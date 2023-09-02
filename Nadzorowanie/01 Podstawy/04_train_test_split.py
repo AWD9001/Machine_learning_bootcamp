@@ -5,6 +5,7 @@ import sklearn
 import seaborn as sns
 from sklearn.datasets import load_breast_cancer
 from sklearn.datasets import load_iris
+from sklearn.model_selection import train_test_split
 
 np.random.seed(42)
 np.set_printoptions(edgeitems=30, linewidth=100000,
@@ -13,7 +14,6 @@ sns.set()
 print(sklearn.__version__)
 
 # Załadowanie danych
-
 raw_data = load_iris()
 raw_data_copy = raw_data.copy()
 raw_data_copy.keys()
@@ -47,8 +47,6 @@ print(data.head())
 print(target.head())
 
 # Podział danych na zbiór treningowy i testowy - iris data
-from sklearn.model_selection import train_test_split
-
 X_train, X_test, y_train, y_test = train_test_split(data, target, random_state=42)
 
 print(f'X_train shape {X_train.shape}')
