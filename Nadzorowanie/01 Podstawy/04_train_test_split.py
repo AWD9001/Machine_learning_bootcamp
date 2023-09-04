@@ -129,8 +129,6 @@ print(f'\ny_test:\n{y_test.value_counts() / len(y_test)}')
 
 # Równy podział ze względu na zmienną docelową
 
-from sklearn.model_selection import train_test_split
-
 X_train, X_test, y_train, y_test = train_test_split(data, target, random_state=40, test_size=0.25,
                                                     stratify=target)
 
