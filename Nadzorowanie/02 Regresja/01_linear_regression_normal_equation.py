@@ -9,3 +9,7 @@ m = len(X1)
 print(f'Lata pracy: {X1}')
 print(f'Wynagrodzenie: {Y}')
 print(f'Liczba próbek: {m}')
+
+X1 = X1.reshape(m, 1)
+print(X1)
+print(X1.shape)
