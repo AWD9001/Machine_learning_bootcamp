@@ -13,3 +13,7 @@ print(f'Liczba próbek: {m}')
 X1 = X1.reshape(m, 1)
 print(X1)
 print(X1.shape)
+
+bias = np.ones((m, 1))
+print(bias)
+print(bias.shape)
