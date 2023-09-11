@@ -17,3 +17,7 @@ print(X1.shape)
 bias = np.ones((m, 1))
 print(bias)
 print(bias.shape)
+
+X = np.append(bias, X1, axis=1)
+print(X)
+print(X.shape)
