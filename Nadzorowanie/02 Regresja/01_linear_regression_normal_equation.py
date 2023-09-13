@@ -21,3 +21,6 @@ print(bias.shape)
 X = np.append(bias, X1, axis=1)
 print(X)
 print(X.shape)
+
+# Równanie normalne
+np.dot(X.T, X)
