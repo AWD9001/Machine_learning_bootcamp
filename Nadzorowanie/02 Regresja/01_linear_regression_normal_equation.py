@@ -24,3 +24,6 @@ print(X.shape)
 
 # Równanie normalne
 np.dot(X.T, X)
+
+L = np.linalg.inv(np.dot(X.T, X))
+print(L)
