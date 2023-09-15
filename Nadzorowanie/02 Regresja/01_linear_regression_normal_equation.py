@@ -27,3 +27,6 @@ np.dot(X.T, X)
 
 L = np.linalg.inv(np.dot(X.T, X))
 print(L)
+
+P = np.dot(X.T, Y)
+print(P)
