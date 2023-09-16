@@ -30,3 +30,5 @@ print(L)
 
 P = np.dot(X.T, Y)
 print(P)
+
+print(np.dot(L, P))
