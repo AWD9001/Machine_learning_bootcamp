@@ -32,3 +32,12 @@ P = np.dot(X.T, Y)
 print(P)
 
 print(np.dot(L, P))
+
+# Regresja liniowa przy pomocy scikit-learn
+from sklearn.linear_model import LinearRegression
+
+regression = LinearRegression()
+regression.fit(X1, Y)
+
+print(regression.intercept_)
+print(regression.coef_[0])
