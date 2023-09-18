@@ -1,5 +1,6 @@
 # Import bibliotek
 import numpy as np
+from sklearn.linear_model import LinearRegression
 
 # Przygotowanie danych
 X1 = np.array([1, 2, 3, 4, 5, 6])
@@ -34,8 +35,6 @@ print(P)
 print(np.dot(L, P))
 
 # Regresja liniowa przy pomocy scikit-learn
-from sklearn.linear_model import LinearRegression
-
 regression = LinearRegression()
 regression.fit(X1, Y)
 
