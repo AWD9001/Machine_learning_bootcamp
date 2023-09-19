@@ -24,7 +24,7 @@ print(X)
 print(X.shape)
 
 # Równanie normalne
-np.dot(X.T, X)
+print(np.dot(X.T, X))
 
 L = np.linalg.inv(np.dot(X.T, X))
 print(L)
@@ -35,8 +35,11 @@ print(P)
 print(np.dot(L, P))
 
 # Regresja liniowa przy pomocy scikit-learn
+print('\n   Regresja liniowa przy pomocy scikit-learn:')
 regression = LinearRegression()
 regression.fit(X1, Y)
 
+print('regression.intercept_:')
 print(regression.intercept_)
+print('regression.coef_[0]:')
 print(regression.coef_[0])
