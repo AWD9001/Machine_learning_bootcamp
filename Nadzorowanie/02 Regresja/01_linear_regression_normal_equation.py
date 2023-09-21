@@ -17,12 +17,12 @@ print(f'X1:\n{X1}\n')
 print(f'X1.shape:\n{X1.shape}\n')
 
 bias = np.ones((m, 1))
-print(bias)
-print(bias.shape)
+print(f'bias:\n{bias}\n')
+print(f'bias.shape:\n{bias.shape}\n')
 
 X = np.append(bias, X1, axis=1)
-print(X)
-print(X.shape)
+print(f'X = np.append(bias, X1, axis=1):\n{X}\n')
+print(f'X.shape:\n{X.shape}\n')
 
 # Równanie normalne
 print(np.dot(X.T, X))
