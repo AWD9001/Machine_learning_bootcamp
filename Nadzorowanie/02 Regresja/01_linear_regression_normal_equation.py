@@ -25,15 +25,15 @@ print(f'X = np.append(bias, X1, axis=1):\n{X}\n')
 print(f'X.shape:\n{X.shape}\n')
 
 # Równanie normalne
-print(np.dot(X.T, X))
+print(f'np.dot(X.T, X):\n{np.dot(X.T, X)}\n')
 
 L = np.linalg.inv(np.dot(X.T, X))
-print(L)
+print(f'np.linalg.inv(np.dot(X.T, X)):\n{L}\n')
 
 P = np.dot(X.T, Y)
-print(P)
+print(f'np.dot(X.T, Y):\n{P}\n')
 
-print(np.dot(L, P))
+print(f'np.dot(L, P):\n{np.dot(L, P)}\n')
 
 # Regresja liniowa przy pomocy scikit-learn
 print('\n   Regresja liniowa przy pomocy scikit-learn:')
