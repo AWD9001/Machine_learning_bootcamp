@@ -32,7 +32,6 @@ print(f'np.linalg.inv(np.dot(X.T, X)):\n{L}\n')
 
 P = np.dot(X.T, Y)
 print(f'np.dot(X.T, Y):\n{P}\n')
-
 print(f'np.dot(L, P):\n{np.dot(L, P)}\n')
 
 # Regresja liniowa przy pomocy scikit-learn
@@ -40,7 +39,5 @@ print('\n   Regresja liniowa przy pomocy scikit-learn:')
 regression = LinearRegression()
 regression.fit(X1, Y)
 
-print('regression.intercept_:')
-print(regression.intercept_)
-print('regression.coef_[0]:')
-print(regression.coef_[0])
+print(f'regression.intercept_:\n{regression.intercept_}\n')
+print(f'regression.coef_[0]:\n{regression.coef_[0]}\n')
