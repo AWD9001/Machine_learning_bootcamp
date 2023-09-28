@@ -13,3 +13,10 @@ m = len(X1)
 print(f'Lata pracy: {X1}')
 print(f'Wynagrodzenie: {Y}')
 print(f'Liczba próbek: {m}\n')
+
+# Przygotowanie danych
+X1 = X1.reshape(m, 1)
+Y = Y.reshape(-1, 1)
+print(f'Lata pracy.reshape(m = len(X1), 1):\n{X1}\n')
+print(f'Lata pracy.shape:\n{X1.shape}\n')
+print(f'Wynagrodzenie.reshape(-1, 1):\n{Y}\n')
