@@ -20,3 +20,7 @@ Y = Y.reshape(-1, 1)
 print(f'Lata pracy.reshape(m = len(X1), 1):\n{X1}\n')
 print(f'Lata pracy.shape:\n{X1.shape}\n')
 print(f'Wynagrodzenie.reshape(-1, 1):\n{Y}\n')
+
+bias = np.ones((m, 1))
+print(f'bias = np.ones((m, 1)):\n{bias}\n')
+print(f'bias.shape:\n{bias.shape}\n')
