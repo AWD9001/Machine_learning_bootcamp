@@ -24,3 +24,7 @@ print(f'Wynagrodzenie.reshape(-1, 1):\n{Y}\n')
 bias = np.ones((m, 1))
 print(f'bias = np.ones((m, 1)):\n{bias}\n')
 print(f'bias.shape:\n{bias.shape}\n')
+
+X = np.append(bias, X1, axis=1)
+print(f'X = np.append(bias, X1, axis=1):\n{X}\n')
+print(f'X.shape:\n{X.shape}\n')
