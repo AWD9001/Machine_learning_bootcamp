@@ -28,3 +28,10 @@ print(f'bias.shape:\n{bias.shape}\n')
 X = np.append(bias, X1, axis=1)
 print(f'X = np.append(bias, X1, axis=1):\n{X}\n')
 print(f'X.shape:\n{X.shape}\n')
+
+# Losowa inicjalizacja parametrów
+eta = 0.01
+print(f'eta: {eta}\n')
+
+weights = np.random.randn(2, 1)
+print(f'weights = np.random.randn(2, 1):\n{weights}\n')
