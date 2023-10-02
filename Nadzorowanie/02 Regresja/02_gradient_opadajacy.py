@@ -1,6 +1,6 @@
 # Import bibliotek
 import numpy as np
-# import pandas as pd
+import pandas as pd
 # import plotly.express as px
 
 np.random.seed(42)
@@ -35,3 +35,20 @@ print(f'eta: {eta}\n')
 
 weights = np.random.randn(2, 1)
 print(f'weights = np.random.randn(2, 1):\n{weights}\n')
+
+# Metoda gradientu prostego
+intercept = []
+coef = []
+
+for i in range(3000):
+    gradient = (2 / m) * X.T.dot(X.dot(weights) - Y)
+    weights = weights - eta * gradient
+    intercept.append(weights[0][0])
+    coef.append(weights[1][0])
+
+print('Metoda gradientu prostego:')
+print(f'weights:\n{weights}\n')
+
+df = pd.DataFrame(data={'intercept': intercept, 'coef': coef})
+print("df = pd.DataFrame(data={'intercept': intercept, 'coef': coef})")
+print(f'df.head():\n{df.head()}')
