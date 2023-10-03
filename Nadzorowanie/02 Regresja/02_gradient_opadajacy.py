@@ -1,7 +1,7 @@
 # Import bibliotek
 import numpy as np
 import pandas as pd
-# import plotly.express as px
+import plotly.express as px
 
 np.random.seed(42)
 
@@ -52,3 +52,7 @@ print(f'weights:\n{weights}\n')
 df = pd.DataFrame(data={'intercept': intercept, 'coef': coef})
 print("df = pd.DataFrame(data={'intercept': intercept, 'coef': coef})")
 print(f'df.head():\n{df.head()}')
+
+# Wizualizacja dopasowania
+px.line(df, y='intercept', width=800, title='Dopasowanie: intercept')
+px.line(df, y='coef', width=800, title='Dopasowanie: coef')
