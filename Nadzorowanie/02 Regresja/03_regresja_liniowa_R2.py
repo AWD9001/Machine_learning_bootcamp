@@ -1,5 +1,5 @@
 # Import bibliotek
-# import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 import numpy as np
 # import pandas as pd
 import seaborn as sns
@@ -19,3 +19,14 @@ data, target = make_regression(n_samples=100, n_features=1, n_targets=1, noise=3
 
 print(f'data shape: {data.shape}\n')
 print(f'target shape: {target.shape}')
+
+print(f'data[:5]:\n{data[:5]}\n')
+print(f'target[:5]:\n{target[:5]}\n')
+
+plt.figure(figsize=(8, 6))
+plt.title('Regresja liniowa')
+plt.xlabel('cecha x')
+plt.ylabel('zmienna docelowa')
+plt.scatter(data, target, label='cecha x')
+plt.legend()
+plt.plot()
