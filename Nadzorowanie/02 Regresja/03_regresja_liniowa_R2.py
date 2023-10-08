@@ -30,3 +30,20 @@ plt.ylabel('zmienna docelowa')
 plt.scatter(data, target, label='cecha x')
 plt.legend()
 plt.plot()
+
+# Regresja Liniowa przy użyciu scikit-learn
+# Y = w0 + w1X1
+
+from sklearn.linear_model import LinearRegression
+
+regressor = LinearRegression()
+
+# metoda fit() dopasowuje model liniowy do danych
+print(f'regressor.fit(data, target):\n{regressor.fit(data, target)}\n')
+
+# metoda score() dokonuje oceny modelu na przekazanych danych (wynik R2 score)
+print(f'regressor.score(data, target): {regressor.score(data, target)}\n')
+
+# metoda predict() dokonuje predykcji na podstawie modelu
+y_pred = regressor.predict(data)
+print(f'y_pred = regressor.predict(data):\n{y_pred}\n')
