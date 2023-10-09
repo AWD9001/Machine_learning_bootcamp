@@ -47,3 +47,14 @@ print(f'regressor.score(data, target): {regressor.score(data, target)}\n')
 # metoda predict() dokonuje predykcji na podstawie modelu
 y_pred = regressor.predict(data)
 print(f'y_pred = regressor.predict(data):\n{y_pred}\n')
+
+# Wizualizacja graficzna modelu
+
+plt.figure(figsize=(8, 6))
+plt.title('Regresja liniowa')
+plt.xlabel('cecha x')
+plt.ylabel('zmienna docelowa')
+plt.scatter(data, target, label='cecha x')
+plt.plot(data, y_pred, color='red', label='model')
+plt.legend()
+plt.show()
