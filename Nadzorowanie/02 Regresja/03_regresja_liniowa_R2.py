@@ -58,3 +58,9 @@ plt.scatter(data, target, label='cecha x')
 plt.plot(data, y_pred, color='red', label='model')
 plt.legend()
 plt.show()
+
+
+# Współczynnik R^2
+print(f'regressor.score(data, target): {regressor.score(data, target)}\n')
+print(f"[item for item in dir(regressor) if not item.startswith('_')]"
+      f"\n{[item for item in dir(regressor) if not item.startswith('_')]}\n")
