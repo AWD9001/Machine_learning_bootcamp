@@ -64,3 +64,6 @@ plt.show()
 print(f'regressor.score(data, target): {regressor.score(data, target)}\n')
 print(f"[item for item in dir(regressor) if not item.startswith('_')]"
       f"\n{[item for item in dir(regressor) if not item.startswith('_')]}\n")
+
+print(f'regressor.coef_: {regressor.coef_}')
+print(f'regressor.intercept_: {regressor.intercept_}\n')
