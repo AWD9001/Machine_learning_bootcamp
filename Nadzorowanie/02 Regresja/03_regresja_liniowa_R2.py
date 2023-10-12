@@ -67,3 +67,13 @@ print(f"[item for item in dir(regressor) if not item.startswith('_')]"
 
 print(f'regressor.coef_: {regressor.coef_}')
 print(f'regressor.intercept_: {regressor.intercept_}\n')
+
+# Końcowa postać modelu
+plt.figure(figsize=(8, 6))
+plt.title('Regresja liniowa')
+plt.xlabel('cecha x')
+plt.ylabel('zmienna docelowa')
+plt.scatter(data, target, label='cecha x')
+plt.plot(data, regressor.intercept_ + regressor.coef_[0] * data, color='red', label='model')
+plt.legend()
+plt.show()
