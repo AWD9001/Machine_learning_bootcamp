@@ -77,3 +77,11 @@ plt.scatter(data, target, label='cecha x')
 plt.plot(data, regressor.intercept_ + regressor.coef_[0] * data, color='red', label='model')
 plt.legend()
 plt.show()
+
+# Regresja z podziałem na zbiór treningowy oraz testowy
+
+data, target = make_regression(n_samples=1000, n_features=1, n_targets=1, noise=15.0,
+                               random_state=42)
+
+print(f'data shape: {data.shape}')
+print(f'target shape: {target.shape}\n')
