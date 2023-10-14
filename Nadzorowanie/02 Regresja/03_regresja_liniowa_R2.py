@@ -85,3 +85,12 @@ data, target = make_regression(n_samples=1000, n_features=1, n_targets=1, noise=
 
 print(f'data shape: {data.shape}')
 print(f'target shape: {target.shape}\n')
+
+from sklearn.model_selection import train_test_split
+
+X_train, X_test, y_train, y_test = train_test_split(data, target, test_size=0.25)
+
+print(f'X_train shape: {X_train.shape}')
+print(f'X_test shape: {X_test.shape}')
+print(f'y_train shape: {y_train.shape}')
+print(f'y_train shape: {y_train.shape}')
