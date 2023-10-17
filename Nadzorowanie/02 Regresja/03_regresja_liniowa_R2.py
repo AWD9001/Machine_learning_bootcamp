@@ -103,3 +103,6 @@ plt.scatter(X_train, y_train, label='zbiór treningowy', color='gray', alpha=0.5
 plt.scatter(X_test, y_test, label='zbiór testowy', color='gold', alpha=0.5)
 plt.legend()
 plt.plot()
+
+regressor = LinearRegression()
+regressor.fit(X_train, y_train)
