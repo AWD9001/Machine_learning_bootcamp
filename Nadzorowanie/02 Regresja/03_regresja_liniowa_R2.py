@@ -106,3 +106,7 @@ plt.plot()
 
 regressor = LinearRegression()
 regressor.fit(X_train, y_train)
+
+regressor.score(X_train, y_train)
+
+regressor.score(X_test, y_test)
