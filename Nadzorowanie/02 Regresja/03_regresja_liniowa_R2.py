@@ -110,3 +110,13 @@ regressor.fit(X_train, y_train)
 regressor.score(X_train, y_train)
 
 regressor.score(X_test, y_test)
+
+# Regresja liniowa - zbiór treningowy - wizualizacja
+plt.figure(figsize=(8, 6))
+plt.title('Regresja liniowa: zbior treningowy')
+plt.xlabel('cecha x')
+plt.ylabel('zmienna docelowa')
+plt.scatter(X_train, y_train, label='zbiór treningowy', color='gray', alpha=0.5)
+plt.plot(X_train, regressor.intercept_ + regressor.coef_[0] * X_train, color='red')
+plt.legend()
+plt.plot()
