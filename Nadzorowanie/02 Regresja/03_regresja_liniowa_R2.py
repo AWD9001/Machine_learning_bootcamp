@@ -120,3 +120,13 @@ plt.scatter(X_train, y_train, label='zbiór treningowy', color='gray', alpha=0.5
 plt.plot(X_train, regressor.intercept_ + regressor.coef_[0] * X_train, color='red')
 plt.legend()
 plt.plot()
+
+# Regresja liniowa - zbiór testowy - wizualizacja
+plt.figure(figsize=(8, 6))
+plt.title('Regresja liniowa: zbior testowy')
+plt.xlabel('cecha x')
+plt.ylabel('zmienna docelowa')
+plt.scatter(X_test, y_test, label='zbiór testowy', color='gold', alpha=0.5)
+plt.plot(X_test, regressor.intercept_ + regressor.coef_[0] * X_test, color='red')
+plt.legend()
+plt.plot()
