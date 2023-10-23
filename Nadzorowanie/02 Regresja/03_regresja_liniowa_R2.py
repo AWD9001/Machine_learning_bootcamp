@@ -1,6 +1,7 @@
 # Import bibliotek
 import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
 import seaborn as sns
 import sklearn
 from sklearn.datasets import make_regression
@@ -128,3 +129,9 @@ plt.scatter(X_test, y_test, label='zbiór testowy', color='gold', alpha=0.5)
 plt.plot(X_test, regressor.intercept_ + regressor.coef_[0] * X_test, color='red')
 plt.legend()
 plt.plot()
+
+# Predykcja na podstawie modelu
+y_pred = regressor.predict(X_test)
+
+predictions = pd.DataFrame(data={'y_true': y_test, 'y_pred': y_pred})
+print(predictions.head())
