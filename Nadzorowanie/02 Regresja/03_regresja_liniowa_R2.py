@@ -135,3 +135,6 @@ y_pred = regressor.predict(X_test)
 
 predictions = pd.DataFrame(data={'y_true': y_test, 'y_pred': y_pred})
 print(predictions.head())
+
+predictions['error'] = predictions['y_true'] - predictions['y_pred']
+print(predictions.head())
