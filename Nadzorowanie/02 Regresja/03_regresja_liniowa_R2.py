@@ -138,3 +138,5 @@ print(predictions.head())
 
 predictions['error'] = predictions['y_true'] - predictions['y_pred']
 print(predictions.head())
+
+_ = predictions['error'].plot(kind='hist', bins=50, figsize=(8, 6))
