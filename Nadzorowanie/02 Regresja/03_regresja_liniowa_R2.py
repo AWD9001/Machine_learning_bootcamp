@@ -5,6 +5,7 @@ import pandas as pd
 import seaborn as sns
 import sklearn
 from sklearn.datasets import make_regression
+from sklearn.linear_model import LinearRegression
 
 np.random.seed(42)
 np.set_printoptions(precision=6, suppress=True, edgeitems=30, linewidth=120,
@@ -33,8 +34,6 @@ plt.plot()
 # Regresja Liniowa przy użyciu scikit-learn
 # Y = w0 + w1X1
 
-from sklearn.linear_model import LinearRegression
-
 regressor = LinearRegression()
 
 # metoda fit() dopasowuje model liniowy do danych
@@ -57,7 +56,6 @@ plt.scatter(data, target, label='cecha x')
 plt.plot(data, y_pred, color='red', label='model')
 plt.legend()
 plt.show()
-
 
 # Współczynnik R^2
 print(f'regressor.score(data, target): {regressor.score(data, target)}\n')
