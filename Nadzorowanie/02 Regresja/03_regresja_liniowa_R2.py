@@ -6,6 +6,7 @@ import seaborn as sns
 import sklearn
 from sklearn.datasets import make_regression
 from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import train_test_split
 
 np.random.seed(42)
 np.set_printoptions(precision=6, suppress=True, edgeitems=30, linewidth=120,
@@ -82,8 +83,6 @@ data, target = make_regression(n_samples=1000, n_features=1, n_targets=1, noise=
 
 print(f'data shape: {data.shape}')
 print(f'target shape: {target.shape}\n')
-
-from sklearn.model_selection import train_test_split
 
 X_train, X_test, y_train, y_test = train_test_split(data, target, test_size=0.25)
 
