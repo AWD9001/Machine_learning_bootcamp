@@ -1,6 +1,6 @@
 # Import bibliotek
 import numpy as np
-# import pandas as pd
+import pandas as pd
 # import matplotlib.pyplot as plt
 import seaborn as sns
 import sklearn
@@ -14,3 +14,7 @@ print(f'sklearn version: {sklearn.__version__}')
 df_raw = pd.read_csv('https://storage.googleapis.com/esmartdata-courses-files/'
                      'ml-course/insurance.csv')
 print(df_raw.head())
+
+# Utworzenie kopii danych
+df = df_raw.copy()
+print(df.info())
