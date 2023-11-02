@@ -18,3 +18,10 @@ print(df_raw.head())
 # Utworzenie kopii danych
 df = df_raw.copy()
 print(df.info())
+
+# Eksplorcja i wstępne przygotowanie danych
+print(df[df.duplicated()])
+print(df[df['charges'] == 1639.5631])
+
+df = df.drop_duplicates()
+print(df.info())
