@@ -25,3 +25,6 @@ print(df[df['charges'] == 1639.5631])
 
 df = df.drop_duplicates()
 print(df.info())
+
+cat_cols = [col for col in df.columns if df[col].dtype == 'O']
+print(cat_cols)
