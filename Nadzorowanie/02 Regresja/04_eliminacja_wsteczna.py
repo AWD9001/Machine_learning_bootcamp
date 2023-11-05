@@ -28,3 +28,6 @@ print(df.info())
 
 cat_cols = [col for col in df.columns if df[col].dtype == 'O']
 print(cat_cols)
+
+cat_cols = [col for col in df.columns if df[col].dtype == 'O']
+print(cat_cols)
