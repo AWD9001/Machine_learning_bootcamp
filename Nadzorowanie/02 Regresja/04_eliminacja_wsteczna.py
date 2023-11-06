@@ -31,3 +31,10 @@ print(cat_cols)
 
 cat_cols = [col for col in df.columns if df[col].dtype == 'O']
 print(cat_cols)
+
+for col in cat_cols:
+    df[col] = df[col].astype('category')
+df.info()
+
+print(df.describe().T)
+print(df.describe(include=['category']).T)
