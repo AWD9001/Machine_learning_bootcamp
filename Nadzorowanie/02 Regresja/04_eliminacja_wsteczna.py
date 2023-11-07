@@ -38,3 +38,7 @@ df.info()
 
 print(df.describe().T)
 print(df.describe(include=['category']).T)
+
+print(df.isnull().sum())
+print(df.sex.value_counts())
+df.sex.value_counts().plot(kind='pie')
