@@ -53,3 +53,6 @@ px.histogram(df, x='charges', width=700, height=400, nbins=50, facet_col='smoker
 px.histogram(df, x='smoker', facet_col='sex', color='sex', width=700, height=400)
 df_dummies = pd.get_dummies(df, drop_first=True)
 print(df_dummies)
+
+corr = df_dummies.corr()
+print(corr)
