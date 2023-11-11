@@ -56,3 +56,11 @@ print(df_dummies)
 
 corr = df_dummies.corr()
 print(corr)
+
+sns.set(style="white")
+mask = np.zeros_like(corr, dtype=np.bool)
+mask[np.triu_indices_from(mask)] = True
+f, ax = plt.subplots(figsize=(8, 6))
+cmap = sns.diverging_palette(220, 10, as_cmap=True)
+sns.heatmap(corr, mask=mask, cmap=cmap, vmax=.3, center=0, square=True, linewidths=.5,
+            cbar_kws={"shrink": .5})
