@@ -1,7 +1,7 @@
 # Import bibliotek
 import numpy as np
 import pandas as pd
-# import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 import seaborn as sns
 import sklearn
 
@@ -64,3 +64,5 @@ f, ax = plt.subplots(figsize=(8, 6))
 cmap = sns.diverging_palette(220, 10, as_cmap=True)
 sns.heatmap(corr, mask=mask, cmap=cmap, vmax=.3, center=0, square=True, linewidths=.5,
             cbar_kws={"shrink": .5})
+
+df_dummies.corr()['charges'].sort_values(ascending=False)
