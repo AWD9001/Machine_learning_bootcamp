@@ -66,3 +66,6 @@ sns.heatmap(corr, mask=mask, cmap=cmap, vmax=.3, center=0, square=True, linewidt
             cbar_kws={"shrink": .5})
 
 df_dummies.corr()['charges'].sort_values(ascending=False)
+
+sns.set()
+df_dummies.corr()['charges'].sort_values()[:-1].plot(kind='barh')
