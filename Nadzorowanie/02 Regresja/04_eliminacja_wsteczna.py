@@ -73,3 +73,5 @@ df_dummies.corr()['charges'].sort_values()[:-1].plot(kind='barh')
 data = df_dummies.copy()
 target = data.pop('charges')
 data.head()
+
+target.head()
