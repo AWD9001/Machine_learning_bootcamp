@@ -85,3 +85,9 @@ print(f'X_trian shape: {X_train.shape}')
 print(f'X_test shape: {X_test.shape}')
 print(f'y_trian shape: {y_train.shape}')
 print(f'y_test shape: {y_test.shape}')
+
+# Regresja liniowa
+from sklearn.linear_model import LinearRegression
+
+regressor = LinearRegression()
+regressor.fit(X_train, y_train)
