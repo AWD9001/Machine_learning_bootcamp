@@ -91,3 +91,5 @@ from sklearn.linear_model import LinearRegression
 
 regressor = LinearRegression()
 regressor.fit(X_train, y_train)
+
+print(f'R2 score: {regressor.score(X_test, y_test):.4f}')
