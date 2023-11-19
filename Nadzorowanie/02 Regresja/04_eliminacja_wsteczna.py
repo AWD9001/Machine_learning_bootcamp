@@ -93,3 +93,6 @@ regressor = LinearRegression()
 regressor.fit(X_train, y_train)
 
 print(f'R2 score: {regressor.score(X_test, y_test):.4f}')
+
+y_pred = regressor.predict(X_test)
+print(y_pred[:10])
