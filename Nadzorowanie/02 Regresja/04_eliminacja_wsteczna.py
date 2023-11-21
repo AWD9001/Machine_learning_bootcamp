@@ -99,5 +99,7 @@ print(y_pred[:10])
 
 y_true = y_test.copy()
 predictions = pd.DataFrame(data={'y_true': y_true, 'y_pred': y_pred})
-predictions['error'] = predictions['y_true'] -  predictions['y_pred']
+predictions['error'] = predictions['y_true'] - predictions['y_pred']
 print(predictions.head())
+
+predictions.error.plot(kind='hist', bins=30)
