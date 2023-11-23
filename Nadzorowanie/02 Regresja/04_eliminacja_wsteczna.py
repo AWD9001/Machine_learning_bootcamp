@@ -108,3 +108,7 @@ from sklearn.metrics import mean_absolute_error
 
 mae = mean_absolute_error(y_true, y_pred)
 print(f'MAE wynosi: {mae:.2f}')
+
+print(regressor.intercept_)
+print(regressor.coef_)
+print(data.columns)
