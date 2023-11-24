@@ -112,3 +112,12 @@ print(f'MAE wynosi: {mae:.2f}')
 print(regressor.intercept_)
 print(regressor.coef_)
 print(data.columns)
+
+# Dobór cech modelu - eliminacja wsteczna
+
+import statsmodels.api as sm
+
+X_train_ols = X_train.copy()
+X_train_ols = X_train_ols.values
+X_train_ols = sm.add_constant(X_train_ols)
+print(X_train_ols)
