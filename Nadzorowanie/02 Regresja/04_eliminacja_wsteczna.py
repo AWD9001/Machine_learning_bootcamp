@@ -121,3 +121,7 @@ X_train_ols = X_train.copy()
 X_train_ols = X_train_ols.values
 X_train_ols = sm.add_constant(X_train_ols)
 print(X_train_ols)
+
+ols = sm.OLS(endog=y_train, exog=X_train_ols).fit()
+predictors = ['const'] + list(X_train.columns)
+print(ols.summary(xname=predictors))
