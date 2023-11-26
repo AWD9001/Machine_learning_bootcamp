@@ -125,3 +125,9 @@ print(X_train_ols)
 ols = sm.OLS(endog=y_train, exog=X_train_ols).fit()
 predictors = ['const'] + list(X_train.columns)
 print(ols.summary(xname=predictors))
+
+X_selected = X_train_ols[:, [0, 1, 2, 3, 5, 6, 7, 8]]
+predictors.remove('sex_male')
+
+ols = sm.OLS(endog=y_train, exog=X_selected).fit()
+print(ols.summary(xname=predictors))
