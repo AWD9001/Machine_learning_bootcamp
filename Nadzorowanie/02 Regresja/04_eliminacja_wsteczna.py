@@ -137,3 +137,9 @@ predictors.remove('region_northwest')
 
 ols = sm.OLS(endog=y_train, exog=X_selected).fit()
 print(ols.summary(xname=predictors))
+
+X_selected = X_train_ols[:, [0, 1, 2, 3, 5, 7]]
+predictors.remove('region_southwest')
+
+ols = sm.OLS(endog=y_train, exog=X_selected).fit()
+print(ols.summary(xname=predictors))
