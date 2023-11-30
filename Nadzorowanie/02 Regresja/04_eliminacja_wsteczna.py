@@ -149,3 +149,23 @@ predictors.remove('region_southeast')
 
 ols = sm.OLS(endog=y_train, exog=X_selected).fit()
 print(ols.summary(xname=predictors))
+
+# Eliminacja wsteczna - automatyzacja
+
+X_train_numpy = X_train.values
+X_train_numpy = sm.add_constant(X_train_numpy)
+num_vars = len(X_train_numpy[0])
+
+predictors = ['const'] + list(X_train.columns)
+sl = 0.05
+
+for i in range(0, num_vars):
+    ols = sm.OLS(endog=y_train, exog=X_train_numpy).fit()
+    max_pval = max(ols.pvalues.astype('float'))
+    if max_pval > sl:
+        for j in range(0, num_vars - i):
+            if ols.pvalues[j].astype('float') == max_pval:
+                X_train_numpy = np.delete(X_train_numpy, j, axis=1)
+                predictors.remove(predictors[j])
+
+print(ols.summary(xname=predictors))
