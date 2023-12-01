@@ -151,7 +151,6 @@ ols = sm.OLS(endog=y_train, exog=X_selected).fit()
 print(ols.summary(xname=predictors))
 
 # Eliminacja wsteczna - automatyzacja
-
 X_train_numpy = X_train.values
 X_train_numpy = sm.add_constant(X_train_numpy)
 num_vars = len(X_train_numpy[0])
@@ -169,3 +168,6 @@ for i in range(0, num_vars):
                 predictors.remove(predictors[j])
 
 print(ols.summary(xname=predictors))
+
+# Zapisanie końcowego modelu
+ols.save('model.pickle')
