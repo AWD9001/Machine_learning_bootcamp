@@ -2,6 +2,7 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+import plotly.express as px
 import seaborn as sns
 import sklearn
 
@@ -46,8 +47,6 @@ df.sex.value_counts().plot(kind='pie')
 print(df.smoker.value_counts())
 print(df.region.value_counts())
 df.charges.plot(kind='hist', bins=30)
-
-import plotly.express as px
 
 px.histogram(df, x='charges', width=700, height=400, nbins=50, facet_col='smoker', facet_row='sex')
 px.histogram(df, x='smoker', facet_col='sex', color='sex', width=700, height=400)
