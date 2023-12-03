@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import plotly.express as px
 import seaborn as sns
 import sklearn
+from sklearn.model_selection import train_test_split
 
 sns.set()
 np.random.seed(42)
@@ -76,8 +77,6 @@ data.head()
 target.head()
 
 # Podział danych na zbiór treningowy i testowy
-from sklearn.model_selection import train_test_split
-
 X_train, X_test, y_train, y_test = train_test_split(data, target, test_size=0.2)
 
 print(f'X_trian shape: {X_train.shape}')
