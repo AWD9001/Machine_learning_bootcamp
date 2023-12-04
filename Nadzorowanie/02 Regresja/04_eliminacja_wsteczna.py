@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import plotly.express as px
 import seaborn as sns
 import sklearn
+from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 
 sns.set()
@@ -85,8 +86,6 @@ print(f'y_trian shape: {y_train.shape}')
 print(f'y_test shape: {y_test.shape}')
 
 # Regresja liniowa
-from sklearn.linear_model import LinearRegression
-
 regressor = LinearRegression()
 regressor.fit(X_train, y_train)
 
