@@ -6,6 +6,7 @@ import plotly.express as px
 import seaborn as sns
 import sklearn
 from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_absolute_error
 from sklearn.model_selection import train_test_split
 
 sns.set()
@@ -100,8 +101,6 @@ predictions['error'] = predictions['y_true'] - predictions['y_pred']
 print(predictions.head())
 
 predictions.error.plot(kind='hist', bins=30)
-
-from sklearn.metrics import mean_absolute_error
 
 mae = mean_absolute_error(y_true, y_pred)
 print(f'MAE wynosi: {mae:.2f}')
