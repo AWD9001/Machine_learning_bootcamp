@@ -8,6 +8,7 @@ import sklearn
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_absolute_error
 from sklearn.model_selection import train_test_split
+import statsmodels.api as sm
 
 sns.set()
 np.random.seed(42)
@@ -110,9 +111,6 @@ print(regressor.coef_)
 print(data.columns)
 
 # Dobór cech modelu - eliminacja wsteczna
-
-import statsmodels.api as sm
-
 X_train_ols = X_train.copy()
 X_train_ols = X_train_ols.values
 X_train_ols = sm.add_constant(X_train_ols)
