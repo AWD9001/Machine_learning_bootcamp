@@ -39,3 +39,19 @@ plt.ylabel('zmienna docelowa')
 plt.scatter(X, y, label='cecha x')
 plt.legend()
 plt.show()
+
+# Model liniowy
+from sklearn.linear_model import LinearRegression
+
+regressor = LinearRegression()
+regressor.fit(X, y)
+y_pred_lin = regressor.predict(X)
+
+plt.figure(figsize=(8, 6))
+plt.title('Regresja wielomianowa')
+plt.xlabel('cecha x')
+plt.ylabel('zmienna docelowa')
+plt.scatter(X, y, label='cecha x')
+plt.plot(X, y_pred_lin, c='red', label='regresja liniowa')
+plt.legend()
+plt.show()
