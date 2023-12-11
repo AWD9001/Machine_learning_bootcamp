@@ -55,3 +55,10 @@ plt.scatter(X, y, label='cecha x')
 plt.plot(X, y_pred_lin, c='red', label='regresja liniowa')
 plt.legend()
 plt.show()
+
+from sklearn.metrics import r2_score
+r2_score(y, y_pred_lin)
+
+# Ekstrakcja cech wielomianowych - stopień 2
+df = pd.DataFrame(data={'X': X.ravel()})
+df.head(10)
