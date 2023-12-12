@@ -1,6 +1,6 @@
 # Import bibliotek
 import numpy as np
-# import pandas as pd
+import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 # import plotly.express as px
@@ -62,3 +62,31 @@ r2_score(y, y_pred_lin)
 # Ekstrakcja cech wielomianowych - stopień 2
 df = pd.DataFrame(data={'X': X.ravel()})
 df.head(10)
+
+from sklearn.preprocessing import PolynomialFeatures
+
+poly = PolynomialFeatures(degree=2)
+
+X_poly = poly.fit_transform(X)
+print(X_poly)
+print(X_poly.shape)
+
+df = pd.DataFrame(X_poly)
+df.columns = ['1', 'x', 'x^2']
+print(df.head(10))
+
+# Dopasowanie modelu
+regressor_poly = LinearRegression()
+regressor_poly.fit(X_poly, y)
+
+y_pred_2 = regressor_poly.predict(X_poly)
+
+plt.figure(figsize=(8, 6))
+plt.title('Regresja wielomianowa')
+plt.xlabel('cecha x')
+plt.ylabel('zmienna docelowa')
+plt.scatter(X, y, label='cecha x')
+plt.plot(X, y_pred_lin, c='red', label='regresja liniowa')
+plt.plot(X, y_pred_2, c='green', label='regresja wielomianowa, st. 2')
+plt.legend()
+plt.show()
