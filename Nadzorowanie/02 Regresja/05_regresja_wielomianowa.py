@@ -90,3 +90,11 @@ plt.plot(X, y_pred_lin, c='red', label='regresja liniowa')
 plt.plot(X, y_pred_2, c='green', label='regresja wielomianowa, st. 2')
 plt.legend()
 plt.show()
+
+print(r2_score(y, y_pred_2))
+
+# Ekstrakcja cech wielomianowych - stopień 3
+poly = PolynomialFeatures(degree=3)
+
+X_poly_3 = poly.fit_transform(X)
+print(X_poly_3)
