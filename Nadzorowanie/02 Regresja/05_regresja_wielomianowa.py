@@ -98,3 +98,23 @@ poly = PolynomialFeatures(degree=3)
 
 X_poly_3 = poly.fit_transform(X)
 print(X_poly_3)
+
+# Dopasowanie modelu
+regressor_poly_3 = LinearRegression()
+regressor_poly_3.fit(X_poly_3, y)
+
+y_pred_3 = regressor_poly_3.predict(X_poly_3)
+
+plt.figure(figsize=(8, 6))
+plt.title('Regresja wielomianowa')
+plt.xlabel('cecha x')
+plt.ylabel('zmienna docelowa')
+plt.scatter(X, y, label='cecha x')
+plt.plot(X, y_pred_lin, c='red', label='regresja liniowa')
+plt.plot(X, y_pred_2, c='green', label='regresja wielomianowa, st. 2')
+plt.plot(X, y_pred_3, c='orange', label='regresja wielomianowa, st. 3')
+plt.legend()
+plt.show()
+
+print(r2_score(y, y_pred_3))
+print(r2_score(y, y_pred_lin))
