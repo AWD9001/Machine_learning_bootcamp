@@ -4,6 +4,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import sklearn
+from sklearn.linear_model import LinearRegression
 
 np.random.seed(42)
 np.set_printoptions(precision=6, suppress=True)
@@ -40,8 +41,6 @@ plt.legend()
 plt.show()
 
 # Model liniowy
-from sklearn.linear_model import LinearRegression
-
 regressor = LinearRegression()
 regressor.fit(X, y)
 y_pred_lin = regressor.predict(X)
