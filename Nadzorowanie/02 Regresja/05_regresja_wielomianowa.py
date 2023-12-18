@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import sklearn
 from sklearn.linear_model import LinearRegression
+from sklearn.metrics import r2_score
 
 np.random.seed(42)
 np.set_printoptions(precision=6, suppress=True)
@@ -54,7 +55,6 @@ plt.plot(X, y_pred_lin, c='red', label='regresja liniowa')
 plt.legend()
 plt.show()
 
-from sklearn.metrics import r2_score
 r2_score(y, y_pred_lin)
 
 # Ekstrakcja cech wielomianowych - stopień 2
