@@ -6,6 +6,7 @@ import seaborn as sns
 import sklearn
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import r2_score
+from sklearn.preprocessing import PolynomialFeatures
 
 np.random.seed(42)
 np.set_printoptions(precision=6, suppress=True)
@@ -60,8 +61,6 @@ r2_score(y, y_pred_lin)
 # Ekstrakcja cech wielomianowych - stopień 2
 df = pd.DataFrame(data={'X': X.ravel()})
 df.head(10)
-
-from sklearn.preprocessing import PolynomialFeatures
 
 poly = PolynomialFeatures(degree=2)
 
