@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import sklearn
 from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_absolute_error as mae
 from sklearn.metrics import r2_score
 from sklearn.preprocessing import PolynomialFeatures
 
@@ -118,7 +119,6 @@ print(r2_score(y, y_pred_lin))
 
 # Porównanie metryk
 
-from sklearn.metrics import mean_absolute_error as mae
 from sklearn.metrics import mean_squared_error as mse
 
 results = pd.DataFrame(data={
