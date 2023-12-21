@@ -6,6 +6,7 @@ import seaborn as sns
 import sklearn
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_absolute_error as mae
+from sklearn.metrics import mean_squared_error as mse
 from sklearn.metrics import r2_score
 from sklearn.preprocessing import PolynomialFeatures
 
@@ -118,9 +119,6 @@ print(r2_score(y, y_pred_3))
 print(r2_score(y, y_pred_lin))
 
 # Porównanie metryk
-
-from sklearn.metrics import mean_squared_error as mse
-
 results = pd.DataFrame(data={
     'name': ['regresja liniowa', 'regresja wielomianowa st. 2', 'regresja wielomianowa st. 3'],
     'r2_score': [r2_score(y, y_pred_lin), r2_score(y, y_pred_2), r2_score(y, y_pred_3)],
