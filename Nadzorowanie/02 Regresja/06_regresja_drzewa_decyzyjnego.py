@@ -16,3 +16,12 @@ target = target ** 2
 
 print(f'{data[:5]}\n')
 print(target[:5])
+
+# Regresja liniowa
+plt.figure(figsize=(8, 6))
+plt.title('Regresja liniowa')
+plt.scatter(data, target, label='dane')
+plt.legend()
+plt.xlabel('cecha x')
+plt.ylabel('target')
+plt.show()
