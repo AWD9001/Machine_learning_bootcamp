@@ -1,9 +1,10 @@
 # Import bibliotek
 import numpy as np
-# import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 import seaborn as sns
 import sklearn
 from sklearn.datasets import make_regression
+from sklearn.linear_model import LinearRegression
 
 sns.set(font_scale=1.3)
 np.random.seed(42)
@@ -20,6 +21,21 @@ print(target[:5])
 # Regresja liniowa
 plt.figure(figsize=(8, 6))
 plt.title('Regresja liniowa')
+plt.scatter(data, target, label='dane')
+plt.legend()
+plt.xlabel('cecha x')
+plt.ylabel('target')
+plt.show()
+
+
+regressor = LinearRegression()
+regressor.fit(data, target)
+
+plot_data = np.arange(-3, 3, 0.01).reshape(-1, 1)
+
+plt.figure(figsize=(8, 6))
+plt.title('Regresja liniowa')
+plt.plot(plot_data, regressor.predict(plot_data), c='red', label='regresja liniowa')
 plt.scatter(data, target, label='dane')
 plt.legend()
 plt.xlabel('cecha x')
