@@ -69,3 +69,17 @@ plt.legend()
 plt.xlabel('cecha x')
 plt.ylabel('target')
 plt.show()
+
+
+max_depth = 2
+regressor = DecisionTreeRegressor(max_depth=max_depth)
+regressor.fit(data, target)
+
+plt.figure(figsize=(8, 6))
+plt.title(f'Regresja drzew decyzyjnych, max_depth={max_depth}')
+plt.plot(plot_data, regressor.predict(plot_data), c='green', label='regresja drzew decyzyjnych')
+plt.scatter(data, target, label='dane')
+plt.legend()
+plt.xlabel('cecha x')
+plt.ylabel('target')
+plt.show()
