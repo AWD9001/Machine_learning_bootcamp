@@ -101,3 +101,28 @@ graph = pydotplus.graph_from_dot_data(dot_data.getvalue())
 graph.write_png('graph.png')
 
 Image(graph.create_png(), width=600)
+
+
+# Model drzewa decyzyjnego - budowa funkcji
+
+
+def make_dt_regression(max_depth1=2):
+    regressor1 = DecisionTreeRegressor(max_depth=max_depth1)
+    regressor1.fit(data, target)
+
+    plt.figure(figsize=(8, 6))
+    plt.plot(plot_data, regressor1.predict(plot_data), c='red')
+    plt.scatter(data, target)
+
+    dot_data1 = StringIO()
+    export_graphviz(regressor1, out_file=dot_data1,
+                    filled=True, rounded=True,
+                    special_characters=True,
+                    feature_names=['cecha x'])
+    graph1 = pydotplus.graph_from_dot_data(dot_data.getvalue())
+    graph1.write_png('graph.png')
+
+    return Image(graph1.create_png(), width=300 + max_depth * 100)
+
+
+make_dt_regression(max_depth1=2)
