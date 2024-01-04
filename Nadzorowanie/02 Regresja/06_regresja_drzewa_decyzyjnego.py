@@ -127,3 +127,4 @@ def make_dt_regression(max_depth1=2):
 
 make_dt_regression(max_depth1=2)
 make_dt_regression(max_depth1=3)
+make_dt_regression(max_depth1=4)
