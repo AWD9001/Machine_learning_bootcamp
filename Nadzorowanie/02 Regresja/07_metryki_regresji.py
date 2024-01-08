@@ -8,3 +8,6 @@ np.random.seed(42)
 
 y_true = 100 + 20 * np.random.randn(50)
 print(y_true)
+
+y_pred = y_true + 10 * np.random.randn(50)
+print(y_pred)
