@@ -14,3 +14,7 @@ print(y_pred)
 
 results = pd.DataFrame({'y_true': y_true, 'y_pred': y_pred})
 print(results.head())
+
+results['error'] = results['y_true'] - results['y_pred']
+results['error_squared'] = results['error'] ** 2
+print(results.head())
