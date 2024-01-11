@@ -18,3 +18,8 @@ print(results.head())
 results['error'] = results['y_true'] - results['y_pred']
 results['error_squared'] = results['error'] ** 2
 print(results.head())
+
+print(f"MAE - mean absolute error: {results['error'].abs().sum() / len(results):.4f}")
+print(f"MSE - mean squared error: {results['error_squared'].sum() / len(results):.4f}")
+print(f"RMSE - root mean squared error: "
+      f"{np.sqrt(results['error_squared'].sum() / len(results)):.4f}")
