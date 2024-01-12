@@ -2,7 +2,7 @@
 import numpy as np
 import pandas as pd
 # import plotly.express as px
-# import plotly.graph_objects as go
+import plotly.graph_objects as go
 
 np.random.seed(42)
 
@@ -23,3 +23,24 @@ print(f"MAE - mean absolute error: {results['error'].abs().sum() / len(results):
 print(f"MSE - mean squared error: {results['error_squared'].sum() / len(results):.4f}")
 print(f"RMSE - root mean squared error: "
       f"{np.sqrt(results['error_squared'].sum() / len(results)):.4f}")
+
+# Interpretacja graficzna
+
+
+# noinspection PyTypeChecker
+def plot_regression_results(y_true1, y_pred1):
+
+    results1 = pd.DataFrame({'y_true': y_true1, 'y_pred': y_pred1})
+    min1 = results[['y_true', 'y_pred']].min().min()
+    max1 = results[['y_true', 'y_pred']].max().max()
+
+    fig = go.Figure(data=[go.Scatter(x=results1['y_true'], y=results1['y_pred'], mode='markers'),
+                    go.Scatter(x=[min1, max1], y=[min1, max1])],
+                    layout=go.Layout(showlegend=False, width=800,
+                                     xaxis_title='y_true',
+                                     yaxis_title='y_pred',
+                                     title='Regresja: y_true vs. y_pred'))
+    fig.show()
+
+
+plot_regression_results(y_true, y_pred)
