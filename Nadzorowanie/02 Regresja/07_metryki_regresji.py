@@ -44,3 +44,11 @@ def plot_regression_results(y_true1, y_pred1):
 
 
 plot_regression_results(y_true, y_pred)
+
+y_true = 100 + 20 * np.random.randn(1000)
+y_pred = y_true + 10 * np.random.randn(1000)
+
+results = pd.DataFrame({'y_true': y_true, 'y_pred': y_pred})
+results['error'] = results['y_true'] - results['y_pred']
+
+px.histogram(results, x='error', nbins=50, width=800)
