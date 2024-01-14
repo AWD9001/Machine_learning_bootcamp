@@ -1,7 +1,7 @@
 # Import bibliotek
 import numpy as np
 import pandas as pd
-# import plotly.express as px
+import plotly.express as px
 import plotly.graph_objects as go
 
 np.random.seed(42)
@@ -52,3 +52,10 @@ results = pd.DataFrame({'y_true': y_true, 'y_pred': y_pred})
 results['error'] = results['y_true'] - results['y_pred']
 
 px.histogram(results, x='error', nbins=50, width=800)
+
+
+def mean_absolute_error(y_true1, y_pred1):
+    return abs(y_true1 - y_pred1).sum() / len(y_true1)
+
+
+mean_absolute_error(y_true, y_pred)
