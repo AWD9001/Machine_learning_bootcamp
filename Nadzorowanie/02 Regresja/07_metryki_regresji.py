@@ -4,6 +4,7 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 from sklearn.metrics import mean_absolute_error
+from sklearn.metrics import mean_squared_error
 
 np.random.seed(42)
 
@@ -62,3 +63,12 @@ def mean_absolut_error(y_true1, y_pred1):
 mean_absolut_error(y_true, y_pred)
 
 mean_absolute_error(y_true, y_pred)
+
+
+def mean_squared_def_error(y_true1, y_pred1):
+    return ((y_true1 - y_pred1) ** 2).sum() / len(y_true1)
+
+
+mean_squared_def_error(y_true, y_pred)
+
+mean_squared_error(y_true, y_pred)
