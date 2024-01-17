@@ -72,3 +72,12 @@ def mean_squared_def_error(y_true1, y_pred1):
 mean_squared_def_error(y_true, y_pred)
 
 mean_squared_error(y_true, y_pred)
+
+
+def root_mean_squared_error(y_true1, y_pred1):
+    return np.sqrt(((y_true1 - y_pred1) ** 2).sum() / len(y_true1))
+
+
+root_mean_squared_error(y_true, y_pred)
+
+np.sqrt(mean_squared_error(y_true, y_pred))
