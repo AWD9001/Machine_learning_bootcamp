@@ -87,3 +87,16 @@ def root_mean_squared_error(y_true1, y_pred1):
 root_mean_squared_error(y_true, y_pred)
 
 np.sqrt(mean_squared_error(y_true, y_pred))
+
+# Max Error - Błąd maksymalny
+
+
+def max_error1(y_true1, y_pred1):
+    return abs(y_true1 - y_pred1).max()
+
+
+max_error1(y_true, y_pred)
+
+from sklearn.metrics import max_error
+
+max_error(y_true, y_pred)
