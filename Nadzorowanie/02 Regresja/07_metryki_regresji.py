@@ -100,3 +100,9 @@ max_error1(y_true, y_pred)
 from sklearn.metrics import max_error
 
 max_error(y_true, y_pred)
+
+# R2 score - współczynnik determinacji
+
+from sklearn.metrics import r2_score
+
+r2_score(y_true, y_pred)
