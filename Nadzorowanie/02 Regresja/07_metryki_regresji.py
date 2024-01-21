@@ -3,8 +3,10 @@ import numpy as np
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
+from sklearn.metrics import max_error
 from sklearn.metrics import mean_absolute_error
 from sklearn.metrics import mean_squared_error
+from sklearn.metrics import r2_score
 
 np.random.seed(42)
 
@@ -97,12 +99,7 @@ def max_error1(y_true1, y_pred1):
 
 max_error1(y_true, y_pred)
 
-from sklearn.metrics import max_error
-
 max_error(y_true, y_pred)
 
 # R2 score - współczynnik determinacji
-
-from sklearn.metrics import r2_score
-
 r2_score(y_true, y_pred)
