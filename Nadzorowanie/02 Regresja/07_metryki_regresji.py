@@ -103,3 +103,17 @@ max_error(y_true, y_pred)
 
 # R2 score - współczynnik determinacji
 r2_score(y_true, y_pred)
+
+
+def r2_score2(y_true1, y_pred1):
+    numerator = ((y_true1 - y_pred1) ** 2).sum()
+    denominator = ((y_true1 - y_true1.mean()) ** 2).sum()
+    r2 = 0.0
+    try:
+        r2 = 1 - numerator / denominator
+    except ZeroDivisionError:
+        print('Dzielenie przez zero')
+    return r2
+
+
+r2_score2(y_true, y_pred)
