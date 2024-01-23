@@ -28,7 +28,7 @@ print(f"MSE - mean squared error: {results['error_squared'].sum() / len(results)
 print(f"RMSE - root mean squared error: "
       f"{np.sqrt(results['error_squared'].sum() / len(results)):.4f}")
 
-# Interpretacja graficzna
+# Interpretacja graficzna:
 
 
 # noinspection PyTypeChecker
