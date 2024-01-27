@@ -26,3 +26,12 @@ plt.figure(figsize=(8, 6))
 plt.plot(X, y)
 plt.title('Funkcja Sigmoid')
 plt.show()
+
+# Załadowanie danych
+
+from sklearn.datasets import load_breast_cancer
+
+raw_data = load_breast_cancer()
+raw_data.keys()
+
+print(raw_data.DESCR)
