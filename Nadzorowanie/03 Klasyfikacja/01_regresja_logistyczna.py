@@ -35,3 +35,11 @@ raw_data = load_breast_cancer()
 raw_data.keys()
 
 print(raw_data.DESCR)
+
+all_data = raw_data.copy()
+
+data = all_data['data']
+target = all_data['target']
+
+print(f'rozmiar data: {data.shape}')
+print(f'rozmiar target: {target.shape}')
