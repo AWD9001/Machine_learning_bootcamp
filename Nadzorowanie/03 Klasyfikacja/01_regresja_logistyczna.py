@@ -53,3 +53,6 @@ print(f'X_train shape: {X_train.shape}')
 print(f'y_train shape: {y_train.shape}')
 print(f'X_test shape: {X_test.shape}')
 print(f'y_test shape: {y_test.shape}')
+
+# Przygotowanie danych do modelu
+print(X_train)
