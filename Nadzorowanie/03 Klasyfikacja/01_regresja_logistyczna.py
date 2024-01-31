@@ -56,3 +56,12 @@ print(f'y_test shape: {y_test.shape}')
 
 # Przygotowanie danych do modelu
 print(X_train)
+
+from sklearn.preprocessing import StandardScaler
+
+scaler = StandardScaler()
+scaler.fit(X_train)
+
+X_train = scaler.transform(X_train)
+X_test = scaler.transform(X_test)
+print(X_train)
