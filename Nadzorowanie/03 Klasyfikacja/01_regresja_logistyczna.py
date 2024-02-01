@@ -65,3 +65,5 @@ scaler.fit(X_train)
 X_train = scaler.transform(X_train)
 X_test = scaler.transform(X_test)
 print(X_train)
+
+print(scaler.mean_)
