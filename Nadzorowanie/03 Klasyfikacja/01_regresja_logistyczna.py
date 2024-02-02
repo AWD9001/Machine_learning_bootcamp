@@ -67,3 +67,4 @@ X_test = scaler.transform(X_test)
 print(X_train)
 
 print(scaler.mean_)
+print(scaler.scale_)
