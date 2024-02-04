@@ -68,3 +68,10 @@ print(X_train)
 
 print(scaler.mean_)
 print(scaler.scale_)
+
+# Dopasowanie modelu
+
+from sklearn.linear_model import LogisticRegression
+
+log_reg = LogisticRegression()
+log_reg.fit(X_train, y_train)
