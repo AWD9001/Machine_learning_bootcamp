@@ -75,3 +75,8 @@ from sklearn.linear_model import LogisticRegression
 
 log_reg = LogisticRegression()
 log_reg.fit(X_train, y_train)
+
+# Predykcja na podstawie modelu
+
+y_pred = log_reg.predict(X_test)
+print(y_pred[:30])
