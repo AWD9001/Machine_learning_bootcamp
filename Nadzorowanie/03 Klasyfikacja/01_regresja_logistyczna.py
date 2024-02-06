@@ -80,3 +80,6 @@ log_reg.fit(X_train, y_train)
 
 y_pred = log_reg.predict(X_test)
 print(y_pred[:30])
+
+y_prob = log_reg.predict_proba(X_test)
+print(y_prob[:30])
