@@ -83,3 +83,11 @@ print(y_pred[:30])
 
 y_prob = log_reg.predict_proba(X_test)
 print(y_prob[:30])
+
+# Ocena modelu
+from sklearn.metrics import confusion_matrix
+from sklearn.metrics import accuracy_score
+from mlxtend.plotting import plot_confusion_matrix
+cm = confusion_matrix(y_test, y_pred)
+plot_confusion_matrix(cm)
+print(f'Accuracy: {accuracy_score(y_test, y_pred)}')
