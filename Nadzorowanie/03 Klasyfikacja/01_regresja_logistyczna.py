@@ -1,8 +1,8 @@
 # Import bibliotek
 import numpy as np
-# import pandas as pd
+import pandas as pd
 import matplotlib.pyplot as plt
-# import plotly.figure_factory as ff
+import plotly.figure_factory as ff
 import seaborn as sns
 import sklearn
 
@@ -91,3 +91,13 @@ from mlxtend.plotting import plot_confusion_matrix
 cm = confusion_matrix(y_test, y_pred)
 plot_confusion_matrix(cm)
 print(f'Accuracy: {accuracy_score(y_test, y_pred)}')
+
+
+def plot_confusion_matrix(cm1):
+    # klasyfikacja binarna cm = cm[::-1]
+    cm1 = pd.DataFrame(cm1, columns=['pred_0', 'pred_1'], index=['true_1', 'true_0'])
+    fig = ff.create_annotated_heatmap(z=cm1.values, x=list(cm1.columns), y=list(cm1.index),
+                                      colorscale='ice', showscale=True, reversescale=True)
+    fig.update_layout(width=500, height=500, title='Confusion Matrix', font_size=16)
+    fig.show()
+    plot_confusion_matrix(cm1)
