@@ -101,3 +101,7 @@ def plot_confusion_matrix(cm1):
     fig.update_layout(width=500, height=500, title='Confusion Matrix', font_size=16)
     fig.show()
     plot_confusion_matrix(cm1)
+
+
+from sklearn.metrics import classification_report
+print(classification_report(y_test, y_pred))
