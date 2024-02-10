@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import plotly.figure_factory as ff
 import seaborn as sns
 import sklearn
+from sklearn.metrics import classification_report
 
 sns.set(font_scale=1.3)
 np.set_printoptions(precision=6, suppress=True, edgeitems=10, linewidth=100000,
@@ -103,5 +104,4 @@ def plot_confusion_matrix(cm1):
     plot_confusion_matrix(cm1)
 
 
-from sklearn.metrics import classification_report
 print(classification_report(y_test, y_pred))
