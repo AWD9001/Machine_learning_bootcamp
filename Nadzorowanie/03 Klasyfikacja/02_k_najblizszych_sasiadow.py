@@ -20,3 +20,5 @@ target = all_data['target']
 
 print(f'{data[:5]}\n')
 print(f'{target[:5]}')
+
+print(all_data['target_names'])
