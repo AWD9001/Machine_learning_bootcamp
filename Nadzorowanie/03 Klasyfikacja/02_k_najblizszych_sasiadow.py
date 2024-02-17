@@ -22,3 +22,6 @@ print(f'{data[:5]}\n')
 print(f'{target[:5]}')
 
 print(all_data['target_names'])
+
+df = pd.DataFrame(data=np.c_[data, target], columns=all_data['feature_names'] + ['class'])
+print(df.head())
