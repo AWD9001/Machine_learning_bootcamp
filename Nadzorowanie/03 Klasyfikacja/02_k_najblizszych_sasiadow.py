@@ -1,7 +1,7 @@
 # Import bibliotek
 # import matplotlib.pyplot as plt
 import numpy as np
-# import pandas as pd
+import pandas as pd
 # import plotly.express as px
 import seaborn as sns
 from sklearn.datasets import load_iris
@@ -25,3 +25,5 @@ print(all_data['target_names'])
 
 df = pd.DataFrame(data=np.c_[data, target], columns=all_data['feature_names'] + ['class'])
 print(df.head())
+
+print(df.info())
