@@ -27,3 +27,4 @@ df = pd.DataFrame(data=np.c_[data, target], columns=all_data['feature_names'] + 
 print(df.head())
 
 print(df.info())
+print(df.describe().T)
