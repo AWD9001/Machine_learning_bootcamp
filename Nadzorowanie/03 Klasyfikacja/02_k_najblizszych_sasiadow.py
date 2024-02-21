@@ -29,3 +29,7 @@ print(df.head())
 print(df.info())
 print(df.describe().T)
 print(df['class'].value_counts())
+
+# Wykres Rozproszenia
+
+print(df.columns)
