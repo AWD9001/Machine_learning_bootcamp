@@ -33,3 +33,5 @@ print(df['class'].value_counts())
 # Wykres Rozproszenia
 
 print(df.columns)
+
+_ = sns.pairplot(df, vars=all_data['feature_names'], hue='class')
