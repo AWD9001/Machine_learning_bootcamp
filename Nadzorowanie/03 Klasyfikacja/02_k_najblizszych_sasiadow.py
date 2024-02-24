@@ -35,4 +35,9 @@ print(df['class'].value_counts())
 print(df.columns)
 
 _ = sns.pairplot(df, vars=all_data['feature_names'], hue='class')
-df.corr()
+print(df.corr())
+
+data = data[:, :2]
+
+print('data shape:', data.shape)
+print('target shape:', target.shape)
