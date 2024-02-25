@@ -41,3 +41,10 @@ data = data[:, :2]
 
 print('data shape:', data.shape)
 print('target shape:', target.shape)
+
+plt.figure(figsize=(8, 6))
+plt.scatter(data[:, 0], data[:, 1], c=target, cmap='viridis')
+plt.title('Wykres punktowy')
+plt.xlabel('cecha_1: sepal_length')
+plt.ylabel('cecha_2: sepal_width')
+plt.show()
