@@ -1,8 +1,8 @@
 # Import bibliotek
-# import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-# import plotly.express as px
+import plotly.express as px
 import seaborn as sns
 from sklearn.datasets import load_iris
 
@@ -48,3 +48,6 @@ plt.title('Wykres punktowy')
 plt.xlabel('cecha_1: sepal_length')
 plt.ylabel('cecha_2: sepal_width')
 plt.show()
+
+df = pd.DataFrame(data=np.c_[data, target], columns=['sepal_length', 'sepal_width', 'class'])
+px.scatter(df, x='sepal_length', y='sepal_width', color='class', width=800)
