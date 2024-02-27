@@ -51,3 +51,9 @@ plt.show()
 
 df = pd.DataFrame(data=np.c_[data, target], columns=['sepal_length', 'sepal_width', 'class'])
 px.scatter(df, x='sepal_length', y='sepal_width', color='class', width=800)
+
+# K-nearest Neighbour Algorithm - Algorytm K-najbliższych sąsiadów
+from sklearn.neighbors import KNeighborsClassifier
+
+classifier = KNeighborsClassifier(n_neighbors=5)
+classifier.fit(data, target)
