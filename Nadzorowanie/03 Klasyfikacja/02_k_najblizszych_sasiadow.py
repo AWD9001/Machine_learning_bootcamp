@@ -57,3 +57,20 @@ from sklearn.neighbors import KNeighborsClassifier
 
 classifier = KNeighborsClassifier(n_neighbors=5)
 classifier.fit(data, target)
+
+# Wykres granic decyzyjnych
+x_min, x_max = data[:, 0].min() - 0.5, data[:, 0].max() + 0.5
+y_min, y_max = data[:, 1].min() - 0.5, data[:, 1].max() + 0.5
+
+xx, yy = np.meshgrid(np.arange(x_min, x_max, 0.01), np.arange(y_min, y_max, 0.01))
+mesh = np.c_[xx.ravel(), yy.ravel()]
+Z = classifier.predict(mesh)
+Z = Z.reshape(xx.shape)
+
+plt.figure(figsize=(10, 8))
+plt.pcolormesh(xx, yy, Z, cmap='gnuplot', alpha=0.1)
+plt.scatter(data[:, 0], data[:, 1], c=target, cmap='gnuplot', edgecolors='r')
+plt.xlim(xx.min(), xx.max())
+plt.ylim(yy.min(), yy.max())
+plt.title('3-class classification k=5')
+plt.show()
