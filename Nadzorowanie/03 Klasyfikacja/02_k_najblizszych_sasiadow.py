@@ -74,3 +74,27 @@ plt.xlim(xx.min(), xx.max())
 plt.ylim(yy.min(), yy.max())
 plt.title('3-class classification k=5')
 plt.show()
+
+
+def plot_decision_boundries(n_neighbors, data1, target1):
+    classifier1 = KNeighborsClassifier(n_neighbors=n_neighbors)
+    classifier1.fit(data1, target1)
+
+    x_min1, x_max1 = data1[:, 0].min() - 0.5, data1[:, 0].max() + 0.5
+    y_min1, y_max1 = data1[:, 1].min() - 0.5, data1[:, 1].max() + 0.5
+
+    xx1, yy1 = np.meshgrid(np.arange(x_min1, x_max1, 0.01), np.arange(y_min1, y_max1, 0.01))
+    mesh1 = np.c_[xx1.ravel(), yy1.ravel()]
+    Z1 = classifier.predict(mesh1)
+    Z1 = Z1.reshape(xx.shape)
+
+    plt.figure(figsize=(10, 8))
+    plt.pcolormesh(xx1, yy1, Z1, cmap='gnuplot', alpha=0.1)
+    plt.scatter(data1[:, 0], data1[:, 1], c=target1, cmap='gnuplot', edgecolors='r')
+    plt.xlim(xx1.min(), xx1.max())
+    plt.ylim(yy1.min(), yy1.max())
+    plt.title(f'3-class classification k={n_neighbors}')
+    plt.show()
+
+
+plot_decision_boundries(1, data, target)
