@@ -99,3 +99,4 @@ def plot_decision_boundries(n_neighbors, data1, target1):
 
 plot_decision_boundries(1, data, target)
 plot_decision_boundries(2, data, target)
+plot_decision_boundries(50, data, target)
