@@ -100,3 +100,24 @@ def plot_decision_boundries(n_neighbors, data1, target1):
 plot_decision_boundries(1, data, target)
 plot_decision_boundries(2, data, target)
 plot_decision_boundries(50, data, target)
+
+plt.figure(figsize=(12, 12))
+
+for i in range(1, 7):
+    plt.subplot(3, 2, i)
+
+    clf = KNeighborsClassifier(n_neighbors=i)
+    clf.fit(data, target)
+
+    xx, yy = np.meshgrid(np.arange(x_min, x_max, 0.01), np.arange(y_min, y_max, 0.01))
+    mesh = np.c_[xx.ravel(), yy.ravel()]
+    Z = clf.predict(mesh)
+    Z = Z.reshape(xx.shape)
+
+    plt.pcolormesh(xx, yy, Z, cmap='gnuplot', alpha=0.1)
+    plt.scatter(data[:, 0], data[:, 1], c=target, cmap='gnuplot', edgecolors='r')
+    plt.xlim(xx.min(), xx.max())
+    plt.ylim(yy.min(), yy.max())
+    plt.title(f'3-class classification k={i}')
+
+plt.show()
