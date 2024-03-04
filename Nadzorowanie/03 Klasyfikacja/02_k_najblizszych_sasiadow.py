@@ -5,6 +5,7 @@ import pandas as pd
 import plotly.express as px
 import seaborn as sns
 from sklearn.datasets import load_iris
+from sklearn.neighbors import KNeighborsClassifier
 
 np.random.seed(42)
 sns.set(font_scale=1.3)
@@ -31,7 +32,6 @@ print(df.describe().T)
 print(df['class'].value_counts())
 
 # Wykres Rozproszenia
-
 print(df.columns)
 
 _ = sns.pairplot(df, vars=all_data['feature_names'], hue='class')
@@ -53,8 +53,6 @@ df = pd.DataFrame(data=np.c_[data, target], columns=['sepal_length', 'sepal_widt
 px.scatter(df, x='sepal_length', y='sepal_width', color='class', width=800)
 
 # K-nearest Neighbour Algorithm - Algorytm K-najbliższych sąsiadów
-from sklearn.neighbors import KNeighborsClassifier
-
 classifier = KNeighborsClassifier(n_neighbors=5)
 classifier.fit(data, target)
 
