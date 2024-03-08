@@ -10,3 +10,6 @@ np.random.seed(42)
 
 # Wskaźnik Giniego
 Image('https://storage.googleapis.com/esmartdata-courses-files/ml-course/Picture1.png')
+
+# Gini dla korzenia(root) - poziom0
+print(1 - (50 / 150) ** 2 - (50 / 150) ** 2 - (50 / 150) ** 2)
