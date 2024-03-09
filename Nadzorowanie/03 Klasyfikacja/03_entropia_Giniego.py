@@ -13,3 +13,5 @@ Image('https://storage.googleapis.com/esmartdata-courses-files/ml-course/Picture
 
 # Gini dla korzenia(root) - poziom0
 print(1 - (50 / 150) ** 2 - (50 / 150) ** 2 - (50 / 150) ** 2)
+# Poziom 1, węzeł lewy
+print(1 - (45 / 52)**2 - (6 / 52)**2 - (1 / 52)**2)
