@@ -17,3 +17,6 @@ print(1 - (50 / 150) ** 2 - (50 / 150) ** 2 - (50 / 150) ** 2)
 print(1 - (45 / 52)**2 - (6 / 52)**2 - (1 / 52)**2)
 # Poziom 1, węzeł prawy
 print(1 - (5 / 98)**2 - (44 / 98)**2 - (49 / 98)**2)
+
+# Entropia
+Image('https://storage.googleapis.com/esmartdata-courses-files/ml-course/Picture2.png')
