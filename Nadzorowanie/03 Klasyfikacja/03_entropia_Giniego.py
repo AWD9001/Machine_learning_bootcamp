@@ -20,3 +20,7 @@ print(1 - (5 / 98)**2 - (44 / 98)**2 - (49 / 98)**2)
 
 # Entropia
 Image('https://storage.googleapis.com/esmartdata-courses-files/ml-course/Picture2.png')
+
+# Entropia dla korzenia (root) - poziom 0
+print(-((50 / 150) * np.log2(50 / 150) + (50 / 150) * np.log2(50 / 150) + (50 / 150) *
+        np.log2(50 / 150)))
