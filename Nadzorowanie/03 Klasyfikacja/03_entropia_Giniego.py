@@ -24,3 +24,5 @@ Image('https://storage.googleapis.com/esmartdata-courses-files/ml-course/Picture
 # Entropia dla korzenia (root) - poziom 0
 print(-((50 / 150) * np.log2(50 / 150) + (50 / 150) * np.log2(50 / 150) + (50 / 150) *
         np.log2(50 / 150)))
+# Poziom 1, węzeł lewy
+print(-((47 / 59) * np.log2(47 / 59) + (11 / 59) * np.log2(11 / 59) + (1 / 59) * np.log2(1 / 59)))
