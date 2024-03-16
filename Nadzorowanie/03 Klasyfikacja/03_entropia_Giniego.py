@@ -34,3 +34,12 @@ from scipy.stats import entropy
 print(entropy([0.5, 0.5], base=2))
 print(entropy([0.8, 0.2], base=2))
 print(entropy([0.95, 0.05], base=2))
+
+
+def entropy(x):
+    return -np.sum(x * np.log2(x))
+
+
+print(entropy([0.5, 0.5]))
+print(entropy([0.8, 0.2]))
+print(entropy([0.95, 0.05]))
