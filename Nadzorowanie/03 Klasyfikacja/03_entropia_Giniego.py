@@ -48,3 +48,6 @@ p = np.arange(0.01, 1.0, 0.01)
 q = 1 - p
 pq = np.c_[p, q]
 print(pq[:10])
+
+entropies = [entropy(pair) for pair in pq]
+print(entropies[:10])
