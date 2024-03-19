@@ -51,3 +51,5 @@ print(pq[:10])
 
 entropies = [entropy(pair) for pair in pq]
 print(entropies[:10])
+
+plt.plot(p, entropies)
