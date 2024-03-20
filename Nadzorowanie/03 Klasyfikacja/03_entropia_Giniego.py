@@ -1,7 +1,7 @@
 # Import bibliotek
 import numpy as np
 # import pandas as pd
-# import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 import seaborn as sns
 from IPython.display import Image
 
@@ -53,3 +53,6 @@ entropies = [entropy(pair) for pair in pq]
 print(entropies[:10])
 
 plt.plot(p, entropies)
+
+entropia = -(6/10 * np.log2(6/10) + (4/10) * np.log2(4/10))
+print(entropia)
