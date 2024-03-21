@@ -56,3 +56,7 @@ plt.plot(p, entropies)
 
 entropia = -(6/10 * np.log2(6/10) + (4/10) * np.log2(4/10))
 print(entropia)
+
+# Rozkład zmiennej Wiarygodność
+entropia_wiarygodnosc = 5 / 10 * 0 + 2 / 10 * 1 + 3 / 10 * 0
+print(entropia_wiarygodnosc)
