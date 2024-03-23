@@ -60,3 +60,14 @@ print(entropia)
 # Rozkład zmiennej Wiarygodność
 entropia_wiarygodnosc = 5 / 10 * 0 + 2 / 10 * 1 + 3 / 10 * 0
 print(entropia_wiarygodnosc)
+
+# Rozkład zmiennej Dochód
+entropia_dochod = 3/10 * 0 + 4/10 * 1 + 3/10 * 0.9183
+print(entropia_dochod)
+
+# Zysk informacyjny
+ig_wiarygodnosc = entropia - entropia_wiarygodnosc
+ig_dochod = entropia - entropia_dochod
+
+print('Zysk informacyjny (IG): wiarygodność:', ig_wiarygodnosc)
+print('Zysk informacyjny (IG): dochód:', ig_dochod)
