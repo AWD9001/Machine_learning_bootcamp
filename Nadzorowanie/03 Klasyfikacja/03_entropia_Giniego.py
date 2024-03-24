@@ -1,7 +1,7 @@
 # Import bibliotek
 import numpy as np
-# import pandas as pd
 import matplotlib.pyplot as plt
+from scipy.stats import entropy
 import seaborn as sns
 from IPython.display import Image
 
@@ -28,8 +28,6 @@ print(-((50 / 150) * np.log2(50 / 150) + (50 / 150) * np.log2(50 / 150) + (50 / 
 print(-((47 / 59) * np.log2(47 / 59) + (11 / 59) * np.log2(11 / 59) + (1 / 59) * np.log2(1 / 59)))
 # Poziom 1, węzeł prawy
 print(-((3 / 91) * np.log2(3 / 91) + (39 / 91) * np.log2(39 / 91) + (49 / 91) * np.log2(49 / 91)))
-
-from scipy.stats import entropy
 
 print(entropy([0.5, 0.5], base=2))
 print(entropy([0.8, 0.2], base=2))
