@@ -22,3 +22,7 @@ print(f'Liczba próbek: {len(data)}')
 print(f'Kształt danych: {data.shape}')
 print(f'Nazwy zmiennych objaśniających: {feature_names}')
 print(f'Nazwy kategorii kosaćca: {target_names}')
+
+# Eksploracja danych
+df = pd.DataFrame(data=np.c_[data, target], columns=feature_names + ['target'])
+print(df.head())
