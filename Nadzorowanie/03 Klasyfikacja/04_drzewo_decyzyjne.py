@@ -4,7 +4,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.datasets import load_iris
-from IPython.display import Image
+# from IPython.display import Image
 
 sns.set(font_scale=1.3)
 np.random.seed(42)
@@ -26,3 +26,6 @@ print(f'Nazwy kategorii kosaćca: {target_names}')
 # Eksploracja danych
 df = pd.DataFrame(data=np.c_[data, target], columns=feature_names + ['target'])
 print(df.head())
+plt.figure(figsize=(8, 6))
+_ = sns.scatterplot('sepal_length', hue='target', data=df, legend='full',
+                    palette=sns.color_palette()[:3])
