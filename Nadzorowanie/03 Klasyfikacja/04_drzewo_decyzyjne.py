@@ -29,3 +29,4 @@ print(df.head())
 plt.figure(figsize=(8, 6))
 _ = sns.scatterplot('sepal_length', hue='target', data=df, legend='full',
                     palette=sns.color_palette()[:3])
+print(df['target'].value_counts())
