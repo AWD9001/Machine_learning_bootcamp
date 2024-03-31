@@ -30,3 +30,10 @@ plt.figure(figsize=(8, 6))
 _ = sns.scatterplot('sepal_length', hue='target', data=df, legend='full',
                     palette=sns.color_palette()[:3])
 print(df['target'].value_counts())
+
+# Przygotowanie danych do modelu
+data = df.copy()
+data = data[['sepal_length', 'sepal_width', 'target']]
+target = data.pop('target')
+
+print(data.head())
