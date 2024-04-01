@@ -37,3 +37,4 @@ data = data[['sepal_length', 'sepal_width', 'target']]
 target = data.pop('target')
 
 print(data.head())
+print(target.head())
