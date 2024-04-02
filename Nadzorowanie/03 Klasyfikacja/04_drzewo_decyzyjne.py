@@ -38,3 +38,6 @@ target = data.pop('target')
 
 print(data.head())
 print(target.head())
+
+data = data.values
+target = target.values.astype('int16')
