@@ -41,3 +41,10 @@ print(target.head())
 
 data = data.values
 target = target.values.astype('int16')
+
+# Budowa klasyfikatora drzewa decyzyjnego
+#   max_depth=1
+from sklearn.tree import DecisionTreeClassifier
+
+classifier = DecisionTreeClassifier(max_depth=1, random_state=42)
+classifier.fit(data, target)
