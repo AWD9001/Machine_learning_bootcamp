@@ -48,3 +48,17 @@ from sklearn.tree import DecisionTreeClassifier
 
 classifier = DecisionTreeClassifier(max_depth=1, random_state=42)
 classifier.fit(data, target)
+
+# Wykreślenie granic decyzyjnych
+from mlxtend.plotting import plot_decision_regions
+
+colors='#f1865b,#31c30f,#64647F,#d62728,#9467bd,#8c564b,#e377c2,#7f7f7f,#bcbd22,#17becf'
+
+acc = classifier.score(data, target)
+
+plt.figure(figsize=(8, 6))
+plot_decision_regions(data, target, classifier, legend=2, colors=colors)
+plt.xlabel('sepal length (cm)')
+plt.ylabel('sepal width (cm)')
+plt.title(f'Drzewo decyzyjne: max_depth=1, accuracy: {acc * 100:.2f}%')
+plt.show()
