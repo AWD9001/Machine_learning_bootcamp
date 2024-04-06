@@ -81,3 +81,10 @@ export_graphviz(classifier,
 graph = pydotplus.graph_from_dot_data(dot_data.getvalue())
 graph.write_png('graph.png')
 Image(graph.create_png(), width=300)
+
+
+# Budowa funkcji dla modelu drzewa decyzyjnego
+def make_decision_tree(max_depth=1):
+    # trenowanie modelu
+    classifier1 = DecisionTreeClassifier(max_depth=max_depth, random_state=42)
+    classifier1.fit(data, target)
