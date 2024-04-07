@@ -88,3 +88,14 @@ def make_decision_tree(max_depth=1):
     # trenowanie modelu
     classifier1 = DecisionTreeClassifier(max_depth=max_depth, random_state=42)
     classifier1.fit(data, target)
+    # eksport grafu drzewa
+    dot_data1 = StringIO()
+    export_graphviz(classifier,
+                    out_file=dot_data1,
+                    feature_names=feature_names[:2],
+                    class_names=target_names,
+                    special_characters=True,
+                    rounded=True,
+                    filled=True)
+    graph1 = pydotplus.graph_from_dot_data(dot_data1.getvalue())
+    graph1.write_png('graph.png')
