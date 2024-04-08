@@ -99,3 +99,6 @@ def make_decision_tree(max_depth=1):
                     filled=True)
     graph1 = pydotplus.graph_from_dot_data(dot_data1.getvalue())
     graph1.write_png('graph.png')
+
+    # obliczenie dokładności
+    acc = classifier.score(data, target)
