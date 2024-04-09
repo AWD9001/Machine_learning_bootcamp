@@ -99,6 +99,16 @@ def make_decision_tree(max_depth=1):
                     filled=True)
     graph1 = pydotplus.graph_from_dot_data(dot_data1.getvalue())
     graph1.write_png('graph.png')
-
     # obliczenie dokładności
-    acc = classifier.score(data, target)
+    acc1 = classifier.score(data, target)
+    # wykreślenie granic decyzyjnych
+    colors1 = '#f1865b,#31c30f,#64647F,#d62728,#9467bd,#8c564b,#e377c2,#7f7f7f,#bcbd22,#17becf'
+    plt.figure(figsize=(8, 6))
+    ax = plot_decision_regions(data, target, classifier, legend=0, colors=colors1)
+    handles, labels = ax.get_legend_handles_labels()
+    ax.legend(handles, ['setosa', 'versicolor', 'virginica'], framealpha=0.3)
+    plt.xlabel('sepal length (cm)')
+    plt.ylabel('sepal width (cm)')
+    plt.title(f'Drzewo decyzyjne: max_depth={max_depth}, accuracy={acc1 * 100:.2f}')
+
+    return Image(graph.create_png(), width=200 + max_depth * 120)
