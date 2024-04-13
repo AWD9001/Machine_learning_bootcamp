@@ -117,3 +117,4 @@ def make_decision_tree(max_depth=1):
 make_decision_tree(max_depth=2)
 make_decision_tree(max_depth=3)
 make_decision_tree(max_depth=4)
+make_decision_tree(max_depth=5)
