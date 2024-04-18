@@ -1,15 +1,14 @@
 # Import bibliotek
-# import pandas as pd
+import pandas as pd
 import numpy as np
 # import matplotlib.pyplot as plt
 import seaborn as sns
-import plotly.express as px
+# import plotly.express as px
 
 sns.set(font_scale=1.3)
 np.random.seed(42)
 
 # Załadowanie danych
-
 from sklearn.datasets import load_iris
 
 raw_data = load_iris()
@@ -19,3 +18,6 @@ data = all_data['data']
 target = all_data['target']
 feature_names = all_data['feature_names']
 target_names = all_data['target_names']
+
+df = pd.DataFrame(data=np.c_[data, target], columns=feature_names + ['target'])
+df.head()
