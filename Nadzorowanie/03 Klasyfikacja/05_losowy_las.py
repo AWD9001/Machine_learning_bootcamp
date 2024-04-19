@@ -21,3 +21,9 @@ target_names = all_data['target_names']
 
 df = pd.DataFrame(data=np.c_[data, target], columns=feature_names + ['target'])
 df.head()
+
+data = data[:, [0, 1]]
+target = df['target'].apply(int).values
+
+print(f'{data[:5]}\n')
+print(f'{target[:5]}')
