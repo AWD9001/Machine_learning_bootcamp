@@ -27,3 +27,9 @@ target = df['target'].apply(int).values
 
 print(f'{data[:5]}\n')
 print(f'{target[:5]}')
+
+# Las losowy
+from sklearn.ensemble import RandomForestClassifier
+
+classifier = RandomForestClassifier(n_estimators=100, random_state=42)
+classifier.fit(data, target)
