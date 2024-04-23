@@ -1,7 +1,7 @@
 # Import bibliotek
 import pandas as pd
 import numpy as np
-# import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 import seaborn as sns
 # import plotly.express as px
 
@@ -44,3 +44,7 @@ plt.xlabel(feature_names[0])
 plt.ylabel(feature_names[1])
 plt.title('Las Losowy n_estimators=100')
 plt.show()
+
+# Wszystkie cechy
+data = all_data['data']
+targets = all_data['target']
