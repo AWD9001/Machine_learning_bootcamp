@@ -64,3 +64,5 @@ classifier.fit(X_train, y_train)
 from sklearn.metrics import accuracy_score
 y_pred = classifier.predict(X_test)
 accuracy_score(y_test, y_pred)
+
+print(classifier.feature_importances_)
