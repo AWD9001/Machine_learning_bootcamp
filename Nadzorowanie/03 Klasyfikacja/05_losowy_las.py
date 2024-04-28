@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
-# import plotly.express as px
+import plotly.express as px
 
 sns.set(font_scale=1.3)
 np.random.seed(42)
@@ -66,3 +66,8 @@ y_pred = classifier.predict(X_test)
 accuracy_score(y_test, y_pred)
 
 print(classifier.feature_importances_)
+
+features = pd.DataFrame(data={'feature': feature_names,
+                              'feature_importance': classifier.feature_importances_})
+
+px.bar(features, x='feature', y='feature_importance', width=700, height=400)
