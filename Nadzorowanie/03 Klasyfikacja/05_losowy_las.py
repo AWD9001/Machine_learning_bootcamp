@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
+from sklearn.metrics import accuracy_score
 import plotly.express as px
 
 sns.set(font_scale=1.3)
@@ -61,7 +62,6 @@ print('y_test shape:', y_test.shape)
 classifier = RandomForestClassifier(n_estimators=100, random_state=42)
 classifier.fit(X_train, y_train)
 
-from sklearn.metrics import accuracy_score
 y_pred = classifier.predict(X_test)
 accuracy_score(y_test, y_pred)
 
