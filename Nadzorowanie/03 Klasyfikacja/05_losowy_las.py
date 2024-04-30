@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
+from sklearn.datasets import load_iris
 from sklearn.metrics import accuracy_score
 import plotly.express as px
 
@@ -10,8 +11,6 @@ sns.set(font_scale=1.3)
 np.random.seed(42)
 
 # Załadowanie danych
-from sklearn.datasets import load_iris
-
 raw_data = load_iris()
 all_data = raw_data.copy()
 
