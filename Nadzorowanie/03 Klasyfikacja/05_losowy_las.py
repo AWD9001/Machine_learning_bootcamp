@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.datasets import load_iris
 from sklearn.metrics import accuracy_score
 import plotly.express as px
@@ -29,8 +30,6 @@ print(f'{data[:5]}\n')
 print(f'{target[:5]}')
 
 # Las losowy
-from sklearn.ensemble import RandomForestClassifier
-
 classifier = RandomForestClassifier(n_estimators=100, random_state=42)
 classifier.fit(data, target)
 
