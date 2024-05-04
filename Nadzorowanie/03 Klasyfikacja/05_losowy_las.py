@@ -2,6 +2,7 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+from mlxtend.plotting import plot_decision_regions
 import seaborn as sns
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.datasets import load_iris
@@ -34,8 +35,6 @@ classifier = RandomForestClassifier(n_estimators=100, random_state=42)
 classifier.fit(data, target)
 
 classifier.score(data, target)
-
-from mlxtend.plotting import plot_decision_regions
 
 plt.figure(figsize=(8, 6))
 plot_decision_regions(data, target, classifier)
