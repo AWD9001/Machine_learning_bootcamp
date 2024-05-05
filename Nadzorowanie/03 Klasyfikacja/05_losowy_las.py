@@ -7,6 +7,7 @@ import seaborn as sns
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.datasets import load_iris
 from sklearn.metrics import accuracy_score
+from sklearn.model_selection import train_test_split
 import plotly.express as px
 
 sns.set(font_scale=1.3)
@@ -46,8 +47,6 @@ plt.show()
 # Wszystkie cechy
 data = all_data['data']
 targets = all_data['target']
-
-from sklearn.model_selection import train_test_split
 
 X_train, X_test, y_train, y_test = train_test_split(data, targets)
 
