@@ -1,5 +1,5 @@
 import numpy as np
-# import pandas as pd
+import pandas as pd
 # import matplotlib.pyplot as plt
 import seaborn as sns
 
@@ -20,3 +20,9 @@ target_names = all_data['target_names']
 df = pd.DataFrame(np.c_[data, target], columns=feature_names + ['target'])
 # df = df[(df['target'] == 0.0) | (df['target'] == 1.0)]
 df.head()
+
+data = df.iloc[:, [2, 1]].values
+target = df['target'].apply(int).values
+
+print(f'{data[:5]}\n')
+print(f'{target[:5]}')
