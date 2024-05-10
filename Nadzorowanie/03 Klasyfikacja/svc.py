@@ -26,3 +26,7 @@ target = df['target'].apply(int).values
 
 print(f'{data[:5]}\n')
 print(f'{target[:5]}')
+
+# Podział na zbiór treningowy i testowy
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(data, target)
