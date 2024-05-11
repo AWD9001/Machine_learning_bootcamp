@@ -30,3 +30,12 @@ print(f'{target[:5]}')
 # Podział na zbiór treningowy i testowy
 from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(data, target)
+
+# Standaryzacja cech
+from sklearn.preprocessing import StandardScaler
+
+scaler = StandardScaler()
+scaler.fit(X_train)
+
+X_train = scaler.transform(X_train)
+X_test = scaler.transform(X_test)
