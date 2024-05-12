@@ -39,3 +39,10 @@ scaler.fit(X_train)
 
 X_train = scaler.transform(X_train)
 X_test = scaler.transform(X_test)
+
+# Klasyfikator SVM - linear
+from sklearn.svm import SVC
+
+classifier = SVC(C=1.0, kernel='linear')
+
+classifier.fit(X_train, y_train)
