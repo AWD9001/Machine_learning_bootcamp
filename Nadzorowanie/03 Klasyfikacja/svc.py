@@ -48,3 +48,12 @@ classifier = SVC(C=1.0, kernel='linear')
 classifier.fit(X_train, y_train)
 
 classifier.score(X_test, y_test)
+
+from mlxtend.plotting import plot_decision_regions
+
+plt.figure(figsize=(8, 6))
+plot_decision_regions(X_train, y_train, classifier)
+plt.xlabel(feature_names[2])
+plt.ylabel(feature_names[1])
+plt.title(f'SVC: train accuracy: {classifier.score(X_train, y_train):.4f}')
+plt.show()
