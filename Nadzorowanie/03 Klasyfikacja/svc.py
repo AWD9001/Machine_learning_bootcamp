@@ -64,3 +64,9 @@ plt.xlabel(feature_names[2])
 plt.ylabel(feature_names[1])
 plt.title(f'SVC: test accuracy: {classifier.score(X_test, y_test):.4f}')
 plt.show()
+
+# Klasyfikator SVM - rbf
+classifier = SVC(C=1.0, kernel='rbf')
+
+classifier.fit(X_train, y_train)
+classifier.score(X_test, y_test)
