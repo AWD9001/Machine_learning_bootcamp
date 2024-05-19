@@ -2,13 +2,12 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+from sklearn.datasets import load_iris
 
 sns.set(font_scale=1.3)
 np.random.seed(42)
 
 # Wygenerowanie danych
-from sklearn.datasets import load_iris
-
 raw_data = load_iris()
 all_data = raw_data.copy()
 
