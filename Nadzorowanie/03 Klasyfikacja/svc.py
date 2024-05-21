@@ -3,6 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.datasets import load_iris
+from sklearn.model_selection import train_test_split
 
 sns.set(font_scale=1.3)
 np.random.seed(42)
@@ -27,7 +28,6 @@ print(f'{data[:5]}\n')
 print(f'{target[:5]}')
 
 # Podział na zbiór treningowy i testowy
-from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(data, target)
 
 # Standaryzacja cech
