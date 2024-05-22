@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
 
 sns.set(font_scale=1.3)
 np.random.seed(42)
@@ -31,8 +32,6 @@ print(f'{target[:5]}')
 X_train, X_test, y_train, y_test = train_test_split(data, target)
 
 # Standaryzacja cech
-from sklearn.preprocessing import StandardScaler
-
 scaler = StandardScaler()
 scaler.fit(X_train)
 
