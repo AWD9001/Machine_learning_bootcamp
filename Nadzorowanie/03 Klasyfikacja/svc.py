@@ -5,6 +5,7 @@ import seaborn as sns
 from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
+from sklearn.svm import SVC
 
 sns.set(font_scale=1.3)
 np.random.seed(42)
@@ -39,8 +40,6 @@ X_train = scaler.transform(X_train)
 X_test = scaler.transform(X_test)
 
 # Klasyfikator SVM - linear
-from sklearn.svm import SVC
-
 classifier = SVC(C=1.0, kernel='linear')
 
 classifier.fit(X_train, y_train)
