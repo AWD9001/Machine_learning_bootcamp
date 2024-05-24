@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
+from mlxtend.plotting import plot_decision_regions
 from sklearn.preprocessing import StandardScaler
 from sklearn.svm import SVC
 
@@ -45,8 +46,6 @@ classifier = SVC(C=1.0, kernel='linear')
 classifier.fit(X_train, y_train)
 
 classifier.score(X_test, y_test)
-
-from mlxtend.plotting import plot_decision_regions
 
 plt.figure(figsize=(8, 6))
 plot_decision_regions(X_train, y_train, classifier)
