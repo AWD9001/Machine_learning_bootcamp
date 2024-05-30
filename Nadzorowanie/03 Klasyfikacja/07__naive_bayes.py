@@ -18,3 +18,10 @@ spacer = ['tak', 'nie', 'tak', 'nie', 'tak', 'tak', 'nie', 'tak', 'nie']
 raw_df = pd.DataFrame(data={'pogoda': pogoda, 'temperatura': temperatura, 'spacer': spacer})
 df = raw_df.copy()
 print(df)
+
+# Przygotowanie danych do modelu
+from sklearn.preprocessing import LabelEncoder
+
+encoder = LabelEncoder()
+df['spacer']= encoder.fit_transform(spacer)
+print(df)
