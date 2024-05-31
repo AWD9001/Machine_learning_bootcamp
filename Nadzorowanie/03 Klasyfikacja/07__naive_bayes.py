@@ -23,5 +23,8 @@ print(df)
 from sklearn.preprocessing import LabelEncoder
 
 encoder = LabelEncoder()
-df['spacer']= encoder.fit_transform(spacer)
+df['spacer'] = encoder.fit_transform(spacer)
+print(df)
+
+df = pd.get_dummies(df, columns=['pogoda', 'temperatura'], drop_first=True)
 print(df)
