@@ -28,3 +28,7 @@ print(df)
 
 df = pd.get_dummies(df, columns=['pogoda', 'temperatura'], drop_first=True)
 print(df)
+
+data = df.copy()
+target = data.pop('spacer')
+print(data)
