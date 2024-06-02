@@ -32,3 +32,6 @@ print(df)
 data = df.copy()
 target = data.pop('spacer')
 print(data)
+
+print(target)
+
