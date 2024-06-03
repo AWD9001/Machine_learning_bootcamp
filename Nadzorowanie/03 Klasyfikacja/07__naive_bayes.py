@@ -35,3 +35,8 @@ print(data)
 
 print(target)
 
+# Klasyfikator bayesowski
+from sklearn.naive_bayes import GaussianNB
+
+model = GaussianNB()
+model.fit(data, target)
