@@ -42,3 +42,5 @@ model = GaussianNB()
 model.fit(data, target)
 
 model.score(data, target)
+
+print(data.iloc[[0]])
