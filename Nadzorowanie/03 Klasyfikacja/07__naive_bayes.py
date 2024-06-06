@@ -44,3 +44,5 @@ model.fit(data, target)
 model.score(data, target)
 
 print(data.iloc[[0]])
+
+print(model.predict(data.iloc[[0]]))
