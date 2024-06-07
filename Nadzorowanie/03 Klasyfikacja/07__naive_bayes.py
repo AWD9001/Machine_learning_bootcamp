@@ -46,3 +46,5 @@ model.score(data, target)
 print(data.iloc[[0]])
 
 print(model.predict(data.iloc[[0]]))
+
+print(encoder.classes_)
