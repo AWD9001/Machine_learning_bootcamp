@@ -50,3 +50,5 @@ print(model.predict(data.iloc[[0]]))
 print(encoder.classes_)
 
 print(encoder.classes_[model.predict(data.iloc[[0]])[0]])
+
+print(model.predict_proba(data.iloc[[0]]))
