@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 import sklearn
 from sklearn.naive_bayes import GaussianNB
+from sklearn.preprocessing import LabelEncoder
 
 np.random.seed(42)
 np.set_printoptions(precision=6, suppress=True)
@@ -21,8 +22,6 @@ df = raw_df.copy()
 print(df)
 
 # Przygotowanie danych do modelu
-from sklearn.preprocessing import LabelEncoder
-
 encoder = LabelEncoder()
 df['spacer'] = encoder.fit_transform(spacer)
 print(df)
