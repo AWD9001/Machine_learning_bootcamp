@@ -1,6 +1,6 @@
 # Import bibliotek
 import numpy as np
-# import pandas as pd
+import pandas as pd
 # import plotly.express as px
 # import plotly.graph_objects as go
 # from plotly.subplots import make_subplots
@@ -16,3 +16,6 @@ y_pred = np.array([0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1
 from sklearn.metrics import accuracy_score
 
 accuracy_score(y_true, y_pred)
+
+results = pd.DataFrame({'y_true': y_true, 'y_pred': y_pred})
+print(results)
