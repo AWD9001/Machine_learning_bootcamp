@@ -19,3 +19,8 @@ accuracy_score(y_true, y_pred)
 
 results = pd.DataFrame({'y_true': y_true, 'y_pred': y_pred})
 print(results)
+
+results = results.sort_values(by='y_true')
+results = results.reset_index(drop=True)
+results['sample'] = results.index + 1
+print(results)
