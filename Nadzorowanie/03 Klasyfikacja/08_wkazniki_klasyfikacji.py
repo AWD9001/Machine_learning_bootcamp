@@ -32,3 +32,9 @@ fig.add_trace(go.Scatter(x=results['sample'], y=results['y_pred'], mode='markers
               row=2, col=1)
 fig.update_layout(width=800, height=600, title='Klasyfikator binarny')
 fig.show()
+
+# Macierz konfuzji/pomyłek
+from sklearn.metrics import confusion_matrix
+
+cm = confusion_matrix(y_true, y_pred)
+print(cm)
