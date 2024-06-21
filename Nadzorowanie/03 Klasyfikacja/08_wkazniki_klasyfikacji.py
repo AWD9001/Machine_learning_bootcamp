@@ -53,3 +53,7 @@ def plot_confusion_matrix(cm1):
 
 
 plot_confusion_matrix(cm)
+
+cm = confusion_matrix(y_true, y_pred)
+cm_df = pd.DataFrame(cm, columns=['pred_0', 'pred_1'], index=['true_0', 'true_1'])
+print(cm_df)
