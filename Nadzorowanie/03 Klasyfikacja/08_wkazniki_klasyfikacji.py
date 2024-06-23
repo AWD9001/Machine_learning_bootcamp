@@ -63,3 +63,7 @@ print(f'TN - True Negative: {tn}')
 print(f'FP - False Positive: {fp}')
 print(f'FN - False Negative: {fn}')
 print(f'TP - True Positive: {tp}')
+
+# False Positive Rate - Type I error
+fpr = fp / (fp + tn)
+print(fpr)
