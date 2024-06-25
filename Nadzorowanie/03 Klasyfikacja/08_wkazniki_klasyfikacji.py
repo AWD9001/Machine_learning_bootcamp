@@ -71,3 +71,7 @@ print(fpr)
 # False Negative Rate - Type II error
 fnr = fn / (fn + tp)
 print(fnr)
+
+# Precision - ile obserwacji przewidywanych jako pozytywne są w rzeczywistości pozytywne
+precision = tp / (tp + fp)
+print(precision)
