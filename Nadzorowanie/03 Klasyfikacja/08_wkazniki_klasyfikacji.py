@@ -75,3 +75,7 @@ print(fnr)
 # Precision - ile obserwacji przewidywanych jako pozytywne są w rzeczywistości pozytywne
 precision = tp / (tp + fp)
 print(precision)
+
+# Recall - jak wiele obserwacji z wzystkich poytywnych sklasyfikowaliśmy jako pozytywne
+recall = tp / (tp + fn)
+print(recall)
