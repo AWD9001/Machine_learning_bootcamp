@@ -79,3 +79,8 @@ print(precision)
 # Recall - jak wiele obserwacji z wzystkich poytywnych sklasyfikowaliśmy jako pozytywne
 recall = tp / (tp + fn)
 print(recall)
+
+# Raport klasyfikacji
+from sklearn.metrics import classification_report
+
+print(classification_report(y_true, y_pred))
