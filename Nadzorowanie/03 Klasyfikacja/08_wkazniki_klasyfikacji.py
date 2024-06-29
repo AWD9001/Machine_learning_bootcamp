@@ -4,6 +4,7 @@ import pandas as pd
 # import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
+from sklearn.metrics import classification_report
 
 # Metryki - Klasyfikacja binarna
 # Accuracy - Dokładność klasyfikacji
@@ -81,8 +82,6 @@ recall = tp / (tp + fn)
 print(recall)
 
 # Raport klasyfikacji
-from sklearn.metrics import classification_report
-
 print(classification_report(y_true, y_pred))
 
 print(classification_report(y_true, y_pred, target_names=['label_1', 'label_2', 'label_3']))
