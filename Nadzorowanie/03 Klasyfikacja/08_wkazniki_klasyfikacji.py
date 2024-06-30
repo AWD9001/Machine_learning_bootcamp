@@ -1,9 +1,9 @@
 # Import bibliotek
 import numpy as np
 import pandas as pd
-# import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
+from sklearn.metrics import accuracy_score
 from sklearn.metrics import classification_report
 
 # Metryki - Klasyfikacja binarna
@@ -13,8 +13,6 @@ y_true = np.array([1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1
                    1, 0, 1])
 y_pred = np.array([0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1,
                    1, 0, 1])
-
-from sklearn.metrics import accuracy_score
 
 accuracy_score(y_true, y_pred)
 
