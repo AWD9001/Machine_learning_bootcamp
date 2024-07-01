@@ -5,6 +5,7 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 from sklearn.metrics import accuracy_score
 from sklearn.metrics import classification_report
+from sklearn.metrics import confusion_matrix
 
 # Metryki - Klasyfikacja binarna
 # Accuracy - Dokładność klasyfikacji
@@ -33,8 +34,6 @@ fig.update_layout(width=800, height=600, title='Klasyfikator binarny')
 fig.show()
 
 # Macierz konfuzji/pomyłek
-from sklearn.metrics import confusion_matrix
-
 cm = confusion_matrix(y_true, y_pred)
 print(cm)
 
