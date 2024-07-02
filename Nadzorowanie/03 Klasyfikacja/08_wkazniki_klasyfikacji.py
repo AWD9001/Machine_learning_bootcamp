@@ -1,6 +1,7 @@
 # Import bibliotek
 import numpy as np
 import pandas as pd
+import plotly.figure_factory as ff
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 from sklearn.metrics import accuracy_score
@@ -36,8 +37,6 @@ fig.show()
 # Macierz konfuzji/pomyłek
 cm = confusion_matrix(y_true, y_pred)
 print(cm)
-
-import plotly.figure_factory as ff
 
 
 def plot_confusion_matrix(cm1):
