@@ -17,3 +17,6 @@ target = raw_data[1]
 
 print(f'{data[:5]}\n')
 print(f'{target[:5]}')
+
+df = pd.DataFrame(data=np.c_[data, target], columns=['x1', 'x2', 'target'])
+print(df.head())
