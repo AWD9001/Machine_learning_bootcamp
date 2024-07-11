@@ -39,8 +39,15 @@ print(f'y_test shape: {y_test.shape}')
 
 # Wizualizacja zbioru treningowego i testowego
 plt.figure(figsize=(10, 8))
-plt.scatter(X_train[:, 0], X_train[:, 1], c=y_train, cmap='RdYlBu', label = 'training_set')
-plt.scatter(X_test[:, 0], X_test[:, 1], c=y_test, cmap='RdYlBu', marker='x', alpha=0.5, label='test_set')
+plt.scatter(X_train[:, 0], X_train[:, 1], c=y_train, cmap='RdYlBu', label='training_set')
+plt.scatter(X_test[:, 0], X_test[:, 1], c=y_test, cmap='RdYlBu', marker='x', alpha=0.5,
+            label='test_set')
 plt.title('Zbiór treningowy i testowy')
 plt.legend()
 plt.show()
+
+# Niedouczenie - Regresja Logistyczna
+from sklearn.linear_model import LogisticRegression
+
+classifier = LogisticRegression()
+classifier.fit(X_train, y_train)
