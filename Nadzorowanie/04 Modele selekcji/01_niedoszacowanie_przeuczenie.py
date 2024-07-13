@@ -51,3 +51,10 @@ from sklearn.linear_model import LogisticRegression
 
 classifier = LogisticRegression()
 classifier.fit(X_train, y_train)
+
+from mlxtend.plotting import plot_decision_regions
+
+plt.figure(figsize=(10, 8))
+plot_decision_regions(X_train, y_train, classifier)
+plt.title(f'Zbiór treningowy: dokładność {classifier.score(X_train, y_train):.4f}')
+plt.show()
