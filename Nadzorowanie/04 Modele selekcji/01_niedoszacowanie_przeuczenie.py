@@ -58,3 +58,8 @@ plt.figure(figsize=(10, 8))
 plot_decision_regions(X_train, y_train, classifier)
 plt.title(f'Zbiór treningowy: dokładność {classifier.score(X_train, y_train):.4f}')
 plt.show()
+
+plt.figure(figsize=(10, 8))
+plot_decision_regions(X_test, y_test, classifier)
+plt.title(f'Zbiór testowy: dokładność {classifier.score(X_test, y_test):.4f}')
+plt.show()
