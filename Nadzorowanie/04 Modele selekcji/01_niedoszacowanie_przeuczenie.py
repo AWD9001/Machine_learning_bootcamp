@@ -4,6 +4,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.datasets import make_moons
+from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 # import plotly.express as px
 
@@ -46,8 +47,6 @@ plt.legend()
 plt.show()
 
 # Niedouczenie - Regresja Logistyczna
-from sklearn.linear_model import LogisticRegression
-
 classifier = LogisticRegression()
 classifier.fit(X_train, y_train)
 
