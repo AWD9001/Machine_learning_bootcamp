@@ -2,6 +2,7 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+from mlxtend.plotting import plot_decision_regions
 import seaborn as sns
 from sklearn.datasets import make_moons
 from sklearn.linear_model import LogisticRegression
@@ -49,8 +50,6 @@ plt.show()
 # Niedouczenie - Regresja Logistyczna
 classifier = LogisticRegression()
 classifier.fit(X_train, y_train)
-
-from mlxtend.plotting import plot_decision_regions
 
 plt.figure(figsize=(10, 8))
 plot_decision_regions(X_train, y_train, classifier)
