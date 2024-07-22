@@ -7,8 +7,9 @@ import seaborn as sns
 from sklearn.datasets import make_moons
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
-# import plotly.express as px
+from sklearn.tree import DecisionTreeClassifier
 
+# import plotly.express as px
 np.random.seed(42)
 sns.set(font_scale=1.3)
 
@@ -62,8 +63,6 @@ plt.title(f'Zbiór testowy: dokładność {classifier.score(X_test, y_test):.4f}
 plt.show()
 
 # Niedouczenie - Drzewa Decyzyjne
-from sklearn.tree import DecisionTreeClassifier
-
 classifier = DecisionTreeClassifier(max_depth=1)
 classifier.fit(X_train, y_train)
 
