@@ -1,10 +1,10 @@
 # Import bibliotek
 import numpy as np
-# import pandas as pd
+import pandas as pd
 # import matplotlib.pyplot as plt
 import seaborn as sns
-# from sklearn.datasets import make_moons
-# import plotly.express as px
+from sklearn.datasets import make_moons
+import plotly.express as px
 
 np.random.seed(42)
 sns.set(font_scale=1.3)
@@ -19,3 +19,6 @@ print(f'{target[:5]}')
 
 df = pd.DataFrame(data=np.c_[data, target], columns=['x1', 'x2', 'target'])
 df.head()
+
+# Wizualizacja danych
+px.scatter(df, x='x1', y='x2', color='target', width=700, height=400)
