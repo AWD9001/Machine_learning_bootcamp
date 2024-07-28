@@ -22,3 +22,13 @@ df.head()
 
 # Wizualizacja danych
 px.scatter(df, x='x1', y='x2', color='target', width=700, height=400)
+
+# Podział na zbiór treningowy i testowy
+from sklearn.model_selection import train_test_split
+
+X_train, X_test, y_train, y_test = train_test_split(data, target)
+
+print(f'X_train shape: {X_train.shape}')
+print(f'X_test shape: {X_test.shape}')
+print(f'y_train shape: {y_train.shape}')
+print(f'y_test shape: {y_test.shape}')
