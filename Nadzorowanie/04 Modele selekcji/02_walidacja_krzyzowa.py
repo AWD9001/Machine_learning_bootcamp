@@ -41,3 +41,15 @@ plt.scatter(X_test[:, 0], X_test[:, 1], c=y_test, cmap='RdYlBu', marker='x', alp
 plt.title('Zbiór treningowy i testowy')
 plt.legend()
 plt.show()
+
+# Budowa modelu
+from sklearn.tree import DecisionTreeClassifier
+from mlxtend.plotting import plot_decision_regions
+
+classifier = DecisionTreeClassifier(max_depth=5, min_samples_split=5)
+classifier.fit(X_train, y_train)
+
+plt.figure(figsize=(10, 8))
+plot_decision_regions(X_train, y_train, classifier)
+plt.title(f'Zbiór treningowy: dokładność {classifier.score(X_train, y_train):.4f}')
+plt.show()
