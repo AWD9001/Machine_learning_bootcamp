@@ -53,3 +53,11 @@ plt.figure(figsize=(10, 8))
 plot_decision_regions(X_train, y_train, classifier)
 plt.title(f'Zbiór treningowy: dokładność {classifier.score(X_train, y_train):.4f}')
 plt.show()
+
+# Walidacja krzyżowa
+from sklearn.model_selection import cross_val_score
+
+classifier = DecisionTreeClassifier(max_depth=5, min_samples_split=5)
+
+scores = cross_val_score(estimator=classifier, X=X_train, y=y_train, cv=10)
+print(scores)
