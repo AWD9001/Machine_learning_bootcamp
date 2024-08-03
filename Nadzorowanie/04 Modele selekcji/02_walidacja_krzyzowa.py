@@ -68,3 +68,5 @@ classifier = DecisionTreeClassifier(max_depth=5, min_samples_split=5)
 
 scores = cross_val_score(estimator=classifier, X=X_train, y=y_train, cv=15)
 print(scores)
+
+print(f'Accuracy: {scores.mean():.4f} (+/- {scores.std():.4f})')
