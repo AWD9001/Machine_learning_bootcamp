@@ -73,3 +73,9 @@ print(f'Accuracy: {scores.mean():.4f} (+/- {scores.std():.4f})')
 
 scores = pd.DataFrame(scores, columns=['accuracy'])
 print(scores)
+
+px.bar(scores, y='accuracy', color='accuracy', width=700, height=400,
+       title=f'Walidacja krzyżowa (15 podziałów) | Accuracy: {scores.mean()[0]:.4f}'
+             f'(+/- {scores.std()[0]:.3f})',
+       color_continuous_scale=px.colors.sequential.Inferno_r,
+       range_color=[scores.min()[0] - 0.01, 1.0])
