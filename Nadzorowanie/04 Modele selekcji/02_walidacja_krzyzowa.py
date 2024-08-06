@@ -1,10 +1,11 @@
 # Import bibliotek
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
+import plotly.express as px
 import seaborn as sns
 from sklearn.datasets import make_moons
-import plotly.express as px
+from sklearn.model_selection import train_test_split
 
 np.random.seed(42)
 sns.set(font_scale=1.3)
@@ -24,8 +25,6 @@ df.head()
 px.scatter(df, x='x1', y='x2', color='target', width=700, height=400)
 
 # Podział na zbiór treningowy i testowy
-from sklearn.model_selection import train_test_split
-
 X_train, X_test, y_train, y_test = train_test_split(data, target)
 
 print(f'X_train shape: {X_train.shape}')
