@@ -6,6 +6,7 @@ import plotly.express as px
 import seaborn as sns
 from sklearn.datasets import make_moons
 from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeClassifier
 
 np.random.seed(42)
 sns.set(font_scale=1.3)
@@ -42,7 +43,6 @@ plt.legend()
 plt.show()
 
 # Budowa modelu
-from sklearn.tree import DecisionTreeClassifier
 from mlxtend.plotting import plot_decision_regions
 
 classifier = DecisionTreeClassifier(max_depth=5, min_samples_split=5)
