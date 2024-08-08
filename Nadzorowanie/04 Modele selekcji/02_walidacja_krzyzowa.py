@@ -1,5 +1,6 @@
 # Import bibliotek
 import matplotlib.pyplot as plt
+from mlxtend.plotting import plot_decision_regions
 import numpy as np
 import pandas as pd
 import plotly.express as px
@@ -43,8 +44,6 @@ plt.legend()
 plt.show()
 
 # Budowa modelu
-from mlxtend.plotting import plot_decision_regions
-
 classifier = DecisionTreeClassifier(max_depth=5, min_samples_split=5)
 classifier.fit(X_train, y_train)
 
