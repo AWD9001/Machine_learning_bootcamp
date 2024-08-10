@@ -6,6 +6,7 @@ import pandas as pd
 import plotly.express as px
 import seaborn as sns
 from sklearn.datasets import make_moons
+from sklearn.model_selection import cross_val_score
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 
@@ -53,8 +54,6 @@ plt.title(f'Zbiór treningowy: dokładność {classifier.score(X_train, y_train)
 plt.show()
 
 # Walidacja krzyżowa
-from sklearn.model_selection import cross_val_score
-
 classifier = DecisionTreeClassifier(max_depth=5, min_samples_split=5)
 
 scores = cross_val_score(estimator=classifier, X=X_train, y=y_train, cv=10)
