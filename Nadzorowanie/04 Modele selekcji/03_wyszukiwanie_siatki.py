@@ -6,7 +6,7 @@
 import numpy as np
 import seaborn as sns
 from sklearn.datasets import make_moons
-# import pandas as pd
+import pandas as pd
 # import plotly.express as px
 
 np.random.seed(42)
@@ -19,3 +19,6 @@ target = raw_data[1]
 
 print(f'{data[:5]}\n')
 print(f'{target[:5]}')
+
+df = pd.DataFrame(data=np.c_[data, target], columns=['x1', 'x2', 'target'])
+df.head()
