@@ -2,7 +2,7 @@
 
 # Import bibliotek
 
-# import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
 from sklearn.datasets import make_moons
@@ -22,3 +22,10 @@ print(f'{target[:5]}')
 
 df = pd.DataFrame(data=np.c_[data, target], columns=['x1', 'x2', 'target'])
 df.head()
+
+# Wizualizacja danych
+
+plt.figure(figsize=(10, 8))
+plt.scatter(data[:, 0], data[:, 1], c=target, cmap='viridis')
+plt.title('Klasyfikacja - dane do modelu')
+plt.show()
