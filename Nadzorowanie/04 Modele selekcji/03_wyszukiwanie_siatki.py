@@ -50,14 +50,15 @@ plt.legend()
 plt.show()
 
 # Wybór optymalnych hiperparametrów - Grid Search
-
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import GridSearchCV
 
 classifier = DecisionTreeClassifier()
 
 params = {'max_depth': np.arange(1, 10),
-         'min_samples_leaf': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15, 20]}
+          'min_samples_leaf': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15, 20]}
 
 grid_search = GridSearchCV(classifier, param_grid=params, scoring='accuracy', cv=5)
 grid_search.fit(X_train, y_train)
+
+print(grid_search.best_params_)
