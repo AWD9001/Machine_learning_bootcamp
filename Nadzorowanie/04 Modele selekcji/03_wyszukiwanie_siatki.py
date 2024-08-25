@@ -62,3 +62,9 @@ grid_search = GridSearchCV(classifier, param_grid=params, scoring='accuracy', cv
 grid_search.fit(X_train, y_train)
 
 print(grid_search.best_params_)
+
+from mlxtend.plotting import plot_decision_regions
+plt.figure(figsize=(10, 8))
+plot_decision_regions(X_test, y_test, grid_search)
+plt.title(f'Zbiór treningowy: dokładność {grid_search.score(X_train, y_train):.4f}')
+plt.show()
