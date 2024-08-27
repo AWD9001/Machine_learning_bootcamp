@@ -73,3 +73,14 @@ plt.figure(figsize=(10, 8))
 plot_decision_regions(X_test, y_test, grid_search)
 plt.title(f'Zbiór testowy: dokładność {grid_search.score(X_test, y_test):.4f}')
 plt.show()
+
+from sklearn.model_selection import GridSearchCV
+
+classifier = DecisionTreeClassifier(random_state=42)
+
+param_grid = {'criterion': ['gini', 'entropy'],
+              'max_depth': np.arange(1, 10),
+              'min_samples_leaf': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15, 20]}
+
+grid_search = GridSearchCV(classifier, param_grid=param_grid, n_jobs=-1, scoring='accuracy', cv=5)
+grid_search.fit(X_train, y_train)
