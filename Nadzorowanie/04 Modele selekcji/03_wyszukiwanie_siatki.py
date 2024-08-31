@@ -93,3 +93,13 @@ plt.figure(figsize=(10, 8))
 plot_decision_regions(X_test, y_test, grid_search)
 plt.title(f'Zbiór treningowy: dokładność {grid_search.score(X_train, y_train):.4f}')
 plt.show()
+
+classifier = DecisionTreeClassifier(random_state=42)
+
+param_grid = [
+    {'criterion': ['gini'], 'max_depth': [1, 2, 3, 4, 5]},
+    {'criterion': ['entropy'], 'min_samples_leaf': [2, 3, 4, 5]}
+]
+
+grid_search = GridSearchCV(classifier, param_grid=param_grid, n_jobs=-1, scoring='accuracy', cv=5)
+grid_search.fit(X_train, y_train)
