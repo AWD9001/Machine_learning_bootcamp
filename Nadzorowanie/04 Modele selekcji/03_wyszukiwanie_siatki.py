@@ -108,7 +108,16 @@ print(grid_search.best_params_)
 
 print(grid_search.best_estimator_)
 
-plt.figure(figsize=(10, 8))
-plot_decision_regions(X_test, y_test, grid_search)
-plt.title(f'Zbiór treningowy: dokładność {grid_search.score(X_train, y_train):.4f}')
-plt.show()
+from sklearn.ensemble import RandomForestClassifier
+
+classifier = RandomForestClassifier(random_state=42)
+
+param_grid = {
+    'criterion': ['gini', 'entropy'],
+    'max_depth': np.arange(4, 10),
+    'min_samples_leaf': [4, 5, 6, 7, 8, 9, 10],
+    'n_estimators': [50]
+}
+
+grid_search = GridSearchCV(classifier, param_grid=param_grid, n_jobs=-1, scoring='accuracy', cv=5)
+grid_search.fit(X_train, y_train)
