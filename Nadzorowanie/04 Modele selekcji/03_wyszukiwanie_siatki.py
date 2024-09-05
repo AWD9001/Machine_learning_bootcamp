@@ -121,3 +121,5 @@ param_grid = {
 
 grid_search = GridSearchCV(classifier, param_grid=param_grid, n_jobs=-1, scoring='accuracy', cv=5)
 grid_search.fit(X_train, y_train)
+
+print(grid_search.best_params_)
