@@ -127,3 +127,7 @@ print(grid_search.best_params_)
 plt.figure(figsize=(10, 8))
 plot_decision_regions(X_test, y_test, grid_search)
 plt.title(f'Zbiór treningowy: dokładność {grid_search.score(X_train, y_train):.4f}')
+
+plt.figure(figsize=(10, 8))
+plot_decision_regions(X_test, y_test, grid_search)
+plt.title(f'Zbiór testowy: dokładność {grid_search.score(X_test, y_test):.4f}')
