@@ -5,9 +5,9 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
-from sklearn.datasets import make_moons
 import pandas as pd
-# import plotly.express as px
+from sklearn.datasets import make_moons
+from sklearn.model_selection import train_test_split
 
 np.random.seed(42)
 sns.set(font_scale=1.3)
@@ -30,8 +30,6 @@ plt.title('Klasyfikacja - dane do modelu')
 plt.show()
 
 # Podział na zbiór treningowy i testowy
-from sklearn.model_selection import train_test_split
-
 X_train, X_test, y_train, y_test = train_test_split(data, target)
 
 print(f'X_train shape: {X_train.shape}')
