@@ -8,6 +8,7 @@ import seaborn as sns
 import pandas as pd
 from sklearn.datasets import make_moons
 from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeClassifier
 
 np.random.seed(42)
 sns.set(font_scale=1.3)
@@ -48,7 +49,6 @@ plt.legend()
 plt.show()
 
 # Wybór optymalnych hiperparametrów - Grid Search
-from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import GridSearchCV
 
 classifier = DecisionTreeClassifier()
