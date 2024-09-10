@@ -1,12 +1,12 @@
 # Grid search
 
 # Import bibliotek
-
 import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
 import pandas as pd
 from sklearn.datasets import make_moons
+from sklearn.model_selection import GridSearchCV
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 
@@ -49,8 +49,6 @@ plt.legend()
 plt.show()
 
 # Wybór optymalnych hiperparametrów - Grid Search
-from sklearn.model_selection import GridSearchCV
-
 classifier = DecisionTreeClassifier()
 
 params = {'max_depth': np.arange(1, 10),
