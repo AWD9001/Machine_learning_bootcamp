@@ -7,6 +7,7 @@ import numpy as np
 import seaborn as sns
 import pandas as pd
 from sklearn.datasets import make_moons
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import GridSearchCV
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
@@ -101,8 +102,6 @@ grid_search.fit(X_train, y_train)
 print(grid_search.best_params_)
 
 print(grid_search.best_estimator_)
-
-from sklearn.ensemble import RandomForestClassifier
 
 classifier = RandomForestClassifier(random_state=42)
 
