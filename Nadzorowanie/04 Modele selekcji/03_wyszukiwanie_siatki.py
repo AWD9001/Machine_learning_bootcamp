@@ -1,5 +1,3 @@
-# Grid search
-
 # Import bibliotek
 import matplotlib.pyplot as plt
 from mlxtend.plotting import plot_decision_regions
