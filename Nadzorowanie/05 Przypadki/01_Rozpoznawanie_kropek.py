@@ -14,3 +14,8 @@ np.random.seed(42)
 raw_digits = datasets.load_digits()
 digits = raw_digits.copy()
 digits.keys()
+
+images = digits['images']
+targets = digits['target']
+print(f'images shape: {images.shape}')
+print(f'targets shape: {targets.shape}')
