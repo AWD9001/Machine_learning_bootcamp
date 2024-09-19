@@ -19,3 +19,5 @@ images = digits['images']
 targets = digits['target']
 print(f'images shape: {images.shape}')
 print(f'targets shape: {targets.shape}')
+
+print(images[0])
