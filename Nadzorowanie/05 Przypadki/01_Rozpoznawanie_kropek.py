@@ -1,6 +1,6 @@
 import numpy as np
 # import pandas as pd
-# import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 import seaborn as sns
 # import plotly.figure_factory as ff
 from sklearn import datasets
@@ -21,3 +21,11 @@ print(f'images shape: {images.shape}')
 print(f'targets shape: {targets.shape}')
 
 print(images[0])
+
+# Wyświetlenie kilku obrazów
+plt.figure(figsize=(12, 10))
+for index, (image, target) in enumerate(list(zip(images, targets))[:6]):
+    plt.subplot(2, 6, index + 1)
+    plt.axis('off')
+    plt.imshow(image, cmap='Greys')
+    plt.title(f'Label: {target}')
