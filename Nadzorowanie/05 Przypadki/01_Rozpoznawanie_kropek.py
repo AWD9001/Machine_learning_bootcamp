@@ -29,3 +29,21 @@ for index, (image, target) in enumerate(list(zip(images, targets))[:6]):
     plt.axis('off')
     plt.imshow(image, cmap='Greys')
     plt.title(f'Label: {target}')
+
+# Przygotowanie danych do modelu
+
+from sklearn.model_selection import train_test_split
+
+X_train, X_test, y_train, y_test = train_test_split(images, targets)
+
+print(f'X_train shape: {X_train.shape}')
+print(f'X_test shape: {X_test.shape}')
+print(f'y_train shape: {y_train.shape}')
+print(f'y_test shape: {y_test.shape}')
+
+X_train = X_train.reshape(X_train.shape[0], -1)
+X_test = X_test.reshape(X_test.shape[0], -1)
+
+print()
+print(f'X_train shape: {X_train.shape}')
+print(f'X_test shape: {X_test.shape}')
