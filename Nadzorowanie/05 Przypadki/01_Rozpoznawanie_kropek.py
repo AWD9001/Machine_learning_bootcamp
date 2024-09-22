@@ -47,3 +47,5 @@ X_test = X_test.reshape(X_test.shape[0], -1)
 print()
 print(f'X_train shape: {X_train.shape}')
 print(f'X_test shape: {X_test.shape}')
+
+print(X_train[0])
