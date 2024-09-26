@@ -60,3 +60,7 @@ classifier = SVC(gamma=0.001, kernel='linear')
 classifier.fit(X_train, y_train)
 
 print(classifier.score(X_test, y_test))
+
+# Trenowanie modelu kernel = 'rbf'
+classifier = SVC(gamma=0.001, kernel='rbf')
+classifier.fit(X_train, y_train)
