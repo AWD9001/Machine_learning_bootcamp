@@ -6,6 +6,7 @@ import seaborn as sns
 from sklearn import datasets
 # from sklearn.metrics import classification_report
 # from sklearn.metrics import confusion_matrix
+from sklearn.svm import SVC
 
 sns.set(font_scale=1.3)
 np.random.seed(42)
@@ -53,9 +54,6 @@ print(X_train[0])
 print(y_train[0])
 
 # Trenowanie modelu kernel = 'linear'
-
-from sklearn.svm import SVC
-
 classifier = SVC(gamma=0.001, kernel='linear')
 classifier.fit(X_train, y_train)
 
