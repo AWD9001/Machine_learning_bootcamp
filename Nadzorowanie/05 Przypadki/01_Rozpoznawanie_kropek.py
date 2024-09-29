@@ -64,3 +64,7 @@ classifier = SVC(gamma=0.001, kernel='rbf')
 classifier.fit(X_train, y_train)
 
 print(classifier.score(X_test, y_test))
+
+# Ocena modelu
+y_pred = classifier.predict(X_test)
+print(y_pred)
