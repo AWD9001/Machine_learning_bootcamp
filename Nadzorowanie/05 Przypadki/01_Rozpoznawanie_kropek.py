@@ -6,6 +6,7 @@ import seaborn as sns
 from sklearn import datasets
 # from sklearn.metrics import classification_report
 # from sklearn.metrics import confusion_matrix
+from sklearn.model_selection import train_test_split
 from sklearn.svm import SVC
 
 sns.set(font_scale=1.3)
@@ -32,9 +33,6 @@ for index, (image, target) in enumerate(list(zip(images, targets))[:6]):
     plt.title(f'Label: {target}')
 
 # Przygotowanie danych do modelu
-
-from sklearn.model_selection import train_test_split
-
 X_train, X_test, y_train, y_test = train_test_split(images, targets)
 
 print(f'X_train shape: {X_train.shape}')
