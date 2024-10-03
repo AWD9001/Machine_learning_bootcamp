@@ -4,8 +4,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 # import plotly.figure_factory as ff
 from sklearn import datasets
-# from sklearn.metrics import classification_report
-# from sklearn.metrics import confusion_matrix
+from sklearn.metrics import classification_report
+from sklearn.metrics import confusion_matrix
 from sklearn.model_selection import train_test_split
 from sklearn.svm import SVC
 
@@ -68,3 +68,6 @@ y_pred = classifier.predict(X_test)
 print(y_pred)
 
 print(classification_report(y_test, y_pred))
+
+cm = confusion_matrix(y_test, y_pred)
+print(cm)
