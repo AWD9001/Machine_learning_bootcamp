@@ -71,3 +71,7 @@ print(classification_report(y_test, y_pred))
 
 cm = confusion_matrix(y_test, y_pred)
 print(cm)
+
+plt.figure(figsize=(8, 6))
+plt.title('Macierz konfuzji')
+_ = sns.heatmap(cm, annot=True, cmap=sns.cm.rocket_r)
