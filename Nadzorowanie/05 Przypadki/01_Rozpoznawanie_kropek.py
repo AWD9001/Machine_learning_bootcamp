@@ -75,3 +75,20 @@ print(cm)
 plt.figure(figsize=(8, 6))
 plt.title('Macierz konfuzji')
 _ = sns.heatmap(cm, annot=True, cmap=sns.cm.rocket_r)
+
+columns = ['pred_' + str(i) for i in range(10)]
+index = ['true_' + str(i) for i in range(10)]
+
+
+def plot_confusion_matrix(cm):
+    # Mulitclass classification, 3 classes
+    cm = cm[::-1]
+    cm = pd.DataFrame(cm, columns=columns, index=index[::-1])
+
+    fig = ff.create_annotated_heatmap(z=cm.values, x=list(cm.columns), y=list(cm.index),
+                                      colorscale='ice', showscale=True, reversescale=True)
+    fig.update_layout(width=700, height=500, title='Confusion Matrix', font_size=16)
+    fig.show()
+
+
+plot_confusion_matrix(cm)
