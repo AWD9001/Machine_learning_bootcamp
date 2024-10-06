@@ -1,8 +1,8 @@
 import numpy as np
-# import pandas as pd
+import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-# import plotly.figure_factory as ff
+import plotly.figure_factory as ff
 from sklearn import datasets
 from sklearn.metrics import classification_report
 from sklearn.metrics import confusion_matrix
@@ -80,15 +80,19 @@ columns = ['pred_' + str(i) for i in range(10)]
 index = ['true_' + str(i) for i in range(10)]
 
 
-def plot_confusion_matrix(cm):
+def plot_confusion_matrix(cm1):
     # Mulitclass classification, 3 classes
-    cm = cm[::-1]
-    cm = pd.DataFrame(cm, columns=columns, index=index[::-1])
+    cm1 = cm1[::-1]
+    cm1 = pd.DataFrame(cm1, columns=columns, index=index[::-1])
 
-    fig = ff.create_annotated_heatmap(z=cm.values, x=list(cm.columns), y=list(cm.index),
+    fig = ff.create_annotated_heatmap(z=cm1.values, x=list(cm1.columns), y=list(cm1.index),
                                       colorscale='ice', showscale=True, reversescale=True)
     fig.update_layout(width=700, height=500, title='Confusion Matrix', font_size=16)
     fig.show()
 
 
 plot_confusion_matrix(cm)
+
+# Wyświetlenie błędnych predykcji
+results = pd.DataFrame(data={'y_pred': y_pred, 'y_test': y_test})
+print(results.head(10))
