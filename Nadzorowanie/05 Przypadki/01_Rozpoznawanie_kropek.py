@@ -96,3 +96,7 @@ plot_confusion_matrix(cm)
 # Wyświetlenie błędnych predykcji
 results = pd.DataFrame(data={'y_pred': y_pred, 'y_test': y_test})
 print(results.head(10))
+
+errors = results[results['y_pred'] != results['y_test']]
+errors_idxs = list(errors.index)
+print(errors_idxs)
