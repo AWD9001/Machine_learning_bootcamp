@@ -102,3 +102,12 @@ errors_idxs = list(errors.index)
 print(errors_idxs)
 
 print(results.loc[errors_idxs, :])
+
+plt.figure(figsize=(12, 10))
+for idx, error_idx in enumerate(errors_idxs[:4]):
+    image = X_test[error_idx].reshape(8, 8)
+    plt.subplot(2, 4, idx + 1)
+    plt.axis('off')
+    plt.imshow(image, cmap='Greys')
+    plt.title(f"True {results.loc[error_idx, 'y_test']} Prediction:"
+              f"{results.loc[error_idx, 'y_pred']}")
