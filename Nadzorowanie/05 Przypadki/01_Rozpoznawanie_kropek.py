@@ -74,7 +74,7 @@ print(cm)
 
 plt.figure(figsize=(8, 6))
 plt.title('Macierz konfuzji')
-_ = sns.heatmap(cm, annot=True, cmap=sns.cm.rocket_r)
+_ = sns.heatmap(cm, annot=True, cmap=sns.color_palette("rocket_r", as_cmap=True))
 
 columns = ['pred_' + str(i) for i in range(10)]
 index = ['true_' + str(i) for i in range(10)]
