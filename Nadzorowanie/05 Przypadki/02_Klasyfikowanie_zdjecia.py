@@ -20,3 +20,5 @@ print(f'y_test shape: {y_test.shape}')
 print(f'X_train[0] shape: {X_train[0].shape}')
 
 print(X_train[0])
+
+print(y_train[:10])
