@@ -22,3 +22,6 @@ print(f'X_train[0] shape: {X_train[0].shape}')
 print(X_train[0])
 
 print(y_train[:10])
+
+plt.imshow(X_train[0], cmap='gray_r')
+plt.axis('off')
