@@ -36,3 +36,7 @@ for i in range(1, 11):
     plt.imshow(X_train[i - 1], cmap='gray_r')
     plt.title(class_names[y_train[i - 1]], color='black', fontsize=16)
 plt.show()
+
+# Przygotowanie danych
+X_train = X_train / 255.
+X_test = X_test / 255.
