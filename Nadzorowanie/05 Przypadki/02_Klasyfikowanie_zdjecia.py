@@ -40,3 +40,6 @@ plt.show()
 # Przygotowanie danych
 X_train = X_train / 255.
 X_test = X_test / 255.
+
+print(f'X_train shape: {X_train.shape}')
+print(f'X_test shape: {X_test.shape}')
