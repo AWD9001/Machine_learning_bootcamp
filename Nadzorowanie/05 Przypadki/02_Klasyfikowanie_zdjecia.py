@@ -43,3 +43,9 @@ X_test = X_test / 255.
 
 print(f'X_train shape: {X_train.shape}')
 print(f'X_test shape: {X_test.shape}')
+
+X_train = X_train.reshape(60000, 28 * 28)
+X_test = X_test.reshape(10000, 28 * 28)
+
+print(f'X_train shape: {X_train.shape}')
+print(f'X_test shape: {X_test.shape}')
