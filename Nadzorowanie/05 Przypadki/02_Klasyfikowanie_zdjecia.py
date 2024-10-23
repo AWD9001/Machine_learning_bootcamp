@@ -49,3 +49,9 @@ X_test = X_test.reshape(10000, 28 * 28)
 
 print(f'X_train shape: {X_train.shape}')
 print(f'X_test shape: {X_test.shape}')
+
+# Budowa modelu
+from sklearn.svm import SVC
+
+classifier = SVC()
+classifier.fit(X_train, y_train)
