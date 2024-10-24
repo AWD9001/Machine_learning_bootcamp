@@ -55,3 +55,6 @@ from sklearn.svm import SVC
 
 classifier = SVC()
 classifier.fit(X_train, y_train)
+
+y_pred = classifier.predict(X_test)
+print(y_pred)
