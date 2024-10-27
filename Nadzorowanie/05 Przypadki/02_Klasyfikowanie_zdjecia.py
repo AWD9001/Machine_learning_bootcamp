@@ -62,4 +62,9 @@ print(y_pred)
 # Ocena modelu
 from sklearn.metrics import accuracy_score
 
-accuracy_score(y_test, y_pred)
+print(accuracy_score(y_test, y_pred))
+
+from sklearn.metrics import confusion_matrix
+
+cm = confusion_matrix(y_test, y_pred)
+print(cm)
