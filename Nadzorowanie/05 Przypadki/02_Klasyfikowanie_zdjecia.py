@@ -81,4 +81,5 @@ def plot_confusion_matrix(cm):
     fig.update_layout(width=800, height=600, title='Confusion Matrix', font_size=16)
     fig.show()
 
+
 plot_confusion_matrix(cm)
