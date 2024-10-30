@@ -83,3 +83,7 @@ def plot_confusion_matrix(cm):
 
 
 plot_confusion_matrix(cm)
+
+from sklearn.metrics import classification_report
+
+print(classification_report(y_test, y_pred, target_names=class_names))
