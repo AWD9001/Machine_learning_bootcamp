@@ -87,3 +87,7 @@ plot_confusion_matrix(cm)
 from sklearn.metrics import classification_report
 
 print(classification_report(y_test, y_pred, target_names=class_names))
+
+# Błędnie sklasyfikowane obrazy
+results = pd.DataFrame(data={'y_pred': y_pred, 'y_test': y_test})
+results.head(10)
