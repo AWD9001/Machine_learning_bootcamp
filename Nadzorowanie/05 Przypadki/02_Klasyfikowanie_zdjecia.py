@@ -91,3 +91,7 @@ print(classification_report(y_test, y_pred, target_names=class_names))
 # Błędnie sklasyfikowane obrazy
 results = pd.DataFrame(data={'y_pred': y_pred, 'y_test': y_test})
 results.head(10)
+
+errors = results[results['y_pred'] != results['y_test']]
+errors_idxs = list(errors.index)
+print(errors_idxs[:10])
