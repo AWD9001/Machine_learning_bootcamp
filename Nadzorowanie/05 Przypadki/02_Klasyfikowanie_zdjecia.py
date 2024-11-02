@@ -95,3 +95,5 @@ results.head(10)
 errors = results[results['y_pred'] != results['y_test']]
 errors_idxs = list(errors.index)
 print(errors_idxs[:10])
+
+print(results.loc[errors_idxs[:10], :])
