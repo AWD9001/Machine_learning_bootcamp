@@ -97,3 +97,12 @@ errors_idxs = list(errors.index)
 print(errors_idxs[:10])
 
 print(results.loc[errors_idxs[:10], :])
+
+plt.figure(figsize=(16, 10))
+for idx, error_idx in enumerate(errors_idxs[:15]):
+    image = X_test[error_idx].reshape(28, 28)
+    plt.subplot(3, 5, idx + 1)
+    plt.axis('off')
+    plt.imshow(image, cmap='Greys')
+    plt.title(f"T:{class_names[results.loc[error_idx, 'y_test']]}"
+              f"-P:{class_names[results.loc[error_idx, 'y_pred']]}")
