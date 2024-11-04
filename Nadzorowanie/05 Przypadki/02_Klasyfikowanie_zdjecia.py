@@ -106,3 +106,5 @@ for idx, error_idx in enumerate(errors_idxs[:15]):
     plt.imshow(image, cmap='Greys')
     plt.title(f"T:{class_names[results.loc[error_idx, 'y_test']]}"
               f"-P:{class_names[results.loc[error_idx, 'y_pred']]}")
+
+print(len(errors_idxs) / 10000)
