@@ -4,6 +4,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+from sklearn.metrics import classification_report
 from tensorflow.keras.datasets.fashion_mnist import load_data
 
 np.set_printoptions(precision=12, suppress=True, linewidth=150)
@@ -83,8 +84,6 @@ def plot_confusion_matrix(cm):
 
 
 plot_confusion_matrix(cm)
-
-from sklearn.metrics import classification_report
 
 print(classification_report(y_test, y_pred, target_names=class_names))
 
