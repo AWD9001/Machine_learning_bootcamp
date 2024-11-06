@@ -5,6 +5,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.metrics import classification_report
+from sklearn.svm import SVC
 from tensorflow.keras.datasets.fashion_mnist import load_data
 
 np.set_printoptions(precision=12, suppress=True, linewidth=150)
@@ -52,8 +53,6 @@ print(f'X_train shape: {X_train.shape}')
 print(f'X_test shape: {X_test.shape}')
 
 # Budowa modelu
-from sklearn.svm import SVC
-
 classifier = SVC()
 classifier.fit(X_train, y_train)
 
