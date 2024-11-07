@@ -4,6 +4,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+from sklearn.metrics import accuracy_score
 from sklearn.metrics import classification_report
 from sklearn.svm import SVC
 from tensorflow.keras.datasets.fashion_mnist import load_data
@@ -60,8 +61,6 @@ y_pred = classifier.predict(X_test)
 print(y_pred)
 
 # Ocena modelu
-from sklearn.metrics import accuracy_score
-
 print(accuracy_score(y_test, y_pred))
 
 from sklearn.metrics import confusion_matrix
