@@ -69,13 +69,13 @@ cm = confusion_matrix(y_test, y_pred)
 print(cm)
 
 
-def plot_confusion_matrix(cm):
+def plot_confusion_matrix(cm1):
     # Mulitclass classification, 3 classes
     import plotly.figure_factory as ff
-    cm = cm[::-1]
-    cm = pd.DataFrame(cm, columns=class_names, index=class_names[::-1])
+    cm1 = cm1[::-1]
+    cm1 = pd.DataFrame(cm1, columns=class_names, index=class_names[::-1])
 
-    fig = ff.create_annotated_heatmap(z=cm.values, x=list(cm.columns), y=list(cm.index),
+    fig = ff.create_annotated_heatmap(z=cm1.values, x=list(cm1.columns), y=list(cm1.index),
                                       colorscale='ice', showscale=True, reversescale=True)
     fig.update_layout(width=800, height=600, title='Confusion Matrix', font_size=16)
     fig.show()
