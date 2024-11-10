@@ -2,12 +2,14 @@
 # %tensorflow_version 2.x
 import numpy as np
 import pandas as pd
+import plotly.figure_factory as ff
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.metrics import accuracy_score
 from sklearn.metrics import classification_report
 from sklearn.svm import SVC
 from tensorflow.keras.datasets.fashion_mnist import load_data
+
 
 np.set_printoptions(precision=12, suppress=True, linewidth=150)
 pd.options.display.float_format = '{:.6f}'.format
@@ -71,7 +73,6 @@ print(cm)
 
 def plot_confusion_matrix(cm1):
     # Mulitclass classification, 3 classes
-    import plotly.figure_factory as ff
     cm1 = cm1[::-1]
     cm1 = pd.DataFrame(cm1, columns=class_names, index=class_names[::-1])
 
