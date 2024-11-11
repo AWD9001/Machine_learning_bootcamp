@@ -1,9 +1,9 @@
 # Import bibliotek
 # %tensorflow_version 2.x
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import plotly.figure_factory as ff
-import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.metrics import accuracy_score
 from sklearn.metrics import classification_report
