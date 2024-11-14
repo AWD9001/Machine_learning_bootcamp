@@ -8,3 +8,12 @@ np.random.seed(42)
 np.set_printoptions(precision=6, suppress=True, edgeitems=10, linewidth=1000,
                     formatter=dict(float=lambda x: f'{x:.2f}'))
 print(sklearn.__version__)
+
+# Wygenerowanie danych
+documents = [
+    'Today is Friday',
+    'I like Friday',
+    'Today I am going to learn Python.',
+    'Friday, Friday!!!'
+]
+print(documents)
