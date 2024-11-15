@@ -17,3 +17,9 @@ documents = [
     'Friday, Friday!!!'
 ]
 print(documents)
+
+# Wektoryzacja tekstu
+from sklearn.feature_extraction.text import CountVectorizer
+
+vectorizer = CountVectorizer()
+vectorizer.fit_transform(documents)
