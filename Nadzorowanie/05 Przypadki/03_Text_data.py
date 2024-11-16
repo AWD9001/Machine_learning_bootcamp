@@ -23,3 +23,5 @@ from sklearn.feature_extraction.text import CountVectorizer
 
 vectorizer = CountVectorizer()
 vectorizer.fit_transform(documents)
+
+vectorizer.fit_transform(documents).toarray()
