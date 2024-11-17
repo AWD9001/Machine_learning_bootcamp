@@ -25,3 +25,4 @@ vectorizer = CountVectorizer()
 vectorizer.fit_transform(documents)
 
 vectorizer.fit_transform(documents).toarray()
+vectorizer.get_feature_names()
