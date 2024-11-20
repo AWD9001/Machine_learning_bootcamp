@@ -32,3 +32,5 @@ df = pd.DataFrame(data=vectorizer.fit_transform(documents).toarray(),
 
 print(df)
 print(vectorizer.vocabulary_)
+
+vectorizer.transform(['Friday morning']).toarray()
