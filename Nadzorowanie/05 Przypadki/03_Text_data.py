@@ -34,3 +34,7 @@ print(df)
 print(vectorizer.vocabulary_)
 
 vectorizer.transform(['Friday morning']).toarray()
+
+# Wektoryzacja tekstu - bigramy
+bigram = CountVectorizer(ngram_range=(1, 2), min_df=1)    # min_df=2
+bigram.fit_transform(documents).toarray()
