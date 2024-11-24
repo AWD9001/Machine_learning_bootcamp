@@ -40,3 +40,7 @@ bigram = CountVectorizer(ngram_range=(1, 2), min_df=1)    # min_df=2
 bigram.fit_transform(documents).toarray()
 
 print(bigram.vocabulary_)
+
+df = pd.DataFrame(data=bigram.fit_transform(documents).toarray(),
+                  columns=bigram.get_feature_names())
+print(df)
