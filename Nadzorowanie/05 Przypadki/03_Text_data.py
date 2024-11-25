@@ -44,3 +44,14 @@ print(bigram.vocabulary_)
 df = pd.DataFrame(data=bigram.fit_transform(documents).toarray(),
                   columns=bigram.get_feature_names())
 print(df)
+
+# TFIDF Transformer
+
+documents = [
+    'Friday morning',
+    'Friday chill',
+    'Friday - morning',
+    'Friday, Friday morning!!!'
+]
+
+print(documents)
