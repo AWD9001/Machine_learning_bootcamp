@@ -46,7 +46,6 @@ df = pd.DataFrame(data=bigram.fit_transform(documents).toarray(),
 print(df)
 
 # TFIDF Transformer
-
 documents = [
     'Friday morning',
     'Friday chill',
@@ -55,3 +54,6 @@ documents = [
 ]
 
 print(documents)
+
+counts = vectorizer.fit_transform(documents).toarray()
+print(counts)
