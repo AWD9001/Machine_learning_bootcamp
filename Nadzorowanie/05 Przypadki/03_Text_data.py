@@ -57,3 +57,7 @@ print(documents)
 
 counts = vectorizer.fit_transform(documents).toarray()
 print(counts)
+
+df = pd.DataFrame(data=vectorizer.fit_transform(documents).toarray(),
+                  columns=vectorizer.get_feature_names())
+print(df)
