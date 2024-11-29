@@ -66,3 +66,9 @@ from sklearn.feature_extraction.text import TfidfTransformer
 
 tfidf = TfidfTransformer()
 tfidf.fit_transform(counts).toarray()
+
+# TFIDF Vectorizer
+from sklearn.feature_extraction.text import TfidfVectorizer
+
+tfidf_vectorizer = TfidfVectorizer()
+tfidf_vectorizer.fit_transform(documents).toarray()
