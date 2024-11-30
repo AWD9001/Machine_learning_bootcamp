@@ -72,3 +72,5 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 
 tfidf_vectorizer = TfidfVectorizer()
 tfidf_vectorizer.fit_transform(documents).toarray()
+
+print(tfidf_vectorizer.idf_)
