@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 # import plotly.express as px
 import sklearn
+from sklearn.feature_extraction.text import TfidfTransformer
 
 np.random.seed(42)
 np.set_printoptions(precision=6, suppress=True, edgeitems=10, linewidth=1000,
@@ -61,8 +62,6 @@ print(counts)
 df = pd.DataFrame(data=vectorizer.fit_transform(documents).toarray(),
                   columns=vectorizer.get_feature_names())
 print(df)
-
-from sklearn.feature_extraction.text import TfidfTransformer
 
 tfidf = TfidfTransformer()
 tfidf.fit_transform(counts).toarray()
