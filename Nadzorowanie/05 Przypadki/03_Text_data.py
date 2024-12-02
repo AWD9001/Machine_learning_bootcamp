@@ -73,3 +73,9 @@ tfidf_vectorizer = TfidfVectorizer()
 tfidf_vectorizer.fit_transform(documents).toarray()
 
 print(tfidf_vectorizer.idf_)
+
+# Przygotowanie danych tekstowych - przykład
+from sklearn.datasets import fetch_20newsgroups
+
+raw_data = fetch_20newsgroups(subset='train', categories=['comp.graphics'], random_state=42)
+raw_data.keys()
