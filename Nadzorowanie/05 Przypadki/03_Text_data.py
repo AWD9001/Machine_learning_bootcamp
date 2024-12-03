@@ -79,3 +79,6 @@ from sklearn.datasets import fetch_20newsgroups
 
 raw_data = fetch_20newsgroups(subset='train', categories=['comp.graphics'], random_state=42)
 raw_data.keys()
+
+all_data = raw_data.copy()
+print(all_data['data'][:5])
