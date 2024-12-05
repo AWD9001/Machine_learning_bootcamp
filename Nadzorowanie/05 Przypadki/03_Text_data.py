@@ -84,3 +84,5 @@ all_data = raw_data.copy()
 print(all_data['data'][:5])
 
 print(print(all_data['data'][0]))
+
+print(all_data['target_names'])
