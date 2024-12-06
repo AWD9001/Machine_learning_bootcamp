@@ -86,3 +86,5 @@ print(all_data['data'][:5])
 print(print(all_data['data'][0]))
 
 print(all_data['target_names'])
+
+print(all_data['target'][:10])
