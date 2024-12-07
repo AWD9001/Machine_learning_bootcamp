@@ -88,3 +88,6 @@ print(print(all_data['data'][0]))
 print(all_data['target_names'])
 
 print(all_data['target'][:10])
+
+tfidf = TfidfVectorizer()
+tfidf.fit_transform(all_data['data']).toarray()
