@@ -26,7 +26,7 @@ vectorizer = CountVectorizer()
 vectorizer.fit_transform(documents)
 
 vectorizer.fit_transform(documents).toarray()
-vectorizer.get_feature_names()
+print(vectorizer.get_feature_names())
 
 df = pd.DataFrame(data=vectorizer.fit_transform(documents).toarray(),
                   columns=vectorizer.get_feature_names())
