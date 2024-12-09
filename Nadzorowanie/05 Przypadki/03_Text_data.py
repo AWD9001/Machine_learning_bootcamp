@@ -1,7 +1,6 @@
 # Import bibliotek
 import numpy as np
 import pandas as pd
-# import plotly.express as px
 import sklearn
 from sklearn.feature_extraction.text import TfidfTransformer
 
