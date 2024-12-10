@@ -2,6 +2,7 @@
 import numpy as np
 import pandas as pd
 import sklearn
+from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
 
 np.random.seed(42)
@@ -19,8 +20,6 @@ documents = [
 print(documents)
 
 # Wektoryzacja tekstu
-from sklearn.feature_extraction.text import CountVectorizer
-
 vectorizer = CountVectorizer()
 vectorizer.fit_transform(documents)
 
