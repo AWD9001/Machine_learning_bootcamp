@@ -4,6 +4,7 @@ import pandas as pd
 import sklearn
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
+from sklearn.feature_extraction.text import TfidfVectorizer
 
 np.random.seed(42)
 np.set_printoptions(precision=6, suppress=True, edgeitems=10, linewidth=1000,
@@ -65,8 +66,6 @@ tfidf = TfidfTransformer()
 tfidf.fit_transform(counts).toarray()
 
 # TFIDF Vectorizer
-from sklearn.feature_extraction.text import TfidfVectorizer
-
 tfidf_vectorizer = TfidfVectorizer()
 tfidf_vectorizer.fit_transform(documents).toarray()
 
