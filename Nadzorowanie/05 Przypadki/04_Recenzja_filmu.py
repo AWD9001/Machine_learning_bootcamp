@@ -12,3 +12,5 @@ print(sklearn.__version__)
 # Pobranie danych
 !wget https://raw.githubusercontent.com/nltk/nltk_data/gh-pages/packages/\
               corpora/movie_reviews.zip
+
+!unzip -q movie_reviews.zip
