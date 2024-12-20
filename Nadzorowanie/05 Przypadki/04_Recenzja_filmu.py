@@ -14,3 +14,12 @@ print(sklearn.__version__)
               corpora/movie_reviews.zip
 
 !unzip -q movie_reviews.zip
+
+!pwd
+!ls
+
+from sklearn.datasets import load_files
+
+raw_movie = load_files('movie_reviews')
+movie = raw_movie.copy()
+movie.keys()
