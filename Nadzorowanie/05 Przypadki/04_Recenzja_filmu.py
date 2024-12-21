@@ -23,3 +23,7 @@ from sklearn.datasets import load_files
 raw_movie = load_files('movie_reviews')
 movie = raw_movie.copy()
 movie.keys()
+
+# Eksploracja i przygotowanie danych
+
+print(movie['data'][:10])
