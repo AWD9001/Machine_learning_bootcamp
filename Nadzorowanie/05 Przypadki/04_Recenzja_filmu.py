@@ -28,3 +28,5 @@ movie.keys()
 
 print(movie['data'][:10])
 print(movie['target'][:10])
+print(movie['target_names'])
+
