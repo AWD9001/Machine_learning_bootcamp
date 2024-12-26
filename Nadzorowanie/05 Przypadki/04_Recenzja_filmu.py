@@ -30,3 +30,10 @@ print(movie['data'][:10])
 print(movie['target'][:10])
 print(movie['target_names'])
 print(movie['filenames'][:2])
+
+from sklearn.model_selection import train_test_split
+
+X_train, X_test, y_train, y_test = train_test_split(movie['data'], movie['target'], random_state=42)
+
+print(f'X_train: {len(X_train)}')
+print(f'X_test: {len(X_test)}')
