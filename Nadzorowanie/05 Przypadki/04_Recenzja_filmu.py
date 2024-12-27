@@ -37,3 +37,5 @@ X_train, X_test, y_train, y_test = train_test_split(movie['data'], movie['target
 
 print(f'X_train: {len(X_train)}')
 print(f'X_test: {len(X_test)}')
+
+print(X_train[0])
