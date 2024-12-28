@@ -39,3 +39,12 @@ print(f'X_train: {len(X_train)}')
 print(f'X_test: {len(X_test)}')
 
 print(X_train[0])
+
+from sklearn.feature_extraction.text import TfidfVectorizer
+
+tfidf = TfidfVectorizer(max_features=3000)
+X_train = tfidf.fit_transform(X_train)
+X_test = tfidf.transform(X_test)
+
+print(f'X_train shape: {X_train.shape}')
+print(f'X_test shape: {X_test.shape}')
