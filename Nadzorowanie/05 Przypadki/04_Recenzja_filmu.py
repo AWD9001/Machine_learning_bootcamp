@@ -50,9 +50,15 @@ print(f'X_train shape: {X_train.shape}')
 print(f'X_test shape: {X_test.shape}')
 
 # Trenowanie modelu
-
 from sklearn.naive_bayes import MultinomialNB
 
 classifier = MultinomialNB()
 classifier.fit(X_train, y_train)
 classifier.score(X_test, y_test)
+
+# Ocena modelu
+from sklearn.metrics import confusion_matrix
+
+y_pred = classifier.predict(X_test)
+cm = confusion_matrix(y_test, y_pred)
+print(cm)
