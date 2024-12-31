@@ -62,3 +62,18 @@ from sklearn.metrics import confusion_matrix
 y_pred = classifier.predict(X_test)
 cm = confusion_matrix(y_test, y_pred)
 print(cm)
+
+import plotly.figure_factory as ff
+
+
+def plot_confusion_matrix(cm1):
+    cm1 = cm1[::-1]
+    cm1 = pd.DataFrame(cm1, columns=['negative', 'positive'], index=['positive', 'negative'])
+
+    fig = ff.create_annotated_heatmap(z=cm1.values, x=list(cm1.columns), y=list(cm1.index),
+                                      colorscale='ice', showscale=True, reversescale=True)
+    fig.update_layout(width=400, height=400, title='Confusion Matrix', font_size=16)
+    fig.show()
+
+
+plot_confusion_matrix(cm)
