@@ -81,3 +81,12 @@ plot_confusion_matrix(cm)
 from sklearn.metrics import classification_report
 
 print(classification_report(y_test, y_pred, target_names=['negative', 'positive']))
+
+# Predykcja na podstawie modelu
+new_reviews = ['It was awesome! Very interesting story.',
+               'I cannot recommend this film. Short and awful.',
+               'Very long and boring. Don\'t waste your time.',
+               'Well-organized and quite interesting.']
+
+new_reviews_tfidf = tfidf.transform(new_reviews)
+new_reviews_tfidf
