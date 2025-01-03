@@ -89,4 +89,5 @@ new_reviews = ['It was awesome! Very interesting story.',
                'Well-organized and quite interesting.']
 
 new_reviews_tfidf = tfidf.transform(new_reviews)
-new_reviews_tfidf
+print(new_reviews_tfidf)
+print(new_reviews_tfidf.toarray())
