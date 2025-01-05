@@ -91,3 +91,6 @@ new_reviews = ['It was awesome! Very interesting story.',
 new_reviews_tfidf = tfidf.transform(new_reviews)
 print(new_reviews_tfidf)
 print(new_reviews_tfidf.toarray())
+
+new_reviews_pred = classifier.predict(new_reviews_tfidf)
+print(new_reviews_pred)
