@@ -94,3 +94,6 @@ print(new_reviews_tfidf.toarray())
 
 new_reviews_pred = classifier.predict(new_reviews_tfidf)
 print(new_reviews_pred)
+
+new_reviews_prob = classifier.predict_proba(new_reviews_tfidf)
+print(new_reviews_prob)
