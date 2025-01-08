@@ -99,3 +99,5 @@ new_reviews_prob = classifier.predict_proba(new_reviews_tfidf)
 print(new_reviews_prob)
 
 np.argmax(new_reviews_prob, axis=1)
+
+print(movie['target_names'])
