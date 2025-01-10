@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 import plotly.express as px
 import sklearn
+from sklearn.metrics import classification_report
 
 np.random.seed(42)
 np.set_printoptions(precision=6, suppress=True, edgeitems=10, linewidth=1000,
@@ -77,8 +78,6 @@ def plot_confusion_matrix(cm1):
 
 
 plot_confusion_matrix(cm)
-
-from sklearn.metrics import classification_report
 
 print(classification_report(y_test, y_pred, target_names=['negative', 'positive']))
 
