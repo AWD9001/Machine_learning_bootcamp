@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 import plotly.express as px
 import sklearn
+from sklearn.datasets import load_files
 from sklearn.metrics import classification_report
 
 np.random.seed(42)
@@ -18,8 +19,6 @@ print(sklearn.__version__)
 
 !pwd
 !ls
-
-from sklearn.datasets import load_files
 
 raw_movie = load_files('movie_reviews')
 movie = raw_movie.copy()
