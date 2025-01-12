@@ -1,10 +1,12 @@
 # Import bibliotek
+import io
 import numpy as np
 import pandas as pd
-import plotly.express as px
 import sklearn
 from sklearn.datasets import load_files
 from sklearn.metrics import classification_report
+import requests
+import zipfile
 
 np.random.seed(42)
 np.set_printoptions(precision=6, suppress=True, edgeitems=10, linewidth=1000,
@@ -12,15 +14,18 @@ np.set_printoptions(precision=6, suppress=True, edgeitems=10, linewidth=1000,
 print(sklearn.__version__)
 
 # Pobranie danych
-!wget https://raw.githubusercontent.com/nltk/nltk_data/gh-pages/packages/\
-              corpora/movie_reviews.zip
+url = "https://raw.githubusercontent.com/nltk/" \
+      "nltk_data/gh-pages/packages/corpora/movie_reviews.zip"
 
-!unzip -q movie_reviews.zip
+response = requests.get(url)
 
-!pwd
-!ls
+zip_data = io.BytesIO(response.content)
 
-raw_movie = load_files('movie_reviews')
+# Zapisywanie pliku .zip na dysku
+with open("movie_reviews.zip", "wb") as file:
+    file.write(response.content)
+
+raw_movie = load_files('movie_reviews.zip')
 movie = raw_movie.copy()
 movie.keys()
 
