@@ -5,6 +5,7 @@ import pandas as pd
 import sklearn
 from sklearn.datasets import load_files
 from sklearn.metrics import classification_report
+from sklearn.model_selection import train_test_split
 import requests
 import zipfile
 
@@ -25,6 +26,10 @@ zip_data = io.BytesIO(response.content)
 with open("movie_reviews.zip", "wb") as file:
     file.write(response.content)
 
+# Rozpakowywanie pliku .zip
+with zipfile.ZipFile("movie_reviews.zip", "r") as zip_ref:
+    zip_ref.extractall()
+
 raw_movie = load_files('movie_reviews.zip')
 movie = raw_movie.copy()
 movie.keys()
@@ -35,8 +40,6 @@ print(movie['data'][:10])
 print(movie['target'][:10])
 print(movie['target_names'])
 print(movie['filenames'][:2])
-
-from sklearn.model_selection import train_test_split
 
 X_train, X_test, y_train, y_test = train_test_split(movie['data'], movie['target'], random_state=42)
 
