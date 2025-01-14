@@ -35,7 +35,6 @@ movie = raw_movie.copy()
 movie.keys()
 
 # Eksploracja i przygotowanie danych
-
 print(movie['data'][:10])
 print(movie['target'][:10])
 print(movie['target_names'])
