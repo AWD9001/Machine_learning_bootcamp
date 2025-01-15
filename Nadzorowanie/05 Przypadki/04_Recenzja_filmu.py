@@ -4,6 +4,7 @@ import numpy as np
 import pandas as pd
 import sklearn
 from sklearn.datasets import load_files
+from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics import classification_report
 from sklearn.model_selection import train_test_split
 import requests
@@ -46,8 +47,6 @@ print(f'X_train: {len(X_train)}')
 print(f'X_test: {len(X_test)}')
 
 print(X_train[0])
-
-from sklearn.feature_extraction.text import TfidfVectorizer
 
 tfidf = TfidfVectorizer(max_features=3000)
 X_train = tfidf.fit_transform(X_train)
