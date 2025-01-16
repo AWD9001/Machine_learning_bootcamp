@@ -7,6 +7,7 @@ from sklearn.datasets import load_files
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics import classification_report
 from sklearn.model_selection import train_test_split
+from sklearn.naive_bayes import MultinomialNB
 import requests
 import zipfile
 
@@ -56,8 +57,6 @@ print(f'X_train shape: {X_train.shape}')
 print(f'X_test shape: {X_test.shape}')
 
 # Trenowanie modelu
-from sklearn.naive_bayes import MultinomialNB
-
 classifier = MultinomialNB()
 classifier.fit(X_train, y_train)
 classifier.score(X_test, y_test)
