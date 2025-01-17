@@ -6,6 +6,7 @@ import sklearn
 from sklearn.datasets import load_files
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics import classification_report
+from sklearn.metrics import confusion_matrix
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import MultinomialNB
 import requests
@@ -62,8 +63,6 @@ classifier.fit(X_train, y_train)
 classifier.score(X_test, y_test)
 
 # Ocena modelu
-from sklearn.metrics import confusion_matrix
-
 y_pred = classifier.predict(X_test)
 cm = confusion_matrix(y_test, y_pred)
 print(cm)
