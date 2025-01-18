@@ -9,6 +9,7 @@ from sklearn.metrics import classification_report
 from sklearn.metrics import confusion_matrix
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import MultinomialNB
+import plotly.figure_factory as ff
 import requests
 import zipfile
 
@@ -66,8 +67,6 @@ classifier.score(X_test, y_test)
 y_pred = classifier.predict(X_test)
 cm = confusion_matrix(y_test, y_pred)
 print(cm)
-
-import plotly.figure_factory as ff
 
 
 def plot_confusion_matrix(cm1):
