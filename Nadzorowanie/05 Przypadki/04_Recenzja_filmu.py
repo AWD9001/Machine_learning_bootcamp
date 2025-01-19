@@ -103,6 +103,5 @@ np.argmax(new_reviews_prob, axis=1)
 
 print(movie['target_names'])
 
-
 for review, target, prob in zip(new_reviews, new_reviews_pred, new_reviews_prob):
     print(f"{review} -> {movie['target_names'][target]} -> {prob[target]:.4f}")
