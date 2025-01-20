@@ -11,7 +11,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import MultinomialNB
 import plotly.figure_factory as ff
 import requests
-import zipfile
+
 
 np.random.seed(42)
 np.set_printoptions(precision=6, suppress=True, edgeitems=10, linewidth=1000,
