@@ -20,3 +20,15 @@ df.head()
 # Wizualizacja danych
 fig = px.scatter(df, 'x1', 'x2', width=950, height=500, title='Algorytm K-średnich')
 fig.update_traces(marker_size=12)
+
+# Implementacja algorytmu K-średnich
+
+# wyznaczenie wartości brzegowych
+x1_min = df.x1.min()
+x1_max = df.x1.max()
+
+x2_min = df.x2.min()
+x2_max = df.x2.max()
+
+print(x1_min, x1_max)
+print(x2_min, x2_max)
