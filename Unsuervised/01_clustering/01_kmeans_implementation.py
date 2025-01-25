@@ -32,3 +32,9 @@ x2_max = df.x2.max()
 
 print(x1_min, x1_max)
 print(x2_min, x2_max)
+
+# losowe wygnererowanie współrzędnych centroidów
+centroid_1 = np.array([random.uniform(x1_min, x1_max), random.uniform(x2_min, x2_max)])
+centroid_2 = np.array([random.uniform(x1_min, x1_max), random.uniform(x2_min, x2_max)])
+print(centroid_1)
+print(centroid_2)
