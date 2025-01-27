@@ -44,3 +44,16 @@ fig = px.scatter(df, 'x1', 'x2', width=950, height=500, title='Algorytm K-średn
 fig.add_trace(go.Scatter(x=[centroid_1[0]], y=[centroid_1[1]], name='centroid 1', mode='markers', marker_line_width=3))
 fig.add_trace(go.Scatter(x=[centroid_2[0]], y=[centroid_2[1]], name='centroid 2', mode='markers', marker_line_width=3))
 fig.update_traces(marker_size=12, showlegend=False)
+
+# przypisanie punktów do najbliższego centroidu
+clusters = []
+for point in data:
+    centroid_1_dist = norm(centroid_1 - point)
+    centroid_2_dist = norm(centroid_2 - point)
+    cluster = 1
+    if centroid_1_dist > centroid_2_dist:
+        cluster = 2
+    clusters.append(cluster)
+
+df['cluster'] = clusters
+df.head()
