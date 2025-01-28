@@ -57,3 +57,14 @@ for point in data:
 
 df['cluster'] = clusters
 df.head()
+
+# wizualizacja przypisania
+fig = px.scatter(df, 'x1', 'x2', color='cluster', width=950, height=500,
+                 title='Algorytm K-średnich - iteracja 1 - przypisanie punktów'
+                       'do najbliższego centroidu')
+fig.add_trace(go.Scatter(x=[centroid_1[0]], y=[centroid_1[1]],
+                         name='centroid 1', mode='markers', marker_line_width=3))
+fig.add_trace(go.Scatter(x=[centroid_2[0]], y=[centroid_2[1]],
+                         name='centroid 2', mode='markers', marker_line_width=3))
+fig.update_traces(marker_size=12)
+fig.update_layout(showlegend=False)
