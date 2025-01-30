@@ -75,3 +75,13 @@ new_centroid_1 = [df[df.cluster == 1].x1.mean(), df[df.cluster == 1].x2.mean()]
 new_centroid_2 = [df[df.cluster == 2].x1.mean(), df[df.cluster == 2].x2.mean()]
 
 print(new_centroid_1, new_centroid_2)
+
+# wizualizacja aktualizacji centroidów
+fig = px.scatter(df, 'x1', 'x2', color='cluster', width=950, height=500,
+                 title='Algorytm K-średnich - obliczenie nowych centroidów')
+fig.add_trace(go.Scatter(x=[centroid_1[0]], y=[centroid_1[1]], name='centroid 1', mode='markers', marker_line_width=3))
+fig.add_trace(go.Scatter(x=[centroid_2[0]], y=[centroid_2[1]], name='centroid 2', mode='markers', marker_line_width=3))
+fig.add_trace(go.Scatter(x=[new_centroid_1[0]], y=[new_centroid_1[1]], name='centroid 1', mode='markers', marker_line_width=3))
+fig.add_trace(go.Scatter(x=[new_centroid_2[0]], y=[new_centroid_2[1]], name='centroid 2', mode='markers', marker_line_width=3))
+fig.update_traces(marker_size=12)
+fig.update_layout(showlegend=False)
