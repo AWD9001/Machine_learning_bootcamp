@@ -98,3 +98,16 @@ fig.add_trace(go.Scatter(x=[new_centroid_2[0]], y=[new_centroid_2[1]],
                          name='centroid 2', mode='markers', marker_line_width=3))
 fig.update_traces(marker_size=12)
 fig.update_layout(showlegend=False)
+
+# ponowne przypisanie punktów do najbliższego centroidu
+clusters = []
+for point in data:
+    centroid_1_dist = norm(new_centroid_1 - point)
+    centroid_2_dist = norm(new_centroid_2 - point)
+    cluster = 1
+    if centroid_1_dist > centroid_2_dist:
+        cluster = 2
+    clusters.append(cluster)
+
+df['cluster'] = clusters
+df.head()
