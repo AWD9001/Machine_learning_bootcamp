@@ -1,6 +1,6 @@
 # Import bibliotek
 import pandas as pd
-# import plotly.express as px
+import plotly.express as px
 
 # Wygenerowanie danych
 from sklearn.datasets import make_blobs
@@ -12,3 +12,9 @@ df.head()
 
 # Wizualizacja danych
 px.scatter(df, 'x1', 'x2', width=950, height=500, title='Klasteryzacja - Algorytm K-średnich')
+
+# Algorytm K-średnich
+from sklearn.cluster import KMeans
+
+kmeans = KMeans(n_clusters=4)
+kmeans.fit(data)
