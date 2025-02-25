@@ -22,3 +22,6 @@ from sklearn.cluster import KMeans
 
 kmeans = KMeans(n_clusters=5)
 kmeans.fit(data)
+
+# wcss
+print(kmeans.inertia_)
