@@ -25,3 +25,7 @@ kmeans.fit(data)
 
 # wcss
 print(kmeans.inertia_)
+
+y_kmeans = kmeans.predict(data)
+df['y_kmeans'] = y_kmeans
+df.head()
