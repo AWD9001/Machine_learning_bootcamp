@@ -29,3 +29,6 @@ print(kmeans.inertia_)
 y_kmeans = kmeans.predict(data)
 df['y_kmeans'] = y_kmeans
 df.head()
+
+px.scatter(df, 'x1', 'x2', 'y_kmeans', width=950, height=500,
+           title='Algorytm K-średnich - 5 klastrów', template='plotly_dark')
