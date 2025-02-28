@@ -32,3 +32,12 @@ df.head()
 
 px.scatter(df, 'x1', 'x2', 'y_kmeans', width=950, height=500,
            title='Algorytm K-średnich - 5 klastrów', template='plotly_dark')
+
+# WCSS - Within - Cluster Sum - of - Squared
+wcss = []
+for i in range(2, 10):
+    kmeans = KMeans(n_clusters=i)
+    kmeans.fit(data)
+    wcss.append(kmeans.inertia_)
+
+print(wcss)
