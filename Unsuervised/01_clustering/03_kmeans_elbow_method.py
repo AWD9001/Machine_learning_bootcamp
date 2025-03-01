@@ -41,3 +41,9 @@ for i in range(2, 10):
     wcss.append(kmeans.inertia_)
 
 print(wcss)
+
+wcss = pd.DataFrame(wcss, columns=['wcss'])
+wcss = wcss.reset_index()
+wcss = wcss.rename(columns={'index': 'clusters'})
+wcss['clusters'] += 1
+wcss.head()
