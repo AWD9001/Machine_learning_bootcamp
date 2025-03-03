@@ -47,3 +47,7 @@ wcss = wcss.reset_index()
 wcss = wcss.rename(columns={'index': 'clusters'})
 wcss['clusters'] += 1
 wcss.head()
+
+# Metoda "łokcia" - Elbow Method
+px.line(wcss, x='clusters', y='wcss', width=950, height=500,
+        title='Within-Cluster-Sum of Squared Errors (WCSS)', template='plotly_dark')
