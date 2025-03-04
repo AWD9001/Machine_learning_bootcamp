@@ -51,3 +51,13 @@ wcss.head()
 # Metoda "łokcia" - Elbow Method
 px.line(wcss, x='clusters', y='wcss', width=950, height=500,
         title='Within-Cluster-Sum of Squared Errors (WCSS)', template='plotly_dark')
+
+# Wizualizacja klastrów
+kmeans = KMeans(n_clusters=3)
+kmeans.fit(data)
+
+y_kmeans = kmeans.predict(data)
+df['y_kmeans'] = y_kmeans
+
+px.scatter(df, 'x1', 'x2', 'y_kmeans', width=950, height=500,
+           title='Algorytm K-średnich - 3 klastry',  template='plotly_dark')
