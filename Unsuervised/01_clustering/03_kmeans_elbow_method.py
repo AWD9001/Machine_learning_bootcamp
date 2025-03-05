@@ -61,3 +61,6 @@ df['y_kmeans'] = y_kmeans
 
 px.scatter(df, 'x1', 'x2', 'y_kmeans', width=950, height=500,
            title='Algorytm K-średnich - 3 klastry',  template='plotly_dark')
+
+centers = pd.DataFrame(data=kmeans.cluster_centers_, columns=['c1', 'c2'])
+print(centers)
