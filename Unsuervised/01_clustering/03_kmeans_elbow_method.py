@@ -64,3 +64,11 @@ px.scatter(df, 'x1', 'x2', 'y_kmeans', width=950, height=500,
 
 centers = pd.DataFrame(data=kmeans.cluster_centers_, columns=['c1', 'c2'])
 print(centers)
+
+fig = px.scatter(df, 'x1', 'x2', 'y_kmeans', width=950, height=500,
+                 title='Algorytm K-średnich - 3 klastry', template='plotly_dark')
+fig.add_trace(go.Scatter(x=centers['c1'], y=centers['c2'],
+                         mode='markers', marker={'size': 12, 'color': 'LightSkyBlue',
+                                                 'line': {'width': 2, 'color': 'tomato'}},
+                         showlegend=False))
+fig.show()
