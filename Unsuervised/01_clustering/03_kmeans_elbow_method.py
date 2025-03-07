@@ -72,3 +72,11 @@ fig.add_trace(go.Scatter(x=centers['c1'], y=centers['c2'],
                                                  'line': {'width': 2, 'color': 'tomato'}},
                          showlegend=False))
 fig.show()
+
+from mlxtend.plotting import plot_decision_regions
+
+plt.figure(figsize=(15, 8))
+plt.title('Granice decyzyjne')
+plot_decision_regions(data, y_kmeans, clf=kmeans, legend=1)
+plt.scatter(kmeans.cluster_centers_[:, 0], kmeans.cluster_centers_[:, 1], s=100, c='yellow')
+plt.show()
