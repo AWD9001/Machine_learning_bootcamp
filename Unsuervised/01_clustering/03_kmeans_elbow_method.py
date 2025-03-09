@@ -4,6 +4,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 import matplotlib.pyplot as plt
 import seaborn as sns
+from sklearn.cluster import KMeans
 from sklearn.datasets import make_blobs
 
 sns.set(font_scale=1.3)
@@ -17,8 +18,6 @@ px.scatter(df, 'x1', 'x2', width=950, height=500, title='Algorytm K-średnich',
            template='plotly_dark')
 
 # Algorytm K-średnich
-from sklearn.cluster import KMeans
-
 kmeans = KMeans(n_clusters=5)
 kmeans.fit(data)
 
