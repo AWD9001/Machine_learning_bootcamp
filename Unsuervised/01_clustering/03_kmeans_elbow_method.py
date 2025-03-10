@@ -3,6 +3,7 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 import matplotlib.pyplot as plt
+from mlxtend.plotting import plot_decision_regions
 import seaborn as sns
 from sklearn.cluster import KMeans
 from sklearn.datasets import make_blobs
@@ -70,8 +71,6 @@ fig.add_trace(go.Scatter(x=centers['c1'], y=centers['c2'],
                                                  'line': {'width': 2, 'color': 'tomato'}},
                          showlegend=False))
 fig.show()
-
-from mlxtend.plotting import plot_decision_regions
 
 plt.figure(figsize=(15, 8))
 plt.title('Granice decyzyjne')
