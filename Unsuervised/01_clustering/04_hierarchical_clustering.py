@@ -17,7 +17,7 @@ df.head()
 
 # Wizualizacja danych
 plt.figure(figsize=(14, 7))
-plt.scatter(data[:,0], data[:,1])
+plt.scatter(data[:, 0], data[:, 1])
 
 for label, x, y in zip(range(1, 11), data[:, 0], data[:, 1]):
     plt.annotate(label, xy=(x, y), xytext=(-3, 3), textcoords='offset points',
