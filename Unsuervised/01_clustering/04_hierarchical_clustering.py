@@ -24,3 +24,17 @@ for label, x, y in zip(range(1, 11), data[:, 0], data[:, 1]):
                  ha='right', va='bottom')
 plt.title('Grupowanie hierarchiczne')
 plt.show()
+
+# Wizualizacja - dendrogram
+from scipy.cluster.hierarchy import dendrogram
+from scipy.cluster.hierarchy import linkage
+
+# przeprowadzenie grupowania hierarchicznego
+linked = linkage(data)
+
+# wizualizacja grupowania hierarchicznego jako dendrogram
+plt.figure(figsize=(14, 7))
+dendrogram(linked, orientation='top', labels=range(1, 11),
+           distance_sort='descending', show_leaf_counts=True)
+plt.title('Grupowanie hierarchiczne - dendrogram')
+plt.show()
