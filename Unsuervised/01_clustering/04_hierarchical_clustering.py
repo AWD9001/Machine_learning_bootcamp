@@ -38,3 +38,9 @@ dendrogram(linked, orientation='top', labels=range(1, 11),
            distance_sort='descending', show_leaf_counts=True)
 plt.title('Grupowanie hierarchiczne - dendrogram')
 plt.show()
+
+plt.figure(figsize=(14, 7))
+dendrogram(linked, orientation='right', labels=range(1, 11),
+           distance_sort='descending', show_leaf_counts=True)
+plt.title('Grupowanie hierarchiczne - dendrogram')
+plt.show()
