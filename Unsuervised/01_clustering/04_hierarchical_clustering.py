@@ -44,3 +44,10 @@ dendrogram(linked, orientation='right', labels=range(1, 11),
            distance_sort='descending', show_leaf_counts=True)
 plt.title('Grupowanie hierarchiczne - dendrogram')
 plt.show()
+
+# Grupowanie hierarchiczne
+# bottom-up approach
+from sklearn.cluster import AgglomerativeClustering
+
+cluster = AgglomerativeClustering(n_clusters=2)
+cluster.fit_predict(data)
