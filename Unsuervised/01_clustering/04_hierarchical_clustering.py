@@ -51,3 +51,12 @@ from sklearn.cluster import AgglomerativeClustering
 
 cluster = AgglomerativeClustering(n_clusters=2)
 cluster.fit_predict(data)
+
+# Wizualizacja klastrów
+df = pd.DataFrame(data, columns=['x1', 'x2'])
+df['cluster'] = cluster.labels_
+
+fig = px.scatter(df, 'x1', 'x2', 'cluster', width=950, height=500, template='plotly_dark',
+                 title='Grupowanie hierarchiczne', color_continuous_midpoint=0.6)
+fig.update_traces(marker_size=12)
+fig.show()
