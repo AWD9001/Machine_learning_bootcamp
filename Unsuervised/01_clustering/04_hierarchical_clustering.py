@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+from sklearn.cluster import AgglomerativeClustering
 import plotly.express as px
 
 sns.set(font_scale=1.2)
@@ -47,8 +48,6 @@ plt.show()
 
 # Grupowanie hierarchiczne
 # bottom-up approach
-from sklearn.cluster import AgglomerativeClustering
-
 cluster = AgglomerativeClustering(n_clusters=2)
 cluster.fit_predict(data)
 
