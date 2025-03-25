@@ -82,3 +82,10 @@ fig.show()
 # Metryka Manhattan
 cluster_manhattan = AgglomerativeClustering(n_clusters=4, affinity='manhattan', linkage='complete')
 cluster_manhattan.fit_predict(data)
+
+df_manhattan = pd.DataFrame(data, columns=['x1', 'x2'])
+df_manhattan['cluster'] = cluster_manhattan.labels_
+fig = px.scatter(df_manhattan, 'x1', 'x2', 'cluster', width=950, height=500, template='plotly_dark',
+                 title='Grupowanie hierarchiczne - metryka Manhattan',
+                 color_continuous_midpoint=0.6)
+fig.show()
