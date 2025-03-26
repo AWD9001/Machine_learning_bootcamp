@@ -89,3 +89,7 @@ fig = px.scatter(df_manhattan, 'x1', 'x2', 'cluster', width=950, height=500, tem
                  title='Grupowanie hierarchiczne - metryka Manhattan',
                  color_continuous_midpoint=0.6)
 fig.show()
+
+# Odległość kosinusowa
+cluster_cosine = AgglomerativeClustering(n_clusters=4, affinity='cosine', linkage='complete')
+cluster_cosine.fit_predict(data)
