@@ -93,3 +93,10 @@ fig.show()
 # Odległość kosinusowa
 cluster_cosine = AgglomerativeClustering(n_clusters=4, affinity='cosine', linkage='complete')
 cluster_cosine.fit_predict(data)
+
+df_cosine = pd.DataFrame(data, columns=['x1', 'x2'])
+df_cosine['cluster'] = cluster_cosine.labels_
+fig = px.scatter(df_cosine, 'x1', 'x2', 'cluster', width=950, height=500,
+                 template='plotly_dark', title='Grupowanie hierarchiczne - metryka kosinusowa',
+                 color_continuous_midpoint=0.6)
+fig.show()
