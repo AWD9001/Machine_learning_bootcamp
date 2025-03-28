@@ -100,3 +100,17 @@ fig = px.scatter(df_cosine, 'x1', 'x2', 'cluster', width=950, height=500,
                  template='plotly_dark', title='Grupowanie hierarchiczne - metryka kosinusowa',
                  color_continuous_midpoint=0.6)
 fig.show()
+
+from plotly.subplots import make_subplots
+
+fig = make_subplots(rows=1, cols=3, column_titles=['euclidean', 'Manhattan', 'cosine'])
+
+fig1 = px.scatter(df_euclidean, 'x1', 'x2', 'cluster')['data'][0]
+fig2 = px.scatter(df_manhattan, 'x1', 'x2', 'cluster')['data'][0]
+fig3 = px.scatter(df_cosine, 'x1', 'x2', 'cluster')['data'][0]
+
+fig.add_trace(fig1, row=1, col=1)
+fig.add_trace(fig2, row=1, col=2)
+fig.add_trace(fig3, row=1, col=3)
+fig.update_layout(template='plotly_dark')
+fig.show()
