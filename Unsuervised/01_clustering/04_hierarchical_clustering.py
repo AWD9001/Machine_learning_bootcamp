@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from scipy.cluster.hierarchy import dendrogram
+from scipy.cluster.hierarchy import linkage
 import seaborn as sns
 from sklearn.cluster import AgglomerativeClustering
 from sklearn.datasets import make_blobs
@@ -27,8 +28,6 @@ plt.title('Grupowanie hierarchiczne')
 plt.show()
 
 # Wizualizacja - dendrogram
-from scipy.cluster.hierarchy import linkage
-
 # przeprowadzenie grupowania hierarchicznego
 linked = linkage(data)
 
