@@ -8,6 +8,7 @@ import seaborn as sns
 from sklearn.cluster import AgglomerativeClustering
 from sklearn.datasets import make_blobs
 import plotly.express as px
+from plotly.subplots import make_subplots
 
 sns.set(font_scale=1.2)
 
@@ -98,8 +99,6 @@ fig = px.scatter(df_cosine, 'x1', 'x2', 'cluster', width=950, height=500,
                  template='plotly_dark', title='Grupowanie hierarchiczne - metryka kosinusowa',
                  color_continuous_midpoint=0.6)
 fig.show()
-
-from plotly.subplots import make_subplots
 
 fig = make_subplots(rows=1, cols=3, column_titles=['euclidean', 'Manhattan', 'cosine'])
 
