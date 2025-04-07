@@ -17,3 +17,5 @@ from sklearn.cluster import DBSCAN
 
 cluster = DBSCAN(eps=0.5, min_samples=5)
 cluster.fit(data)
+
+print(cluster.labels_[:10])
