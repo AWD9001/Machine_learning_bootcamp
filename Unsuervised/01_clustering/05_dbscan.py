@@ -25,3 +25,10 @@ print(cluster.labels_[:10])
 df['cluster'] = cluster.labels_
 px.scatter(df, 'x1', 'x2', 'cluster', width=950, height=500, title='DBSCAN(eps=0.5, min_samples=5)',
            template='plotly_dark', color_continuous_midpoint=0)
+
+cluster = DBSCAN(eps=0.5, min_samples=7)
+cluster.fit(data)
+
+df['cluster'] = cluster.labels_
+px.scatter(df, 'x1', 'x2', 'cluster', width=950, height=500, title='DBSCAN(eps=0.5, min_samples=7)',
+           template='plotly_dark')
