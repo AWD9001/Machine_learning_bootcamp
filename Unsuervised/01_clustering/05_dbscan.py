@@ -54,3 +54,10 @@ px.scatter(df, 'x1', 'x2', 'cluster', width=950, height=500, title='DBSCAN(eps=0
            template='plotly_dark')
 
 df.cluster.value_counts()
+
+cluster = DBSCAN(eps=0.8, min_samples=5)
+cluster.fit(data)
+
+df['cluster'] = cluster.labels_
+px.scatter(df, 'x1', 'x2', 'cluster', width=950, height=500, title='DBSCAN(eps=0.8, min_samples=5)',
+           template='plotly_dark')
