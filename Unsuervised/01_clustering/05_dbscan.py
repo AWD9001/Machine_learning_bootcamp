@@ -2,6 +2,7 @@
 import numpy as np
 import pandas as pd
 import plotly.express as px
+from sklearn.cluster import DBSCAN
 from sklearn.datasets import make_blobs
 
 # Wygenerowanie danych i wizualizacja
@@ -12,8 +13,6 @@ px.scatter(df, 'x1', 'x2', width=950, height=500, title='Klasteryzacja',
            template='plotly_dark')
 
 # DBSCAN
-from sklearn.cluster import DBSCAN
-
 cluster = DBSCAN(eps=0.5, min_samples=5)
 cluster.fit(data)
 
