@@ -15,3 +15,7 @@ from sklearn.datasets import make_circles
 circle_data = make_circles(n_samples=1000, factor=0.5, noise=0.05)[0]
 circle = pd.DataFrame(circle_data, columns=['x1', 'x2'])
 px.scatter(circle, 'x1', 'x2', width=950, height=500, title='circle data', template='plotly_dark')
+
+random_data = np.random.rand(1500, 2)
+random = pd.DataFrame(random_data, columns=['x1', 'x2'])
+px.scatter(random, 'x1', 'x2', width=950, height=500, title='random data', template='plotly_dark')
