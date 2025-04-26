@@ -83,3 +83,33 @@ fig.add_trace(trace3, row=1, col=3)
 
 fig.update_layout(title='KMeans vs. Agglomerative Clustering vs. DBSCAN - circle data',
                   template='plotly_dark', coloraxis = {'colorscale':'viridis'})
+
+# Porównanie algorytmów - moons data - 2 klastry
+fig = make_subplots(rows=1, cols=3, shared_yaxes=True, horizontal_spacing=0.01)
+
+# KMeans
+kmeans = KMeans(n_clusters=2)
+kmeans.fit(moons_data)
+clusters = kmeans.predict(moons_data)
+moons['cluster'] = clusters
+trace1 = px.scatter(moons, 'x1', 'x2', 'cluster', width=800, height=500)['data'][0]
+fig.add_trace(trace1, row=1, col=1)
+
+# AgglomerativeClustering
+agglo = AgglomerativeClustering(n_clusters=2, affinity='euclidean')
+clusters = agglo.fit_predict(moons_data)
+moons['cluster'] = clusters
+trace2 = px.scatter(moons, 'x1', 'x2', 'cluster', width=800, height=500)['data'][0]
+fig.add_trace(trace2, row=1, col=2)
+
+# DBSCAN
+dbscan = DBSCAN(eps=0.07, min_samples=5)
+dbscan.fit(moons_data)
+clusters = dbscan.labels_
+moons['cluster'] = clusters
+trace3 = px.scatter(moons, 'x1', 'x2', 'cluster', width=800, height=500)['data'][0]
+fig.add_trace(trace3, row=1, col=3)
+
+fig.update_layout(title='KMeans vs. Agglomerative Clustering vs. DBSCAN - moons data',
+                  template='plotly_dark',
+                  coloraxis={'colorscale': 'viridis'})
