@@ -2,6 +2,7 @@
 import numpy as np
 import pandas as pd
 import plotly.express as px
+from plotly.subplots import make_subplots
 from sklearn.datasets import make_circles
 from sklearn.datasets import make_blobs
 
@@ -19,8 +20,6 @@ random = pd.DataFrame(random_data, columns=['x1', 'x2'])
 px.scatter(random, 'x1', 'x2', width=950, height=500, title='random data', template='plotly_dark')
 
 # Porównanie algorytmów - blobs data - 3 klastry
-from plotly.subplots import make_subplots
-
 fig = make_subplots(rows=1, cols=3, shared_yaxes=True, horizontal_spacing=0.01)
 
 from sklearn.cluster import KMeans
