@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 import plotly.express as px
 from plotly.subplots import make_subplots
+from sklearn.cluster import KMeans
 from sklearn.datasets import make_circles
 from sklearn.datasets import make_blobs
 
@@ -21,8 +22,6 @@ px.scatter(random, 'x1', 'x2', width=950, height=500, title='random data', templ
 
 # Porównanie algorytmów - blobs data - 3 klastry
 fig = make_subplots(rows=1, cols=3, shared_yaxes=True, horizontal_spacing=0.01)
-
-from sklearn.cluster import KMeans
 
 kmeans = KMeans(n_clusters=3)
 kmeans.fit(blobs_data)
