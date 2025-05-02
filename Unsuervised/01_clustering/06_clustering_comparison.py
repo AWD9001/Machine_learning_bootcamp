@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 import plotly.express as px
 from plotly.subplots import make_subplots
+from sklearn.cluster import AgglomerativeClustering
 from sklearn.cluster import KMeans
 from sklearn.datasets import make_circles
 from sklearn.datasets import make_blobs
@@ -29,8 +30,6 @@ clusters = kmeans.predict(blobs_data)
 blobs['cluster'] = clusters
 trace1 = px.scatter(blobs, 'x1', 'x2', 'cluster', width=800, height=500)['data'][0]
 fig.add_trace(trace1, row=1, col=1)
-
-from sklearn.cluster import AgglomerativeClustering
 
 agglo = AgglomerativeClustering(n_clusters=3, affinity='euclidean')
 clusters = agglo.fit_predict(blobs_data)
