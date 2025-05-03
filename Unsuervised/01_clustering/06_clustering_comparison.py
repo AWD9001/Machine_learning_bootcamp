@@ -4,6 +4,7 @@ import pandas as pd
 import plotly.express as px
 from plotly.subplots import make_subplots
 from sklearn.cluster import AgglomerativeClustering
+from sklearn.cluster import DBSCAN
 from sklearn.cluster import KMeans
 from sklearn.datasets import make_circles
 from sklearn.datasets import make_blobs
@@ -36,8 +37,6 @@ clusters = agglo.fit_predict(blobs_data)
 blobs['cluster'] = clusters
 trace2 = px.scatter(blobs, 'x1', 'x2', 'cluster', width=800, height=500)['data'][0]
 fig.add_trace(trace2, row=1, col=2)
-
-from sklearn.cluster import DBSCAN
 
 dbscan = DBSCAN(eps=0.5, min_samples=5)
 dbscan.fit(blobs_data)
