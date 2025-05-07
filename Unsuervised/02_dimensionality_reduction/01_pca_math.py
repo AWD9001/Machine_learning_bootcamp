@@ -17,3 +17,9 @@ feature_names = list(raw_data['feature_names'])
 feature_names = [name.replace(' ', '_')[:-5] for name in feature_names]
 df = pd.DataFrame(data=np.c_[data, target], columns=feature_names + ['class'])
 df['class'] = df['class'].map({0.0: 'setosa', 1.0: 'versicolor', 2.0: 'virginica'})
+
+# Wizualizacja danych
+
+px.scatter_3d(df, x='sepal_length', y='petal_length', z='petal_width', template='plotly_dark',
+              title='Iris data - wizualizacja 3D (sepal_length, petal_length, petal_width)',
+              color='class', symbol='class', opacity=0.5, width=950, height=700)
