@@ -23,3 +23,13 @@ df['class'] = df['class'].map({0.0: 'setosa', 1.0: 'versicolor', 2.0: 'virginica
 px.scatter_3d(df, x='sepal_length', y='petal_length', z='petal_width', template='plotly_dark',
               title='Iris data - wizualizacja 3D (sepal_length, petal_length, petal_width)',
               color='class', symbol='class', opacity=0.5, width=950, height=700)
+
+# Standaryzacja
+from sklearn.preprocessing import StandardScaler
+
+X = df.iloc[:, [0, 2, 3]]
+y = df.iloc[:, -1]
+
+scaler = StandardScaler()
+X_std = scaler.fit_transform(X)
+print(X_std[:5])
