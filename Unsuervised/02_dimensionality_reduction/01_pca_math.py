@@ -33,3 +33,9 @@ y = df.iloc[:, -1]
 scaler = StandardScaler()
 X_std = scaler.fit_transform(X)
 print(X_std[:5])
+
+# Implementacja PCA
+
+# macierz kowariancji
+cov_mat = np.cov(X_std, rowvar=False)
+print(cov_mat)
