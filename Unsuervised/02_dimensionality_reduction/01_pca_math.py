@@ -39,3 +39,9 @@ print(X_std[:5])
 # macierz kowariancji
 cov_mat = np.cov(X_std, rowvar=False)
 print(cov_mat)
+
+# wektory własne i odpowiadające nim wartości własne macierzy kowariancji
+eig_vals, eig_vecs = np.linalg.eig(cov_mat)
+
+print(f'Wartości własne:\n{eig_vals}\n')
+print(f'Wektory własne:\n{eig_vecs}')
