@@ -45,3 +45,8 @@ eig_vals, eig_vecs = np.linalg.eig(cov_mat)
 
 print(f'Wartości własne:\n{eig_vals}\n')
 print(f'Wektory własne:\n{eig_vecs}')
+
+# posortowanie wektorów według wartości własnych
+eig_pairs = [(np.abs(eig_vals[i]), eig_vecs[:, i]) for i in range(len(eig_vals))]
+eig_pairs.sort(reverse=True)
+print(eig_pairs)
