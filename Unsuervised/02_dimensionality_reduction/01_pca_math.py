@@ -50,3 +50,8 @@ print(f'Wektory własne:\n{eig_vecs}')
 eig_pairs = [(np.abs(eig_vals[i]), eig_vecs[:, i]) for i in range(len(eig_vals))]
 eig_pairs.sort(reverse=True)
 print(eig_pairs)
+
+# obliczenie wartości procentowej wyjaśnionej wariancji
+total = sum(eig_vals)
+explained_variance_ratio = [(i / total) for i in sorted(eig_vals, reverse=True)]
+print(explained_variance_ratio)
