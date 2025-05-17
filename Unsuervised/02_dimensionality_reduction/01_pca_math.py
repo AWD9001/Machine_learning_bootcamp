@@ -4,12 +4,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 import plotly.express as px
+from sklearn.datasets import load_iris
 
 np.set_printoptions(precision=8, suppress=True, edgeitems=5, linewidth=200)
 
 # Wygenerowanie danych
-from sklearn.datasets import load_iris
-
 raw_data = load_iris()
 data = raw_data['data']
 target = raw_data['target']
