@@ -71,3 +71,8 @@ fig = go.Figure(data=[go.Bar(x=results['component'], y=results['explained_varian
 fig.show()
 
 print(eig_pairs)
+
+# obliczenie wartości procentowej wyjaśnionej wariancji
+total = sum(eig_vals)
+explained_variance_ratio = [(i / total) for i in sorted(eig_vals, reverse=True)]
+print(explained_variance_ratio)
