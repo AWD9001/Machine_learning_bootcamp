@@ -76,3 +76,6 @@ print(eig_pairs)
 total = sum(eig_vals)
 explained_variance_ratio = [(i / total) for i in sorted(eig_vals, reverse=True)]
 print(explained_variance_ratio)
+
+cumulative_explained_variance = np.cumsum(explained_variance_ratio)
+print(cumulative_explained_variance)
