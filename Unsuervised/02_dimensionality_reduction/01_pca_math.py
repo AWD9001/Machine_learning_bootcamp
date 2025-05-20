@@ -79,3 +79,8 @@ print(explained_variance_ratio)
 
 cumulative_explained_variance = np.cumsum(explained_variance_ratio)
 print(cumulative_explained_variance)
+
+results = pd.DataFrame(data={'explained_variance_ratio': explained_variance_ratio})
+results['cumulative'] = results['explained_variance_ratio'].cumsum()
+results['component'] = results.index + 1
+print(results)
