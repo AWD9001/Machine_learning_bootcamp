@@ -93,3 +93,7 @@ fig = go.Figure(data=[go.Bar(x=results['component'], y=results['explained_varian
 fig.show()
 
 print(eig_pairs)
+
+# 2 komponenty, W - macierz składająca się z 2 wektorów własnych mających największą wartość własną
+W = np.hstack((eig_pairs[0][1].reshape(3, 1), eig_pairs[1][1].reshape(3, 1)))
+print(W)
