@@ -97,3 +97,9 @@ print(eig_pairs)
 # 2 komponenty, W - macierz składająca się z 2 wektorów własnych mających największą wartość własną
 W = np.hstack((eig_pairs[0][1].reshape(3, 1), eig_pairs[1][1].reshape(3, 1)))
 print(W)
+
+X_pca = X_std.dot(W)
+pca_df = pd.DataFrame(data=X_pca, columns=['pca_1', 'pca_2'])
+pca_df['class'] = df['class']
+pca_df['pca_2'] = - pca_df['pca_2']
+print(pca_df)
