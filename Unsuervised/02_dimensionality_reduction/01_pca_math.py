@@ -105,3 +105,12 @@ pca_df['pca_2'] = - pca_df['pca_2']
 print(pca_df)
 
 px.scatter(pca_df, 'pca_1', 'pca_2', color='class', width=950, template='plotly_dark')
+
+# PCA - scikit-learn
+from sklearn.decomposition import PCA
+
+pca = PCA(n_components=2)
+X_pca = pca.fit_transform(X_std)
+pca_df = pd.DataFrame(data=X_pca, columns=['pca_1', 'pca_2'])
+pca_df['class'] = df['class']
+print(pca_df)
