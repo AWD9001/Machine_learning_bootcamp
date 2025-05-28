@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 import plotly.express as px
 from sklearn.datasets import load_iris
+from sklearn.preprocessing import StandardScaler
 
 np.set_printoptions(precision=8, suppress=True, edgeitems=5, linewidth=200)
 
@@ -24,8 +25,6 @@ px.scatter_3d(df, x='sepal_length', y='petal_length', z='petal_width', template=
               color='class', symbol='class', opacity=0.5, width=950, height=700)
 
 # Standaryzacja
-from sklearn.preprocessing import StandardScaler
-
 X = df.iloc[:, [0, 2, 3]]
 y = df.iloc[:, -1]
 
