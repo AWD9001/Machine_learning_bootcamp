@@ -17,3 +17,5 @@ all_data = raw_data.copy()
 data = all_data['data']
 target = all_data['target']
 print(data[:3])
+
+print(target[:30])
