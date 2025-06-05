@@ -21,3 +21,10 @@ print(data[:3])
 print(target[:30])
 
 print(data.shape)
+
+# Standaryzacja
+from sklearn.preprocessing import StandardScaler
+
+scaler = StandardScaler()
+data_std = scaler.fit_transform(data)
+print(data_std[:3])
