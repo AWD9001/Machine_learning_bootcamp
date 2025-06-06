@@ -28,3 +28,10 @@ from sklearn.preprocessing import StandardScaler
 scaler = StandardScaler()
 data_std = scaler.fit_transform(data)
 print(data_std[:3])
+
+# PCA - 2 komponenty
+from sklearn.decomposition import PCA
+
+pca = PCA(n_components=2)
+data_pca = pca.fit_transform(data_std)
+print(data_pca[:5])
