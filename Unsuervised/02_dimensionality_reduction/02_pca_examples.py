@@ -35,3 +35,8 @@ from sklearn.decomposition import PCA
 pca = PCA(n_components=2)
 data_pca = pca.fit_transform(data_std)
 print(data_pca[:5])
+
+pca_2 = pd.DataFrame(data={'pca_1': data_pca[:, 0], 'pca_2': data_pca[:, 1], 'class': target})
+pca_2.replace(0, 'Benign', inplace=True)
+pca_2.replace(1, 'Malignant', inplace=True)
+print(pca_2.head())
