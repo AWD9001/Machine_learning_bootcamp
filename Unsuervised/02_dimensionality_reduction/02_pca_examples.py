@@ -45,3 +45,5 @@ results = pd.DataFrame(data={'explained_variance_ratio': pca.explained_variance_
 results['cumulative'] = results['explained_variance_ratio'].cumsum()
 results['component'] = results.index + 1
 print(results)
+
+px.scatter(pca_2, 'pca_1', 'pca_2', color=pca_2['class'], width=950, template='plotly_dark')
