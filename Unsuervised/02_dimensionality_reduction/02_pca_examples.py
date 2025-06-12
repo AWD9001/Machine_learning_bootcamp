@@ -57,3 +57,8 @@ pca_3 = pd.DataFrame(data={'pca_1': data_pca[:, 0], 'pca_2': data_pca[:, 1], 'pc
 pca_3.replace(0, 'Benign', inplace=True)
 pca_3.replace(1, 'Malignant', inplace=True)
 print(pca_3.head())
+
+results = pd.DataFrame(data={'explained_variance_ratio': pca.explained_variance_ratio_})
+results['cumulative'] = results['explained_variance_ratio'].cumsum()
+results['component'] = results.index + 1
+print(results)
