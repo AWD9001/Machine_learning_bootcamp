@@ -96,3 +96,7 @@ for i in range(8):
     plt.title(y_train[i], color='white', fontsize=17)
     plt.axis('off')
 plt.show()
+
+X_train = X_train / 255.
+X_test = X_test / 255.
+print(X_train.shape)
