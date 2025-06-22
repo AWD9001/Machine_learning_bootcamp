@@ -103,3 +103,9 @@ print(X_train.shape)
 
 X_train = X_train.reshape(-1, 28 * 28)
 print(X_train.shape)
+
+
+pca = PCA(n_components=3)
+
+X_train_pca = pca.fit_transform(X_train)
+print(X_train_pca[:5])
