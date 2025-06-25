@@ -122,3 +122,5 @@ fig = go.Figure(data=[go.Bar(x=results['component'], y=results['explained_varian
                                  name='cumulative')],
                 layout=go.Layout(title='PCA - 2 components', width=950, template='plotly_dark'))
 fig.show()
+
+px.scatter(pca_2, 'pca_1', 'pca_2', color=pca_2['class'], width=950, template='plotly_dark')
