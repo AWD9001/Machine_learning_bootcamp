@@ -124,3 +124,9 @@ fig = go.Figure(data=[go.Bar(x=results['component'], y=results['explained_varian
 fig.show()
 
 px.scatter(pca_2, 'pca_1', 'pca_2', color=pca_2['class'], width=950, template='plotly_dark')
+
+# PCA - 3 komponenty
+
+pca = PCA(n_components=3)
+data_pca = pca.fit_transform(data_std)
+print(data_pca[:5])
