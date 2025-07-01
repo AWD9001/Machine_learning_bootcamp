@@ -131,7 +131,8 @@ pca = PCA(n_components=3)
 data_pca = pca.fit_transform(data_std)
 print(data_pca[:5])
 
-pca_3 = pd.DataFrame(data={'pca_1': data_pca[:, 0], 'pca_2': data_pca[:, 1], 'pca_3': data_pca[:, 2], 'class': target})
+pca_3 = pd.DataFrame(data={'pca_1': data_pca[:, 0], 'pca_2': data_pca[:, 1],
+                           'pca_3': data_pca[:, 2], 'class': target})
 pca_3.replace(0, 'Benign', inplace=True)
 pca_3.replace(1, 'Malignant', inplace=True)
 print(pca_3.head())
@@ -140,3 +141,10 @@ results = pd.DataFrame(data={'explained_variance_ratio': pca.explained_variance_
 results['cumulative'] = results['explained_variance_ratio'].cumsum()
 results['component'] = results.index + 1
 print(results)
+
+fig = go.Figure(data=[go.Bar(x=results['component'], y=results['explained_variance_ratio'],
+                             name='explained_variance_ratio'),
+                      go.Scatter(x=results['component'], y=results['cumulative'],
+                                 name='cumulative')],
+                layout=go.Layout(title='PCA - 3 components', width=950, template='plotly_dark'))
+fig.show()
