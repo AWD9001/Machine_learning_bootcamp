@@ -134,3 +134,8 @@ print(f'X_train shape: {X_train.shape}')
 print(f'X_test shape: {X_test.shape}')
 print(f'y_train shape: {y_train.shape}')
 print(f'y_test shape: {y_test.shape}')
+
+
+X_train = X_train[:5000]
+y_train = y_train[:5000]
+print(X_train[0].shape)
