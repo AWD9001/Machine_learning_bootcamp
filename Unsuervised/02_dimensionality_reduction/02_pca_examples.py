@@ -141,3 +141,11 @@ y_train = y_train[:5000]
 print(X_train[0].shape)
 
 print(y_train[:5])
+
+targets = {0: 'airplane', 1: 'automobile', 2: 'bird', 3: 'cat', 4: 'deer',
+           5: 'dog', 6: 'frog', 7: 'horse', 8: 'ship', 9: 'truck'}
+
+plt.imshow(X_train[1])
+plt.title(targets[y_train[1][0]], color='white', fontsize=17)
+plt.axis('off')
+plt.show()
