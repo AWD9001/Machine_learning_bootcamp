@@ -149,3 +149,11 @@ plt.imshow(X_train[1])
 plt.title(targets[y_train[1][0]], color='white', fontsize=17)
 plt.axis('off')
 plt.show()
+
+plt.figure(figsize=(12, 8))
+for i in range(8):
+    plt.subplot(240 + i + 1)
+    plt.imshow(X_train[i])
+    plt.title(targets[y_train[i][0]], color='white', fontsize=17)
+    plt.axis('off')
+plt.show()
