@@ -164,3 +164,5 @@ print(X_train.shape)
 
 X_train = X_train.reshape(-1, 32 * 32 * 3)
 print(X_train.shape)
+
+print(X_train[:5])
