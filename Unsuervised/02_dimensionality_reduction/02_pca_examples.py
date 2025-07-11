@@ -166,3 +166,8 @@ X_train = X_train.reshape(-1, 32 * 32 * 3)
 print(X_train.shape)
 
 print(X_train[:5])
+
+pca = PCA(n_components=3)
+
+X_train_pca = pca.fit_transform(X_train)
+print(X_train_pca[:5])
