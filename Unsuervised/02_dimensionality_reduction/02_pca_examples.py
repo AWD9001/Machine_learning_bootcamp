@@ -183,3 +183,9 @@ fig = go.Figure(data=[go.Bar(x=results['component'], y=results['explained_varian
                                  name='cumulative')],
                 layout=go.Layout(title='PCA - 3 components', width=950, template='plotly_dark'))
 fig.show()
+
+X_train_pca_df = pd.DataFrame(np.c_[X_train_pca, y_train],
+                              columns=['pca_1', 'pca_2', 'pca_3', 'class'])
+X_train_pca_df['name'] = X_train_pca_df['class'].map(targets)
+X_train_pca_df['class'] = X_train_pca_df['class'].astype('str')
+print(X_train_pca_df.head())
