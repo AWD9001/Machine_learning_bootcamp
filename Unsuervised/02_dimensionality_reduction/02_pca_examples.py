@@ -189,3 +189,8 @@ X_train_pca_df = pd.DataFrame(np.c_[X_train_pca, y_train],
 X_train_pca_df['name'] = X_train_pca_df['class'].map(targets)
 X_train_pca_df['class'] = X_train_pca_df['class'].astype('str')
 print(X_train_pca_df.head())
+
+
+px.scatter_3d(X_train_pca_df, x='pca_1', y='pca_2', z='pca_3', color='name',
+              symbol='name', opacity=0.7, size_max=10, width=950, height=700,
+              title='PCA - CIFAR dataset', template='plotly_dark')
