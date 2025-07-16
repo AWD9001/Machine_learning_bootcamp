@@ -194,3 +194,8 @@ print(X_train_pca_df.head())
 px.scatter_3d(X_train_pca_df, x='pca_1', y='pca_2', z='pca_3', color='name',
               symbol='name', opacity=0.7, size_max=10, width=950, height=700,
               title='PCA - CIFAR dataset', template='plotly_dark')
+
+pca = PCA(n_components=0.95)
+
+X_train_pca = pca.fit_transform(X_train)
+print(X_train_pca[:5])
