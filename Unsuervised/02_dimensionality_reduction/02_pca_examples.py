@@ -199,3 +199,5 @@ pca = PCA(n_components=0.95)
 
 X_train_pca = pca.fit_transform(X_train)
 print(X_train_pca[:5])
+
+print(pca.n_components_)
