@@ -201,3 +201,5 @@ X_train_pca = pca.fit_transform(X_train)
 print(X_train_pca[:5])
 
 print(pca.n_components_)
+
+print(pca.explained_variance_ratio_)
