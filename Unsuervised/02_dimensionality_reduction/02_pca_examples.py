@@ -203,3 +203,8 @@ print(X_train_pca[:5])
 print(pca.n_components_)
 
 print(pca.explained_variance_ratio_)
+
+results = pd.DataFrame(data={'explained_variance_ratio': pca.explained_variance_ratio_})
+results['cumulative'] = results['explained_variance_ratio'].cumsum()
+results['component'] = results.index + 1
+print(results.head())
