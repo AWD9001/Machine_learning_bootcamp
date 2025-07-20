@@ -208,3 +208,11 @@ results = pd.DataFrame(data={'explained_variance_ratio': pca.explained_variance_
 results['cumulative'] = results['explained_variance_ratio'].cumsum()
 results['component'] = results.index + 1
 print(results.head())
+
+fig = go.Figure(data=[go.Bar(x=results['component'], y=results['explained_variance_ratio'],
+                             name='explained_variance_ratio'),
+                      go.Scatter(x=results['component'], y=results['cumulative'],
+                                 name='cumulative')],
+                layout=go.Layout(title=f'PCA - {pca.n_components_} components', width=950,
+                                 template='plotly_dark'))
+fig.show()
