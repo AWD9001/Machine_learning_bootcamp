@@ -75,7 +75,7 @@ px.scatter_3d(pca_3, x='pca_1', y='pca_2', z='pca_3', color='class', symbol='cla
               opacity=0.7, size_max=10, width=950, template='plotly_dark')
 
 # Zbiór danych MNIST
-from keras.datasets import mnist
+from tensorflow.keras.datasets import mnist
 
 (X_train, y_train), (X_test, y_test) = mnist.load_data()
 
@@ -127,7 +127,7 @@ fig.show()
 px.scatter(pca_2, 'pca_1', 'pca_2', color=pca_2['class'], width=950, template='plotly_dark')
 
 # Zbiór danych Cifar
-from keras.datasets import cifar10
+from tensorflow.keras.datasets import cifar10
 
 (X_train, y_train), (X_test, y_test) = cifar10.load_data()
 
