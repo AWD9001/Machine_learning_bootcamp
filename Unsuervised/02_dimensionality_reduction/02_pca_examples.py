@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 import plotly.express as px
 from sklearn.datasets import load_breast_cancer
+from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
 
 np.set_printoptions(precision=4, suppress=True, linewidth=150)
@@ -27,8 +28,6 @@ data_std = scaler.fit_transform(data)
 print(data_std[:3])
 
 # PCA - 2 komponenty
-from sklearn.decomposition import PCA
-
 pca = PCA(n_components=2)
 data_pca = pca.fit_transform(data_std)
 print(data_pca[:5])
