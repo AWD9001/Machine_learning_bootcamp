@@ -8,6 +8,7 @@ import plotly.express as px
 from sklearn.datasets import load_breast_cancer
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
+from tensorflow.keras.datasets import mnist
 
 np.set_printoptions(precision=4, suppress=True, linewidth=150)
 
@@ -71,8 +72,6 @@ px.scatter_3d(pca_3, x='pca_1', y='pca_2', z='pca_3', color='class', symbol='cla
               opacity=0.7, size_max=10, width=950, template='plotly_dark')
 
 # Zbiór danych MNIST
-from tensorflow.keras.datasets import mnist
-
 (X_train, y_train), (X_test, y_test) = mnist.load_data()
 
 print(f'X_train shape: {X_train.shape}')
