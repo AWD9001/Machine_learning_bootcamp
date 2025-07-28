@@ -8,6 +8,7 @@ import plotly.express as px
 from sklearn.datasets import load_breast_cancer
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
+from tensorflow.keras.datasets import cifar10
 from tensorflow.keras.datasets import mnist
 
 np.set_printoptions(precision=4, suppress=True, linewidth=150)
@@ -122,8 +123,6 @@ fig.show()
 px.scatter(pca_2, 'pca_1', 'pca_2', color=pca_2['class'], width=950, template='plotly_dark')
 
 # Zbiór danych Cifar
-from tensorflow.keras.datasets import cifar10
-
 (X_train, y_train), (X_test, y_test) = cifar10.load_data()
 
 print(f'X_train shape: {X_train.shape}')
