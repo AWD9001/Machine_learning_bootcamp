@@ -7,7 +7,7 @@ import plotly.express as px
 from sklearn.datasets import load_breast_cancer
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
-from tensorflow.keras.datasets import cifar10
+from keras.datasets import cifar10
 from tensorflow.keras.datasets import mnist
 
 np.set_printoptions(precision=4, suppress=True, linewidth=150)
