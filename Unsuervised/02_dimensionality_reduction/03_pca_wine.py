@@ -12,3 +12,8 @@ df_raw = pd.read_csv('https://archive.ics.uci.edu/ml/machine-learning-databases/
                      header=None)
 df = df_raw.copy()
 df.head()
+
+
+data = df.iloc[:, 1:]
+target = df.iloc[:, 0]
+data.head()
