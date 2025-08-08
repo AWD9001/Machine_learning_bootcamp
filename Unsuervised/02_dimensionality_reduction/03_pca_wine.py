@@ -17,3 +17,7 @@ df.head()
 data = df.iloc[:, 1:]
 target = df.iloc[:, 0]
 data.head()
+
+data = df.iloc[:, 1:]
+target = df.iloc[:, 0]
+data.head()
