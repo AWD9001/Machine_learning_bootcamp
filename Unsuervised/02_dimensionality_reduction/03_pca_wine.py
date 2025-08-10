@@ -20,3 +20,10 @@ data.head()
 
 target.value_counts()
 
+# Podział na zbiór treningowy i testowy
+from sklearn.model_selection import train_test_split
+
+X_train, X_test, y_train, y_test = train_test_split(data, target)
+
+print(f'X_train shape: {X_train.shape}')
+print(f'X_test shape: {X_test.shape}')
