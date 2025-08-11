@@ -27,3 +27,12 @@ X_train, X_test, y_train, y_test = train_test_split(data, target)
 
 print(f'X_train shape: {X_train.shape}')
 print(f'X_test shape: {X_test.shape}')
+
+# Standaryzacja
+
+from sklearn.preprocessing import StandardScaler
+
+scaler = StandardScaler()
+X_train_std = scaler.fit_transform(X_train)
+X_test_std = scaler.transform(X_test)
+print(X_train_std[:5])
