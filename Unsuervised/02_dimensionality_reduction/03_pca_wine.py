@@ -36,3 +36,12 @@ scaler = StandardScaler()
 X_train_std = scaler.fit_transform(X_train)
 X_test_std = scaler.transform(X_test)
 print(X_train_std[:5])
+
+# PCA
+
+from sklearn.decomposition import PCA
+
+pca = PCA(n_components=3)
+X_train_pca = pca.fit_transform(X_train_std)
+X_test_pca = pca.transform(X_test_std)
+print(X_train_pca.shape)
