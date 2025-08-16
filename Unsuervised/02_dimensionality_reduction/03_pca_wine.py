@@ -62,3 +62,4 @@ fig.show()
 X_train_pca_df = pd.DataFrame(data=np.c_[X_train_pca, y_train],
                               columns=['pca1', 'pca2', 'pca3', 'target'])
 print(X_train_pca_df.head())
+
