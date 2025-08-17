@@ -63,3 +63,5 @@ X_train_pca_df = pd.DataFrame(data=np.c_[X_train_pca, y_train],
                               columns=['pca1', 'pca2', 'pca3', 'target'])
 print(X_train_pca_df.head())
 
+px.scatter_3d(X_train_pca_df, x='pca1', y='pca2', z='pca3', color='target',
+              template='plotly_dark', width=950)
