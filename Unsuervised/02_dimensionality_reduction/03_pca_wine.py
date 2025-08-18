@@ -65,3 +65,5 @@ print(X_train_pca_df.head())
 
 px.scatter_3d(X_train_pca_df, x='pca1', y='pca2', z='pca3', color='target',
               template='plotly_dark', width=950)
+
+print(X_train_pca[:5])
