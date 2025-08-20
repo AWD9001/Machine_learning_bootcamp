@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import plotly.graph_objects as go
 import plotly.express as px
+from sklearn.model_selection import train_test_split
 
 np.set_printoptions(precision=4, suppress=True, edgeitems=5, linewidth=200)
 
@@ -21,8 +22,6 @@ data.head()
 target.value_counts()
 
 # Podział na zbiór treningowy i testowy
-from sklearn.model_selection import train_test_split
-
 X_train, X_test, y_train, y_test = train_test_split(data, target)
 
 print(f'X_train shape: {X_train.shape}')
