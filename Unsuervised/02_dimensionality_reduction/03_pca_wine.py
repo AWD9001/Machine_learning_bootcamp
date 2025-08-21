@@ -4,6 +4,7 @@ import numpy as np
 import plotly.graph_objects as go
 import plotly.express as px
 from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
 
 np.set_printoptions(precision=4, suppress=True, edgeitems=5, linewidth=200)
 
@@ -28,9 +29,6 @@ print(f'X_train shape: {X_train.shape}')
 print(f'X_test shape: {X_test.shape}')
 
 # Standaryzacja
-
-from sklearn.preprocessing import StandardScaler
-
 scaler = StandardScaler()
 X_train_std = scaler.fit_transform(X_train)
 X_test_std = scaler.transform(X_test)
