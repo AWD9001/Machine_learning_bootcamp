@@ -14,3 +14,11 @@ print(f'y_test shape: {y_test.shape}')
 
 X_train = X_train[:5000]
 y_train = y_train[:5000]
+
+plt.figure(figsize=(12, 8))
+for i in range(8):
+    plt.subplot(240 + i + 1)
+    plt.imshow(X_train[i], cmap='gray_r')
+    plt.title(y_train[i], color='white', fontsize=17)
+    plt.axis('off')
+plt.show()
