@@ -22,3 +22,6 @@ for i in range(8):
     plt.title(y_train[i], color='white', fontsize=17)
     plt.axis('off')
 plt.show()
+
+X_train = X_train.reshape(-1, 28 * 28)
+print(X_train.shape)
