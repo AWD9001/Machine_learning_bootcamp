@@ -27,3 +27,11 @@ X_train = X_train.reshape(-1, 28 * 28)
 print(X_train.shape)
 
 X_train = X_train / 255.
+
+# PCA
+
+from sklearn.decomposition import PCA
+
+pca = PCA(n_components=0.95)
+X_train_pca = pca.fit_transform(X_train)
+print(X_train_pca.shape)
