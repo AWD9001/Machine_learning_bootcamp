@@ -47,3 +47,5 @@ fig = go.Figure(data=[go.Bar(x=results['component'], y=results['explained_varian
                                  name='cumulative')],
                 layout=go.Layout(title='PCA - 3 components', width=950, template='plotly_dark'))
 fig.show()
+
+print(X_train_pca[0].shape)
