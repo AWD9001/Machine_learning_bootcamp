@@ -49,3 +49,6 @@ fig = go.Figure(data=[go.Bar(x=results['component'], y=results['explained_varian
 fig.show()
 
 print(X_train_pca[0].shape)
+
+approx = pca.inverse_transform(X_train_pca)
+print(approx[0].shape)
