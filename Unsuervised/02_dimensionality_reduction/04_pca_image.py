@@ -52,3 +52,14 @@ print(X_train_pca[0].shape)
 
 approx = pca.inverse_transform(X_train_pca)
 print(approx[0].shape)
+
+plt.subplot(121)
+plt.imshow(X_train[0].reshape(28, 28), cmap='gray_r', interpolation='nearest')
+plt.xlabel('784 components', color='white', fontsize=14)
+plt.title('Original image', color='white', fontsize=16)
+
+plt.subplot(122)
+plt.imshow(approx[0].reshape(28, 28), cmap='gray_r', interpolation='nearest')
+plt.xlabel(f'{pca.n_components_} components', color='white', fontsize=14)
+plt.title('95% variance', color='white', fontsize=16)
+plt.show()
