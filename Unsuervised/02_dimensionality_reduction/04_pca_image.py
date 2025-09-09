@@ -63,3 +63,16 @@ plt.imshow(approx[0].reshape(28, 28), cmap='gray_r', interpolation='nearest')
 plt.xlabel(f'{pca.n_components_} components', color='white', fontsize=14)
 plt.title('95% variance', color='white', fontsize=16)
 plt.show()
+
+# Porównanie procentu wyjaśnionej wariancji
+
+def make_pca(n_components, data, idx=0):
+
+    pca = PCA(n_components=n_components)
+    data_pca = pca.fit_transform(data)
+
+    approx = pca.inverse_transform(data_pca)
+
+    plt.imshow(approx[idx].reshape(28, 28), cmap='gray_r', interpolation='nearest')
+    plt.xlabel(f'{pca.n_components_} components', color='white', fontsize=12)
+    plt.title(f'{str(n_components)}% var', color='white', fontsize=15)
