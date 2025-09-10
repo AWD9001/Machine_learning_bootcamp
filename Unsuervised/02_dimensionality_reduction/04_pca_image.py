@@ -66,6 +66,7 @@ plt.show()
 
 # Porównanie procentu wyjaśnionej wariancji
 
+
 def make_pca(n_components, data, idx=0):
 
     pca = PCA(n_components=n_components)
@@ -76,3 +77,10 @@ def make_pca(n_components, data, idx=0):
     plt.imshow(approx[idx].reshape(28, 28), cmap='gray_r', interpolation='nearest')
     plt.xlabel(f'{pca.n_components_} components', color='white', fontsize=12)
     plt.title(f'{str(n_components)}% var', color='white', fontsize=15)
+
+
+plt.figure(figsize=(16, 10))
+for i, val in enumerate([0.99, 0.95, 0.90, 0.85, 0.8, 0.75, 0.7, 0.5]):
+    plt.subplot(180 + i + 1)
+    make_pca(val, X_train)
+plt.show()
