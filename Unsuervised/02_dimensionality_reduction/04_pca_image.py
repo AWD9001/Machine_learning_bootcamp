@@ -91,3 +91,10 @@ for i, val in enumerate([0.99, 0.95, 0.90, 0.85, 0.8, 0.75, 0.7, 0.5]):
     plt.subplot(180 + i + 1)
     make_pca(val, X_train, idx=1)
 plt.show()
+
+
+plt.figure(figsize=(16, 10))
+for i, val in enumerate([0.99, 0.95, 0.90, 0.85, 0.8, 0.75, 0.7, 0.5]):
+    plt.subplot(180 + i + 1)
+    make_pca(val, X_train, idx=4)
+plt.show()
