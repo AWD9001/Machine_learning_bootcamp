@@ -68,7 +68,6 @@ plt.show()
 
 
 def make_pca(n_components, data, idx=0):
-
     pca = PCA(n_components=n_components)
     data_pca = pca.fit_transform(data)
 
