@@ -35,3 +35,10 @@ from sklearn.preprocessing import StandardScaler
 
 scaler = StandardScaler()
 X_train_std = scaler.fit_transform(X_train)
+
+# PCA
+from sklearn.decomposition import PCA
+
+pca = PCA(n_components=3)
+X_train_pca = pca.fit_transform(X_train_std)
+print(X_train_pca.shape)
