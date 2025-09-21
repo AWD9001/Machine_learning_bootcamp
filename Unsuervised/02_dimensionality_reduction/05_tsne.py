@@ -42,3 +42,8 @@ from sklearn.decomposition import PCA
 pca = PCA(n_components=3)
 X_train_pca = pca.fit_transform(X_train_std)
 print(X_train_pca.shape)
+
+results = pd.DataFrame(data={'explained_variance_ratio': pca.explained_variance_ratio_})
+results['cumulative'] = results['explained_variance_ratio'].cumsum()
+results['component'] = results.index + 1
+print(results)
