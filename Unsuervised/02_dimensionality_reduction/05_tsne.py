@@ -56,6 +56,10 @@ fig = go.Figure(data=[go.Bar(x=results['component'], y=results['explained_varian
 fig.show()
 
 
-X_train_pca_df = pd.DataFrame(data=np.c_[X_train_pca, y_train], columns=['pca_1', 'pca_2', 'pca_3', 'class'])
+X_train_pca_df = pd.DataFrame(data=np.c_[X_train_pca, y_train], columns=['pca_1', 'pca_2', 'pca_3',
+                                                                         'class'])
 X_train_pca_df['class'] = X_train_pca_df['class'].astype(str)
 print(X_train_pca_df.head())
+
+px.scatter(X_train_pca_df, x='pca_1', y='pca_2', color='class', opacity=0.5, width=950,
+           title='PCA - 2 components', template='plotly_dark')
