@@ -63,3 +63,7 @@ print(X_train_pca_df.head())
 
 px.scatter(X_train_pca_df, x='pca_1', y='pca_2', color='class', opacity=0.5, width=950,
            title='PCA - 2 components', template='plotly_dark')
+
+px.scatter_3d(X_train_pca_df, x='pca_1', y='pca_2', z='pca_3', color='class',
+              opacity=0.5, width=950, height=700, title='PCA - 3 components',
+              template='plotly_dark')
