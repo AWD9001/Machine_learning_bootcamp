@@ -73,3 +73,8 @@ from sklearn.manifold import TSNE
 
 tsne = TSNE(n_components=2, verbose=1)
 X_train_tsne = tsne.fit_transform(X_train_std)
+
+
+X_train_tsne_df = pd.DataFrame(data=np.c_[X_train_tsne, y_train], columns=['tsne_1', 'tsne_2', 'class'])
+X_train_tsne_df['class'] = X_train_tsne_df['class'].astype(str)
+X_train_tsne_df
