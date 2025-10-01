@@ -82,3 +82,17 @@ print(X_train_tsne_df)
 
 px.scatter(X_train_tsne_df, x='tsne_1', y='tsne_2', color='class', opacity=0.5,
            width=950, height=700, template='plotly_dark', title='TSNE - 2 components')
+
+# Porównanie PCA vs. t-SNE
+from plotly.subplots import make_subplots
+
+fig = make_subplots(rows=1, cols=2, subplot_titles=['PCA', 't-SNE'], horizontal_spacing=0.03)
+
+fig1 = px.scatter(X_train_pca_df, x='pca_1', y='pca_2', color='class', opacity=0.5)
+fig2 = px.scatter(X_train_tsne_df, x='tsne_1', y='tsne_2', color='class', opacity=0.5)
+
+for i in range(0, 10):
+    fig.add_trace(fig1['data'][i], row=1, col=1)
+    fig.add_trace(fig2['data'][i], row=1, col=2)
+fig.update_layout(width=950, showlegend=False, template='plotly_dark')
+fig.show()
