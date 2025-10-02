@@ -96,3 +96,9 @@ for i in range(0, 10):
     fig.add_trace(fig2['data'][i], row=1, col=2)
 fig.update_layout(width=950, showlegend=False, template='plotly_dark')
 fig.show()
+
+# 50 komponentów
+
+pca = PCA(n_components=50)
+X_train_pca = pca.fit_transform(X_train_std)
+print(X_train_pca.shape)
