@@ -102,3 +102,6 @@ fig.show()
 pca = PCA(n_components=50)
 X_train_pca = pca.fit_transform(X_train_std)
 print(X_train_pca.shape)
+
+tsne = TSNE(n_components=2, verbose=1)
+X_train_tsne_50 = tsne.fit_transform(X_train_pca)
