@@ -105,3 +105,8 @@ print(X_train_pca.shape)
 
 tsne = TSNE(n_components=2, verbose=1)
 X_train_tsne_50 = tsne.fit_transform(X_train_pca)
+
+X_train_tsne_50_df = pd.DataFrame(data=np.c_[X_train_tsne_50, y_train],
+                                  columns=['tsne_1', 'tsne_2', 'class'])
+X_train_tsne_50_df['class'] = X_train_tsne_50_df['class'].astype(str)
+print(X_train_tsne_50_df)
