@@ -98,7 +98,6 @@ fig.update_layout(width=950, showlegend=False, template='plotly_dark')
 fig.show()
 
 # 50 komponentów
-
 pca = PCA(n_components=50)
 X_train_pca = pca.fit_transform(X_train_std)
 print(X_train_pca.shape)
@@ -110,3 +109,7 @@ X_train_tsne_50_df = pd.DataFrame(data=np.c_[X_train_tsne_50, y_train],
                                   columns=['tsne_1', 'tsne_2', 'class'])
 X_train_tsne_50_df['class'] = X_train_tsne_50_df['class'].astype(str)
 print(X_train_tsne_50_df)
+
+px.scatter(X_train_tsne_50_df, x='tsne_1', y='tsne_2', color='class', opacity=0.5, width=950,
+           height=700,
+           template='plotly_dark', title='t-SNE - 2 components after PCA')
