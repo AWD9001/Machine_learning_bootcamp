@@ -126,3 +126,6 @@ for i in range(0, 10):
     fig.add_trace(fig3['data'][i], row=1, col=3)
 fig.update_layout(width=950, height=450, showlegend=False, template='plotly_dark')
 fig.show()
+
+tsne = TSNE(n_components=3, verbose=1)
+X_train_tsne = tsne.fit_transform(X_train_pca)
