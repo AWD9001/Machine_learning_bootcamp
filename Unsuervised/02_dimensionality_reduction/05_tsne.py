@@ -129,3 +129,8 @@ fig.show()
 
 tsne = TSNE(n_components=3, verbose=1)
 X_train_tsne = tsne.fit_transform(X_train_pca)
+
+X_train_tsne_df = pd.DataFrame(data=np.c_[X_train_tsne, y_train],
+                               columns=['tsne_1', 'tsne_2', 'tsne_3', 'class'])
+X_train_tsne_df['class'] = X_train_tsne_df['class'].astype(str)
+print(X_train_tsne_df)
