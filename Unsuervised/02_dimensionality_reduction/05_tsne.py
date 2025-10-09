@@ -134,3 +134,7 @@ X_train_tsne_df = pd.DataFrame(data=np.c_[X_train_tsne, y_train],
                                columns=['tsne_1', 'tsne_2', 'tsne_3', 'class'])
 X_train_tsne_df['class'] = X_train_tsne_df['class'].astype(str)
 print(X_train_tsne_df)
+
+px.scatter_3d(X_train_tsne_df, x='tsne_1', y='tsne_2', z='tsne_3', color='class',
+              opacity=0.5, width=950, height=700, template='plotly_dark',
+              title='TSNE - 3 components')
