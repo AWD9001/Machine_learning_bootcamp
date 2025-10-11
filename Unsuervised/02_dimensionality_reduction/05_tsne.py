@@ -5,6 +5,7 @@ from keras.datasets import mnist
 import plotly.graph_objects as go
 import plotly.express as px
 import matplotlib.pyplot as plt
+from sklearn.preprocessing import StandardScaler
 
 np.random.seed(42)
 
@@ -31,8 +32,6 @@ X_train = X_train.reshape(-1, 28 * 28)
 print(X_train.shape)
 
 # Standaryzacja
-from sklearn.preprocessing import StandardScaler
-
 scaler = StandardScaler()
 X_train_std = scaler.fit_transform(X_train)
 
