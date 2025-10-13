@@ -5,6 +5,7 @@ from keras.datasets import mnist
 import plotly.graph_objects as go
 import plotly.express as px
 import matplotlib.pyplot as plt
+from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
 
 np.random.seed(42)
@@ -36,8 +37,6 @@ scaler = StandardScaler()
 X_train_std = scaler.fit_transform(X_train)
 
 # PCA
-from sklearn.decomposition import PCA
-
 pca = PCA(n_components=3)
 X_train_pca = pca.fit_transform(X_train_std)
 print(X_train_pca.shape)
