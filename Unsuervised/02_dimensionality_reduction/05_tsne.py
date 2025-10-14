@@ -6,6 +6,7 @@ import plotly.graph_objects as go
 import plotly.express as px
 import matplotlib.pyplot as plt
 from sklearn.decomposition import PCA
+from sklearn.manifold import TSNE
 from sklearn.preprocessing import StandardScaler
 
 np.random.seed(42)
@@ -67,8 +68,6 @@ px.scatter_3d(X_train_pca_df, x='pca_1', y='pca_2', z='pca_3', color='class',
               template='plotly_dark')
 
 # t-SNE
-from sklearn.manifold import TSNE
-
 tsne = TSNE(n_components=2, verbose=1)
 X_train_tsne = tsne.fit_transform(X_train_std)
 
