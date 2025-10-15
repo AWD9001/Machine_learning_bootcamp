@@ -4,6 +4,7 @@ import numpy as np
 from keras.datasets import mnist
 import plotly.graph_objects as go
 import plotly.express as px
+from plotly.subplots import make_subplots
 import matplotlib.pyplot as plt
 from sklearn.decomposition import PCA
 from sklearn.manifold import TSNE
@@ -81,8 +82,6 @@ px.scatter(X_train_tsne_df, x='tsne_1', y='tsne_2', color='class', opacity=0.5,
            width=950, height=700, template='plotly_dark', title='TSNE - 2 components')
 
 # Porównanie PCA vs. t-SNE
-from plotly.subplots import make_subplots
-
 fig = make_subplots(rows=1, cols=2, subplot_titles=['PCA', 't-SNE'], horizontal_spacing=0.03)
 
 fig1 = px.scatter(X_train_pca_df, x='pca_1', y='pca_2', color='class', opacity=0.5)
