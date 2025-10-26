@@ -23,3 +23,6 @@ for col in expand.columns:
 
 products.sort()
 print(products)
+
+transactions_encoded = np.zeros((len(transactions), len(products)), dtype='int8')
+print(transactions_encoded)
