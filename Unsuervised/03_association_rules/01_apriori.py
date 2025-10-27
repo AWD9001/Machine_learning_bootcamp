@@ -26,3 +26,11 @@ print(products)
 
 transactions_encoded = np.zeros((len(transactions), len(products)), dtype='int8')
 print(transactions_encoded)
+
+# kodowanie 0-1
+for row in zip(range(len(transactions)), transactions_encoded, expand.values):
+    for idx, product in enumerate(products):
+        if product in row[2]:
+            transactions_encoded[row[0], idx] = 1
+
+print(transactions_encoded)
