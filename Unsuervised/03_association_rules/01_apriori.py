@@ -34,3 +34,6 @@ for row in zip(range(len(transactions)), transactions_encoded, expand.values):
             transactions_encoded[row[0], idx] = 1
 
 print(transactions_encoded)
+
+transactions_encoded_df = pd.DataFrame(transactions_encoded, columns=products)
+print(transactions_encoded_df)
