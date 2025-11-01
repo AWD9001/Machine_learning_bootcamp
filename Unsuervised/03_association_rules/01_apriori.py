@@ -43,3 +43,10 @@ from mlxtend.frequent_patterns import apriori, association_rules
 
 supports = apriori(transactions_encoded_df, min_support=0.0, use_colnames=True)
 print(supports)
+
+supports = apriori(transactions_encoded_df, min_support=0.3, use_colnames=True)
+print(supports)
+
+rules = association_rules(supports, metric='confidence', min_threshold=0.65)
+rules = rules.iloc[:, [0, 1, 4, 5, 6]]
+print(rules)
