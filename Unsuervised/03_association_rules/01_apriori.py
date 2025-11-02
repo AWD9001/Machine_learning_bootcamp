@@ -50,3 +50,5 @@ print(supports)
 rules = association_rules(supports, metric='confidence', min_threshold=0.65)
 rules = rules.iloc[:, [0, 1, 4, 5, 6]]
 print(rules)
+
+rules.sort_values(by='lift', ascending=False)
