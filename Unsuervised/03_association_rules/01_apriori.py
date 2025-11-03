@@ -1,4 +1,5 @@
 # Import bibliotek
+from mlxtend.frequent_patterns import apriori, association_rules
 import numpy as np
 import pandas as pd
 
@@ -39,8 +40,6 @@ transactions_encoded_df = pd.DataFrame(transactions_encoded, columns=products)
 print(transactions_encoded_df)
 
 # Algorytm Apriori
-from mlxtend.frequent_patterns import apriori, association_rules
-
 supports = apriori(transactions_encoded_df, min_support=0.0, use_colnames=True)
 print(supports)
 
