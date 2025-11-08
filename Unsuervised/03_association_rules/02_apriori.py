@@ -7,3 +7,5 @@ pd.set_option('display.float_format', lambda x: f'{x:.2f}')
 !wget https://storage.googleapis.com/esmartdata-courses-files/ml-course/products.csv
 !wget https://storage.googleapis.com/esmartdata-courses-files/ml-course/orders.csv
 
+products = pd.read_csv('products.csv', usecols=['product_id', 'product_name'])
+print(products.head())
