@@ -9,3 +9,7 @@ pd.set_option('display.float_format', lambda x: f'{x:.2f}')
 
 products = pd.read_csv('products.csv', usecols=['product_id', 'product_name'])
 print(products.head())
+
+
+orders = pd.read_csv('orders.csv', usecols=['order_id', 'product_id'])
+print(orders.head())
