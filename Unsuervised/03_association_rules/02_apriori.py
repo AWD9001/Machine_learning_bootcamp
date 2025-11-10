@@ -13,3 +13,8 @@ print(products.head())
 
 orders = pd.read_csv('orders.csv', usecols=['order_id', 'product_id'])
 print(orders.head())
+
+# Przygotowanie danych
+data = pd.merge(orders, products, how='inner', on='product_id', sort=True)
+data = data.sort_values(by='order_id')
+data.head()
