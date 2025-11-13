@@ -20,3 +20,6 @@ data = data.sort_values(by='order_id')
 data.head()
 
 data.describe()
+
+# rozkład produktów
+data['product_name'].value_counts()
