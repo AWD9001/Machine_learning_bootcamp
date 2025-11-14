@@ -23,3 +23,6 @@ data.describe()
 
 # rozkład produktów
 data['product_name'].value_counts()
+
+# liczba transakcji
+data['order_id'].nunique()
