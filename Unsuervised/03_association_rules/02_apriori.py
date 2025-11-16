@@ -29,3 +29,6 @@ data['order_id'].nunique()
 
 transactions = data.groupby(by='order_id')['product_name'].apply(lambda name: ','.join(name))
 print(transactions)
+
+transactions = transactions.str.split(',')
+print(transactions)
