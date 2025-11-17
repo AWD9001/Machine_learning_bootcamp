@@ -32,3 +32,12 @@ print(transactions)
 
 transactions = transactions.str.split(',')
 print(transactions)
+
+# Kodowanie transakcji
+
+from mlxtend.preprocessing import TransactionEncoder
+
+encoder = TransactionEncoder()
+encoder.fit(transactions)
+transactions_encoded = encoder.transform(transactions, sparse=True)
+print(transactions_encoded)
