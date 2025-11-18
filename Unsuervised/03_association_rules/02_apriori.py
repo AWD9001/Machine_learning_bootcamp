@@ -34,10 +34,12 @@ transactions = transactions.str.split(',')
 print(transactions)
 
 # Kodowanie transakcji
-
 from mlxtend.preprocessing import TransactionEncoder
 
 encoder = TransactionEncoder()
 encoder.fit(transactions)
 transactions_encoded = encoder.transform(transactions, sparse=True)
 print(transactions_encoded)
+
+transactions_encoded_df = pd.DataFrame(transactions_encoded.toarray(), columns=encoder.columns_)
+print(transactions_encoded_df)
