@@ -43,3 +43,10 @@ print(transactions_encoded)
 
 transactions_encoded_df = pd.DataFrame(transactions_encoded.toarray(), columns=encoder.columns_)
 print(transactions_encoded_df)
+
+# Algorytm Apriori
+from mlxtend.frequent_patterns import apriori, association_rules
+
+supports = apriori(transactions_encoded_df, min_support=0.01, use_colnames=True, n_jobs=-1)
+supports = supports.sort_values(by='support', ascending=False)
+supports.head(10)
