@@ -10,10 +10,8 @@ pd.set_option('display.float_format', lambda x: f'{x:.2f}')
 products = pd.read_csv('products.csv', usecols=['product_id', 'product_name'])
 print(products.head())
 
-
 orders = pd.read_csv('orders.csv', usecols=['order_id', 'product_id'])
 print(orders.head())
-
 
 # Przygotowanie danych
 data = pd.merge(orders, products, how='inner', on='product_id', sort=True)
@@ -51,3 +49,8 @@ from mlxtend.frequent_patterns import apriori, association_rules
 supports = apriori(transactions_encoded_df, min_support=0.01, use_colnames=True, n_jobs=-1)
 supports = supports.sort_values(by='support', ascending=False)
 supports.head(10)
+
+rules = association_rules(supports, metric='confidence', min_threshold=0)
+rules = rules.iloc[:, [0, 1, 4, 5, 6]]
+rules = rules.sort_values(by='lift', ascending=False)
+rules.head(15)
