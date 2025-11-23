@@ -1,4 +1,5 @@
 # Import bibliotek
+from mlxtend.preprocessing import TransactionEncoder
 import pandas as pd
 pd.set_option('display.float_format', lambda x: f'{x:.2f}')
 
@@ -32,8 +33,6 @@ transactions = transactions.str.split(',')
 print(transactions)
 
 # Kodowanie transakcji
-from mlxtend.preprocessing import TransactionEncoder
-
 encoder = TransactionEncoder()
 encoder.fit(transactions)
 transactions_encoded = encoder.transform(transactions, sparse=True)
