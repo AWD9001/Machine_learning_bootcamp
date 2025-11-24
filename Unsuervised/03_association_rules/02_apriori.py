@@ -1,4 +1,5 @@
 # Import bibliotek
+from mlxtend.frequent_patterns import apriori, association_rules
 from mlxtend.preprocessing import TransactionEncoder
 import pandas as pd
 pd.set_option('display.float_format', lambda x: f'{x:.2f}')
@@ -42,8 +43,6 @@ transactions_encoded_df = pd.DataFrame(transactions_encoded.toarray(), columns=e
 print(transactions_encoded_df)
 
 # Algorytm Apriori
-from mlxtend.frequent_patterns import apriori, association_rules
-
 supports = apriori(transactions_encoded_df, min_support=0.01, use_colnames=True, n_jobs=-1)
 supports = supports.sort_values(by='support', ascending=False)
 supports.head(10)
