@@ -43,7 +43,7 @@ transactions_encoded_df = pd.DataFrame(transactions_encoded.toarray(), columns=e
 print(transactions_encoded_df)
 
 # Algorytm Apriori
-supports = apriori(transactions_encoded_df, min_support=0.01, use_colnames=True, n_jobs=-1)
+supports = apriori(transactions_encoded_df, min_support=0.01, use_colnames=True)
 supports = supports.sort_values(by='support', ascending=False)
 supports.head(10)
 
