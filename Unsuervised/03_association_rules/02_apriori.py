@@ -17,7 +17,7 @@ print(orders.head())
 # Przygotowanie danych
 data = pd.merge(orders, products, how='inner', on='product_id', sort=True)
 data = data.sort_values(by='order_id')
-data.head()
+print(data.head())
 
 data.describe()
 
