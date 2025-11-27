@@ -19,7 +19,7 @@ data = pd.merge(orders, products, how='inner', on='product_id', sort=True)
 data = data.sort_values(by='order_id')
 print(data.head())
 
-data.describe()
+print(data.describe())
 
 # rozkład produktów
 data['product_name'].value_counts()
