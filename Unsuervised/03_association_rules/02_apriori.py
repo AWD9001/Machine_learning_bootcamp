@@ -25,7 +25,7 @@ print(data.describe())
 print(data['product_name'].value_counts())
 
 # liczba transakcji
-data['order_id'].nunique()
+print(data['order_id'].nunique())
 
 transactions = data.groupby(by='order_id')['product_name'].apply(lambda name: ','.join(name))
 print(transactions)
