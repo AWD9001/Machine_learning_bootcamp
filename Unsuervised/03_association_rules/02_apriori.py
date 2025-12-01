@@ -45,7 +45,7 @@ print(transactions_encoded_df)
 # Algorytm Apriori
 supports = apriori(transactions_encoded_df, min_support=0.01, use_colnames=True)
 supports = supports.sort_values(by='support', ascending=False)
-supports.head(10)
+print(supports.head(10))
 
 rules = association_rules(supports, metric='confidence', min_threshold=0)
 rules = rules.iloc[:, [0, 1, 4, 5, 6]]
