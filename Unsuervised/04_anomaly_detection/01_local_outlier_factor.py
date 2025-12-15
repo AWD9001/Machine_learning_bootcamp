@@ -33,3 +33,9 @@ plt.scatter(data[:, 0], data[:, 1], label='data', cmap='tab10')
 plt.title('Local Outlier Factor')
 plt.legend()
 plt.show()
+
+from sklearn.neighbors import LocalOutlierFactor
+
+lof = LocalOutlierFactor(n_neighbors=20)
+y_pred = lof.fit_predict(data)
+y_pred[:10]
