@@ -42,3 +42,7 @@ y_pred[:10]
 
 all_data = np.c_[data, y_pred]
 all_data[:5]
+
+tmp['y_pred'] = y_pred
+px.scatter(tmp, x='x1', y='x2', color='y_pred', width=950,
+           title='Local Outlier Factor', template='plotly_dark')
