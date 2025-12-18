@@ -46,3 +46,9 @@ all_data[:5]
 tmp['y_pred'] = y_pred
 px.scatter(tmp, x='x1', y='x2', color='y_pred', width=950,
            title='Local Outlier Factor', template='plotly_dark')
+
+plt.figure(figsize=(12, 7))
+plt.scatter(all_data[:, 0], all_data[:, 1], c=all_data[:, 2], cmap='tab10', label='data')
+plt.title('Local Outlier Factor')
+plt.legend()
+plt.show()
