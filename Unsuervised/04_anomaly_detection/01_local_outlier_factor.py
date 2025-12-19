@@ -52,3 +52,7 @@ plt.scatter(all_data[:, 0], all_data[:, 1], c=all_data[:, 2], cmap='tab10', labe
 plt.title('Local Outlier Factor')
 plt.legend()
 plt.show()
+
+LOF_scores = lof.negative_outlier_factor_
+radius = (LOF_scores.max() - LOF_scores) / (LOF_scores.max() - LOF_scores.min())
+radius[:5]
