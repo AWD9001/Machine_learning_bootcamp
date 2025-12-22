@@ -64,3 +64,12 @@ plt.title('Local Outlier Factor')
 legend = plt.legend()
 legend.legendHandles[1]._sizes = [40]
 plt.show()
+
+plt.figure(figsize=(12, 7))
+plt.scatter(all_data[:, 0], all_data[:, 1], c=all_data[:, 2], cmap='tab10', label='data')
+plt.scatter(all_data[:, 0], all_data[:, 1], s=2000 * radius, edgecolors='r', facecolors='none',
+            label='outlier scores')
+plt.title('Local Outlier Factor')
+legend = plt.legend()
+legend.legendHandles[1]._sizes = [40]
+plt.show()
