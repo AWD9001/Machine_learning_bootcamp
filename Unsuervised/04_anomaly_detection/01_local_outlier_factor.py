@@ -12,7 +12,7 @@ np.random.seed(10)
 
 # Wygenerowanie danych
 data = make_blobs(n_samples=300, cluster_std=2.0, random_state=10)[0]
-data[:5]
+print(data[:5])
 
 # Wizualizacja danych
 tmp = pd.DataFrame(data=data, columns={'x1', 'x2'})
