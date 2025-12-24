@@ -38,7 +38,7 @@ from sklearn.neighbors import LocalOutlierFactor
 
 lof = LocalOutlierFactor(n_neighbors=20)
 y_pred = lof.fit_predict(data)
-y_pred[:10]
+print(y_pred[:10])
 
 all_data = np.c_[data, y_pred]
 all_data[:5]
