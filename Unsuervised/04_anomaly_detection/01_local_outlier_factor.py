@@ -55,7 +55,7 @@ plt.show()
 
 LOF_scores = lof.negative_outlier_factor_
 radius = (LOF_scores.max() - LOF_scores) / (LOF_scores.max() - LOF_scores.min())
-radius[:5]
+print(radius[:5])
 
 plt.figure(figsize=(12, 7))
 plt.scatter(all_data[:, 0], all_data[:, 1], label='data', cmap='tab10')
