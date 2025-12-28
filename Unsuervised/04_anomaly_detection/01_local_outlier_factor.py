@@ -24,7 +24,8 @@ fig2 = px.scatter(tmp, x='x1', y='x2', width=700, title='Outliers', opacity=0.5)
 
 fig.add_trace(fig1['data'][0])
 fig.add_trace(fig2['data'][0])
-fig.update_traces(marker=dict(size=4, line=dict(width=2, color='white')), selector=dict(mode='markers'))
+fig.update_traces(marker=dict(size=4, line=dict(width=2, color='white')),
+                  selector=dict(mode='markers'))
 fig.update_layout(template='plotly_dark', width=950)
 fig.show()
 
