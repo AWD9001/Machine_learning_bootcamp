@@ -23,3 +23,6 @@ from sklearn.ensemble import IsolationForest
 # contamination in [0, 0.05]
 outlier = IsolationForest(n_estimators=100, contamination=0.05)
 outlier.fit(data)
+
+y_pred = outlier.predict(data)
+print(y_pred[:30])
