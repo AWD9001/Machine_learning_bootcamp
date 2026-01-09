@@ -26,3 +26,8 @@ outlier.fit(data)
 
 y_pred = outlier.predict(data)
 print(y_pred[:30])
+
+# Isolation Forset - wizualizacja
+data['outlier_flag'] = y_pred
+px.scatter(data, x='item_length', y='item_width', color='outlier_flag', width=950,
+           template='plotly_dark', color_continuous_midpoint=-1, title='Isolation Forest')
