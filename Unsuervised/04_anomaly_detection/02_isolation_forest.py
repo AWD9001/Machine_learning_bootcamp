@@ -9,7 +9,7 @@ sns.set()
 
 # Wczytanie danych
 data = pd.read_csv('https://storage.googleapis.com/esmartdata-courses-files/ml-course/factory.csv')
-data.head()
+print(data.head())
 
 data.describe()
 
