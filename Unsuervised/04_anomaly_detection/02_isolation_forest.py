@@ -2,6 +2,7 @@
 import pandas as pd
 import plotly.express as px
 import seaborn as sns
+from sklearn.ensemble import IsolationForest
 
 sns.set()
 
@@ -16,8 +17,6 @@ px.scatter(data, x='item_length', y='item_width', width=950, template='plotly_da
            title='Isolation Forest')
 
 # Isolation Forset
-from sklearn.ensemble import IsolationForest
-
 # contamination in [0, 0.05]
 outlier = IsolationForest(n_estimators=100, contamination=0.05)
 print(outlier.fit(data))
