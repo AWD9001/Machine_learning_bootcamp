@@ -11,3 +11,5 @@ fbprophet.__version__
 df = pd.read_csv('https://storage.googleapis.com/esmartdata-courses-files/ml-course/traffic.csv',
                  parse_dates=['timestamp'])
 df.head()
+
+df.info()
