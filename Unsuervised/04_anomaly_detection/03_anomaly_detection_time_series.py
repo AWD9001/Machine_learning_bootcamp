@@ -20,3 +20,6 @@ px.line(df, x='timestamp', y='count', title='Anomaly Detection - web traffic', w
 
 px.scatter(df, x='timestamp', y='count', title='Anomaly Detection - web traffic', width=950,
            height=500, template='plotly_dark', color_discrete_sequence=['#42f5d4'])
+
+# Przygotowanie danych
+df.head(3)
