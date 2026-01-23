@@ -23,3 +23,7 @@ px.scatter(df, x='timestamp', y='count', title='Anomaly Detection - web traffic'
 
 # Przygotowanie danych
 df.head(3)
+
+data = df.copy()
+data.columns = ['ds', 'y']
+data.head(3)
