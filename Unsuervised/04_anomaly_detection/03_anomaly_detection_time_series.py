@@ -27,3 +27,8 @@ df.head(3)
 data = df.copy()
 data.columns = ['ds', 'y']
 data.head(3)
+
+# Prophet - budowa modelu
+from fbprophet import Prophet
+
+# Prophet?
