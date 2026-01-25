@@ -31,4 +31,10 @@ data.head(3)
 # Prophet - budowa modelu
 from fbprophet import Prophet
 
-# Prophet?
+print(Prophet?)
+
+model = Prophet(daily_seasonality=True, yearly_seasonality=False, weekly_seasonality=False,
+                interval_width=0.99, changepoint_range=0.8)
+
+model.fit(data)
+forecast = model.predict(data)
