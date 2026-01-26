@@ -38,3 +38,5 @@ model = Prophet(daily_seasonality=True, yearly_seasonality=False, weekly_seasona
 
 model.fit(data)
 forecast = model.predict(data)
+
+forecast.head(3)
