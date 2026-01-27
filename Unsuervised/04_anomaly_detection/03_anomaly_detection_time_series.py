@@ -40,3 +40,5 @@ model.fit(data)
 forecast = model.predict(data)
 
 forecast.head(3)
+
+forecast[['ds', 'trend', 'yhat', 'yhat_lower', 'yhat_upper']].head(3)
