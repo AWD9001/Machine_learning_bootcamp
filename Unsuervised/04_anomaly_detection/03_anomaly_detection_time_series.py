@@ -42,3 +42,9 @@ forecast = model.predict(data)
 forecast.head(3)
 
 forecast[['ds', 'trend', 'yhat', 'yhat_lower', 'yhat_upper']].head(3)
+
+forecast['real'] = data['y']
+forecast['anomaly'] = 1
+forecast.loc[forecast['real'] > forecast['yhat_upper'], 'anomaly'] = -1
+forecast.loc[forecast['real'] < forecast['yhat_lower'], 'anomaly'] = -1
+forecast.head(3)
