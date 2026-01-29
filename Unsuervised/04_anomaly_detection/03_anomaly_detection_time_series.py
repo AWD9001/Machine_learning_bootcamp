@@ -48,3 +48,7 @@ forecast['anomaly'] = 1
 forecast.loc[forecast['real'] > forecast['yhat_upper'], 'anomaly'] = -1
 forecast.loc[forecast['real'] < forecast['yhat_lower'], 'anomaly'] = -1
 forecast.head(3)
+
+# Wizualizacja działania modelu
+px.scatter(forecast, x='ds', y='real', color='anomaly', color_continuous_scale='Bluyl',
+           title='Anomaly Detection in Time Series', template='plotly_dark', width=950, height=500)
