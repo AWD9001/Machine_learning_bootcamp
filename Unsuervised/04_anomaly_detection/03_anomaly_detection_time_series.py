@@ -55,3 +55,6 @@ px.scatter(forecast, x='ds', y='real', color='anomaly', color_continuous_scale='
 
 future = model.make_future_dataframe(periods=1440, freq='Min')
 print(future)
+
+forecast = model.predict(future)
+forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']].head()
