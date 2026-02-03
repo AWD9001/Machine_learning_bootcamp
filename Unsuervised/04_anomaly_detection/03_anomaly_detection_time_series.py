@@ -58,3 +58,5 @@ print(future)
 
 forecast = model.predict(future)
 forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']].head()
+
+_ = model.plot(forecast)
