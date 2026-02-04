@@ -60,3 +60,7 @@ forecast = model.predict(future)
 forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']].head()
 
 _ = model.plot(forecast)
+
+from fbprophet.plot import plot_plotly
+
+plot_plotly(model, forecast, xlabel='czas', ylabel='ruch webowy')
