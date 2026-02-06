@@ -66,3 +66,9 @@ _ = model.plot_components(forecast)
 from fbprophet.plot import plot_plotly
 
 plot_plotly(model, forecast, xlabel='czas', ylabel='ruch webowy')
+
+# Budowa modelu - wrzesień
+
+data_sep = df[df['timestamp'].dt.month == 9]
+data_sep.columns = ['ds', 'y']
+data_sep.head()
