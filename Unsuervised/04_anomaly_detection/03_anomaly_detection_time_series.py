@@ -72,3 +72,10 @@ plot_plotly(model, forecast, xlabel='czas', ylabel='ruch webowy')
 data_sep = df[df['timestamp'].dt.month == 9]
 data_sep.columns = ['ds', 'y']
 data_sep.head()
+
+model = Prophet(daily_seasonality=True, yearly_seasonality=False, weekly_seasonality=False,
+                seasonality_mode='multiplicative', interval_width=0.99, changepoint_range=0.8)
+
+model.fit(data_sep)
+forecast = model.predict(data_sep)
+forecast[['ds', 'trend', 'yhat', 'yhat_lower', 'yhat_upper']].head(3)
