@@ -79,3 +79,9 @@ model = Prophet(daily_seasonality=True, yearly_seasonality=False, weekly_seasona
 model.fit(data_sep)
 forecast = model.predict(data_sep)
 forecast[['ds', 'trend', 'yhat', 'yhat_lower', 'yhat_upper']].head(3)
+
+forecast['real'] = data['y']
+forecast['anomaly'] = 1
+forecast.loc[forecast['real'] > forecast['yhat_upper'], 'anomaly'] = -1
+forecast.loc[forecast['real'] < forecast['yhat_lower'], 'anomaly'] = -1
+print(forecast.head(3))
