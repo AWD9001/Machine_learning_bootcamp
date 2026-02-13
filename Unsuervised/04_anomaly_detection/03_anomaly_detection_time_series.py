@@ -89,3 +89,6 @@ print(forecast.head(3))
 px.scatter(forecast, x='ds', y='real', color='anomaly', color_continuous_scale='Bluyl',
            title='Anomaly Detection in Time Series - September', template='plotly_dark',
            width=950, height=500)
+
+future = model.make_future_dataframe(periods=1440, freq='Min')
+print(future)
