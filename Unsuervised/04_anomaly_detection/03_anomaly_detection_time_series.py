@@ -97,3 +97,5 @@ forecast = model.predict(future)
 forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']].head()
 
 _ = model.plot(forecast)
+
+plot_plotly(model, forecast, xlabel='czas', ylabel='ruch webowy')
