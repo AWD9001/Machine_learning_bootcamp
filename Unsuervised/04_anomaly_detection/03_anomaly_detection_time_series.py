@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 import plotly.express as px
 import fbprophet
+from fbprophet import Prophet
 
 np.random.seed(41)
 fbprophet.__version__
@@ -29,8 +30,6 @@ data.columns = ['ds', 'y']
 data.head(3)
 
 # Prophet - budowa modelu
-from fbprophet import Prophet
-
 print(Prophet?)
 
 model = Prophet(daily_seasonality=True, yearly_seasonality=False, weekly_seasonality=False,
