@@ -4,6 +4,7 @@ import pandas as pd
 import plotly.express as px
 import fbprophet
 from fbprophet import Prophet
+from fbprophet.plot import plot_plotly
 
 np.random.seed(41)
 fbprophet.__version__
@@ -61,8 +62,6 @@ forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']].head()
 _ = model.plot(forecast)
 
 _ = model.plot_components(forecast)
-
-from fbprophet.plot import plot_plotly
 
 plot_plotly(model, forecast, xlabel='czas', ylabel='ruch webowy')
 
