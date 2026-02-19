@@ -7,7 +7,7 @@ from fbprophet import Prophet
 from fbprophet.plot import plot_plotly
 
 np.random.seed(41)
-fbprophet.__version__
+print(fbprophet.__version__)
 
 # Załadowanie danych
 df = pd.read_csv('https://storage.googleapis.com/esmartdata-courses-files/ml-course/traffic.csv',
