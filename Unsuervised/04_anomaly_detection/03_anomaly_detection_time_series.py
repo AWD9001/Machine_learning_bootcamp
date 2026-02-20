@@ -12,7 +12,7 @@ print(fbprophet.__version__)
 # Załadowanie danych
 df = pd.read_csv('https://storage.googleapis.com/esmartdata-courses-files/ml-course/traffic.csv',
                  parse_dates=['timestamp'])
-df.head()
+print(df.head())
 
 df.info()
 
