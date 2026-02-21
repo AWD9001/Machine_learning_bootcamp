@@ -14,7 +14,7 @@ df = pd.read_csv('https://storage.googleapis.com/esmartdata-courses-files/ml-cou
                  parse_dates=['timestamp'])
 print(df.head())
 
-df.info()
+print(df.info())
 
 # Wizualizacja danych
 px.line(df, x='timestamp', y='count', title='Anomaly Detection - web traffic', width=950,
