@@ -39,7 +39,7 @@ model = Prophet(daily_seasonality=True, yearly_seasonality=False, weekly_seasona
 model.fit(data)
 forecast = model.predict(data)
 
-forecast.head(3)
+print(forecast.head(3))
 
 forecast[['ds', 'trend', 'yhat', 'yhat_lower', 'yhat_upper']].head(3)
 
