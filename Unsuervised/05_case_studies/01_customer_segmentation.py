@@ -11,3 +11,7 @@ url = 'https://storage.googleapis.com/esmartdata-courses-files/ml-course/OnlineR
 raw_data = pd.read_csv(url, encoding='latin', parse_dates=['InvoiceDate'])
 data = raw_data.copy()
 data.head(3)
+
+# Eksploracja danych
+
+data.info()
