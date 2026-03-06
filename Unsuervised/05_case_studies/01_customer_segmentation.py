@@ -15,3 +15,5 @@ data.head(3)
 # Eksploracja danych
 
 data.info()
+
+data.describe()
