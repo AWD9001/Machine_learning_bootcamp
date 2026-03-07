@@ -17,3 +17,5 @@ data.head(3)
 data.info()
 
 data.describe()
+
+data.describe(include=['object'])
