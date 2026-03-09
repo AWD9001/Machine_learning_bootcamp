@@ -19,3 +19,5 @@ data.info()
 data.describe()
 
 data.describe(include=['object'])
+
+data.describe(include=['datetime'])
