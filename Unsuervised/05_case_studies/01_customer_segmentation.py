@@ -21,3 +21,5 @@ data.describe()
 data.describe(include=['object'])
 
 data.describe(include=['datetime'])
+
+data.isnull().sum()
