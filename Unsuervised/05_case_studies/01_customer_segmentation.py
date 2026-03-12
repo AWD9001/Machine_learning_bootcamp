@@ -23,3 +23,7 @@ data.describe(include=['object'])
 data.describe(include=['datetime'])
 
 data.isnull().sum()
+
+# usunięcie braków
+data = data.dropna()
+data.isnull().sum()
