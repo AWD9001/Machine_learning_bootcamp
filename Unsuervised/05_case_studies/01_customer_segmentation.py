@@ -27,3 +27,5 @@ data.isnull().sum()
 # usunięcie braków
 data = data.dropna()
 data.isnull().sum()
+
+data['Country'].value_counts()
