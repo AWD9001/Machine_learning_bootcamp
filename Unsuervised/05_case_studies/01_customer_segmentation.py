@@ -29,3 +29,9 @@ data = data.dropna()
 data.isnull().sum()
 
 data['Country'].value_counts()
+
+tmp = data['Country'].value_counts().reset_index()
+tmp.columns = ['Country', 'Count']
+tmp.query("Count > 200", inplace=True)
+px.bar(tmp, x='Country', y='Count', template='plotly_dark', color_discrete_sequence=['#03fcb5'],
+       title='Częstotliwość zakupów ze względu na kraj')
