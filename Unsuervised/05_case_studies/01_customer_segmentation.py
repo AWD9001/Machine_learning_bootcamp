@@ -14,7 +14,7 @@ data.head(3)
 
 # Eksploracja danych
 
-data.info()
+print(data.info())
 
 data.describe()
 
