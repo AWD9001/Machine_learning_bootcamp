@@ -16,7 +16,7 @@ data.head(3)
 
 print(data.info())
 
-data.describe()
+print(data.describe())
 
 data.describe(include=['object'])
 
