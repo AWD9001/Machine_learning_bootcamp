@@ -35,3 +35,7 @@ tmp.columns = ['Country', 'Count']
 tmp.query("Count > 200", inplace=True)
 px.bar(tmp, x='Country', y='Count', template='plotly_dark', color_discrete_sequence=['#03fcb5'],
        title='Częstotliwość zakupów ze względu na kraj')
+
+# obcięcie tylko do United Kingdom
+data_uk = data.query("Country == 'United Kingdom'").copy()
+data_uk.head()
