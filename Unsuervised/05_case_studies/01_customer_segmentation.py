@@ -39,3 +39,8 @@ px.bar(tmp, x='Country', y='Count', template='plotly_dark', color_discrete_seque
 # obcięcie tylko do United Kingdom
 data_uk = data.query("Country == 'United Kingdom'").copy()
 data_uk.head()
+
+
+# utworzenie nowej zmiennej Sales
+data_uk['Sales'] = data_uk['Quantity'] * data_uk['UnitPrice']
+data_uk.head()
