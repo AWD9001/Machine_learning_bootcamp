@@ -72,3 +72,15 @@ data_uk.head()
 tmp = data_uk.groupby(data_uk['InvoiceDate'].dt.date)['Sales'].sum().reset_index()
 tmp.columns = ['InvoiceDate', 'Sales']
 tmp.head()
+
+fig = make_subplots(rows=2, cols=1, shared_xaxes=True, vertical_spacing=0.02)
+
+trace1 = px.line(tmp, x='InvoiceDate', y='Sales', template='plotly_dark',
+                 color_discrete_sequence=['#03fcb5'])['data'][0]
+trace2 = px.scatter(tmp, x='InvoiceDate', y='Sales', template='plotly_dark',
+                    color_discrete_sequence=['#03fcb5'])['data'][0]
+
+fig.add_trace(trace1, row=1, col=1)
+fig.add_trace(trace2, row=2, col=1)
+fig.update_layout(template='plotly_dark', title='Łączna sprzedaż ze względu na datę', width=950)
+fig.show()
