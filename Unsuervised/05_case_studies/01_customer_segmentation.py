@@ -84,3 +84,8 @@ fig.add_trace(trace1, row=1, col=1)
 fig.add_trace(trace2, row=2, col=1)
 fig.update_layout(template='plotly_dark', title='Łączna sprzedaż ze względu na datę', width=950)
 fig.show()
+
+# Wyznacznie retencji klienta
+# wydobycie unikalnych wartości CustomerID
+data_user = pd.DataFrame(data['CustomerID'].unique(), columns=['CustomerID'])
+data_user.head(3)
