@@ -94,3 +94,5 @@ data_user.head(3)
 last_purchase = data_uk.groupby('CustomerID')['InvoiceDate'].max().reset_index()
 last_purchase.columns = ['CustomerID', 'LastPurchaseDate']
 last_purchase.head()
+
+last_purchase['LastPurchaseDate'].max()
