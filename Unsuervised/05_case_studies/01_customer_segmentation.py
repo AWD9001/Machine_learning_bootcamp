@@ -18,7 +18,7 @@ print(data.info())
 
 print(data.describe())
 
-data.describe(include=['object'])
+print(data.describe(include=['object']))
 
 data.describe(include=['datetime'])
 
