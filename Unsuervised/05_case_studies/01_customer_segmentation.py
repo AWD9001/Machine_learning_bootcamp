@@ -96,3 +96,5 @@ last_purchase.columns = ['CustomerID', 'LastPurchaseDate']
 last_purchase.head()
 
 last_purchase['LastPurchaseDate'].max()
+
+last_purchase['LastPurchaseDate'].min()
