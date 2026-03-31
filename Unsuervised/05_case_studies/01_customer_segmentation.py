@@ -98,3 +98,9 @@ last_purchase.head()
 last_purchase['LastPurchaseDate'].max()
 
 last_purchase['LastPurchaseDate'].min()
+
+# wyznaczenie retencji jako liczby dni od daty ostatniego
+# kupna klienta do maksymalnej (ostatniej) daty kupna w danych
+last_purchase['Retention'] = (last_purchase['LastPurchaseDate'].max() -
+                              last_purchase['LastPurchaseDate']).dt.days
+last_purchase.head()
