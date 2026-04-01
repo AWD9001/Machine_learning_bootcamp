@@ -104,3 +104,5 @@ last_purchase['LastPurchaseDate'].min()
 last_purchase['Retention'] = (last_purchase['LastPurchaseDate'].max() -
                               last_purchase['LastPurchaseDate']).dt.days
 last_purchase.head()
+
+last_purchase['Retention'].value_counts()
