@@ -106,3 +106,7 @@ last_purchase['Retention'] = (last_purchase['LastPurchaseDate'].max() -
 last_purchase.head()
 
 last_purchase['Retention'].value_counts()
+
+px.histogram(last_purchase, x='Retention', template='plotly_dark',
+             width=950, height=500, title='Retention', nbins=100,
+             color_discrete_sequence=['#03fcb5'])
