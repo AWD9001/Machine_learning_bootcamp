@@ -110,3 +110,8 @@ last_purchase['Retention'].value_counts()
 px.histogram(last_purchase, x='Retention', template='plotly_dark',
              width=950, height=500, title='Retention', nbins=100,
              color_discrete_sequence=['#03fcb5'])
+
+# połaczenie CustomerID oraz retencji
+data_user = pd.merge(data_user, last_purchase, on='CustomerID')
+data_user = data_user[['CustomerID', 'Retention']]
+data_user.head()
