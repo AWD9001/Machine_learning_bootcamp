@@ -121,3 +121,10 @@ px.scatter(data_user, x='CustomerID', y='Retention', template='plotly_dark',
 
 data_retention = data_user[['Retention']]
 data_retention.head()
+
+# standaryzacja danych
+from sklearn.preprocessing import StandardScaler
+
+scaler = StandardScaler()
+data_user['RetentionScaled'] = scaler.fit_transform(data_retention)
+data_user.head()
