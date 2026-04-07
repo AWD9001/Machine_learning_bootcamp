@@ -128,3 +128,6 @@ from sklearn.preprocessing import StandardScaler
 scaler = StandardScaler()
 data_user['RetentionScaled'] = scaler.fit_transform(data_retention)
 data_user.head()
+
+px.scatter(data_user, x='CustomerID', y='RetentionScaled', template='plotly_dark', width=950,
+           color_discrete_sequence=['#03fcb5'])
