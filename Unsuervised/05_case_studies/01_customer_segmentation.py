@@ -131,3 +131,6 @@ data_user.head()
 
 px.scatter(data_user, x='CustomerID', y='RetentionScaled', template='plotly_dark', width=950,
            color_discrete_sequence=['#03fcb5'])
+
+data_retention_scaled = data_user[['RetentionScaled']]
+data_retention_scaled.head()
