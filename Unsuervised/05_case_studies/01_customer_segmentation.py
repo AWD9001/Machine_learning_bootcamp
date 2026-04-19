@@ -167,3 +167,9 @@ px.bar(tmp, x='Cluster', y='MeanRetention', template='plotly_dark', width=950,
 
 px.scatter(data_user, x='CustomerID', y='Retention', color='Cluster', template='plotly_dark',
            width=950, title='Wizualizacja klastrów')
+
+tmp = data_user['Cluster'].value_counts().reset_index()
+tmp.columns = ['Cluster', 'Count']
+px.bar(tmp, x='Cluster', y='Count', template='plotly_dark', color_discrete_sequence=['#03fcb5'],
+       width=950,
+       title='Rozkład częstości klastrów')
