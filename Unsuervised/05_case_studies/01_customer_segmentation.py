@@ -173,3 +173,12 @@ tmp.columns = ['Cluster', 'Count']
 px.bar(tmp, x='Cluster', y='Count', template='plotly_dark', color_discrete_sequence=['#03fcb5'],
        width=950,
        title='Rozkład częstości klastrów')
+
+# Retencja - DBSCAN
+from sklearn.cluster import DBSCAN
+
+dbscan = DBSCAN(eps=0.03, min_samples=5)
+dbscan.fit(data_retention_scaled)
+clusters = dbscan.labels_
+data_user['Cluster'] = clusters
+data_user.head()
