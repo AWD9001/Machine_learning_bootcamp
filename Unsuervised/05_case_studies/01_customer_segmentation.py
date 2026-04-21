@@ -182,3 +182,7 @@ dbscan.fit(data_retention_scaled)
 clusters = dbscan.labels_
 data_user['Cluster'] = clusters
 data_user.head()
+
+px.scatter(data_user, x='CustomerID', y='Retention', color='Cluster', template='plotly_dark',
+           width=950,
+           title='Wizualizacja klastrów')
