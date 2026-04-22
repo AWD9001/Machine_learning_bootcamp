@@ -186,3 +186,7 @@ data_user.head()
 px.scatter(data_user, x='CustomerID', y='Retention', color='Cluster', template='plotly_dark',
            width=950,
            title='Wizualizacja klastrów')
+
+# Sprzedaż
+data_sales = data_uk.groupby('CustomerID')['Sales'].sum().reset_index()
+data_sales.head()
