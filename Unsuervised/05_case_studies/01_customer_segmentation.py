@@ -190,3 +190,6 @@ px.scatter(data_user, x='CustomerID', y='Retention', color='Cluster', template='
 # Sprzedaż
 data_sales = data_uk.groupby('CustomerID')['Sales'].sum().reset_index()
 data_sales.head()
+
+data_user = pd.merge(data_user, data_sales, on='CustomerID')
+data_user.head()
