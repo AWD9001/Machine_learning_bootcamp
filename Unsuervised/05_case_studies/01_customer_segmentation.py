@@ -193,3 +193,7 @@ data_sales.head()
 
 data_user = pd.merge(data_user, data_sales, on='CustomerID')
 data_user.head()
+
+scaler = StandardScaler()
+data_user['SalesScaled'] = scaler.fit_transform(data_user[['Sales']])
+data_user.head()
