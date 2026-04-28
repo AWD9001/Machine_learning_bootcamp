@@ -204,3 +204,6 @@ px.scatter(data_user, x='CustomerID', y='Sales', template='plotly_dark',
 px.scatter(data_user, x='CustomerID', y='SalesScaled', template='plotly_dark',
            color_discrete_sequence=['#03fcb5'],
            title='Sprzedaż w rozbiciu na klienta - dane przeskalowane')
+
+data_sales_scaled = data_user[['SalesScaled']]
+data_sales_scaled.head()
