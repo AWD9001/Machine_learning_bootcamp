@@ -207,3 +207,13 @@ px.scatter(data_user, x='CustomerID', y='SalesScaled', template='plotly_dark',
 
 data_sales_scaled = data_user[['SalesScaled']]
 data_sales_scaled.head()
+
+# Sprzedaż - KMeans
+wcss = []
+for i in range(1, 10):
+    kmeans = KMeans(n_clusters=i, max_iter=1000)
+    kmeans.fit(data_sales_scaled)
+    wcss.append(kmeans.inertia_)
+
+wcss = pd.DataFrame(data=np.c_[range(1, 10), wcss], columns=['NumberOfClusters', 'WCSS'])
+print(wcss)
