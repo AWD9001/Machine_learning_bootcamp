@@ -225,7 +225,7 @@ kmeans = KMeans(n_clusters=3, max_iter=1000)
 kmeans.fit(data_retention_scaled)
 
 data_user['Cluster'] = kmeans.labels_
-data_user.head()
+print(data_user.head())
 
 tmp = data_user.groupby('Cluster')['Retention'].describe()
 print(tmp)
