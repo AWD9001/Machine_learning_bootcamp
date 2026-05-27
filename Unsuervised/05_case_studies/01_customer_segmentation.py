@@ -296,3 +296,6 @@ kmeans.fit(data_sales_scaled)
 data_user['Cluster'] = kmeans.labels_
 data_user['Cluster'] = data_user['Cluster'].astype(str)
 data_user.head()
+
+kmeans.cluster_centers_
+
