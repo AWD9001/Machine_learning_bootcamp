@@ -263,7 +263,7 @@ data_user.head()
 
 scaler = StandardScaler()
 data_user['SalesScaled'] = scaler.fit_transform(data_user[['Sales']])
-data_user.head()
+print(data_user.head())
 
 
 px.scatter(data_user, x='CustomerID', y='Sales', template='plotly_dark',
