@@ -310,3 +310,6 @@ clusters = dbscan.labels_
 data_user['Cluster'] = clusters
 data_user['Cluster'] = data_user['Cluster'].astype(str)
 data_user.head()
+
+px.scatter(data_user, x='CustomerID', y='Sales', color='Cluster', template='plotly_dark', width=950,
+           title='DBSCAN - Wizualizacja klastrów')
