@@ -313,3 +313,6 @@ data_user.head()
 
 px.scatter(data_user, x='CustomerID', y='Sales', color='Cluster', template='plotly_dark', width=950,
            title='DBSCAN - Wizualizacja klastrów')
+
+# Retencja, sprzedaż - KMeans
+data_user.head()
