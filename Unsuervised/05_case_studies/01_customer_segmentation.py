@@ -316,3 +316,6 @@ px.scatter(data_user, x='CustomerID', y='Sales', color='Cluster', template='plot
 
 # Retencja, sprzedaż - KMeans
 data_user.head()
+
+px.scatter(data_user, x='RetentionScaled', y='SalesScaled', template='plotly_dark', width=950,
+           title='Retencja vs. Sprzedaż')
