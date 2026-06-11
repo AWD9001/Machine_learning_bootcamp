@@ -322,3 +322,12 @@ px.scatter(data_user, x='RetentionScaled', y='SalesScaled', template='plotly_dar
 
 data_scaled = data_user[['RetentionScaled', 'SalesScaled']]
 data_scaled.head()
+
+wcss = []
+for i in range(1, 10):
+    kmeans = KMeans(n_clusters=i, max_iter=1000)
+    kmeans.fit(data_scaled)
+    wcss.append(kmeans.inertia_)
+
+wcss = pd.DataFrame(data=np.c_[range(1, 10), wcss], columns=['NumberOfClusters', 'WCSS'])
+print(wcss)
