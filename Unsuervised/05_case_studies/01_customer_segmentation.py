@@ -331,3 +331,7 @@ for i in range(1, 10):
 
 wcss = pd.DataFrame(data=np.c_[range(1, 10), wcss], columns=['NumberOfClusters', 'WCSS'])
 print(wcss)
+
+px.line(wcss, x='NumberOfClusters', y='WCSS', template='plotly_dark',
+        color_discrete_sequence=['#03fcb5'], width=950,
+        title='WCSS')
