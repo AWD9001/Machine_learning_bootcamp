@@ -335,3 +335,6 @@ print(wcss)
 px.line(wcss, x='NumberOfClusters', y='WCSS', template='plotly_dark',
         color_discrete_sequence=['#03fcb5'], width=950,
         title='WCSS')
+
+kmeans = KMeans(n_clusters=5, max_iter=1000)
+kmeans.fit(data_scaled)
