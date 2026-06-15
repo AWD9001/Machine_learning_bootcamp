@@ -338,3 +338,7 @@ px.line(wcss, x='NumberOfClusters', y='WCSS', template='plotly_dark',
 
 kmeans = KMeans(n_clusters=5, max_iter=1000)
 kmeans.fit(data_scaled)
+
+data_user['Cluster'] = kmeans.labels_
+data_user['Cluster'] = data_user['Cluster'].astype(str)
+data_user.head()
