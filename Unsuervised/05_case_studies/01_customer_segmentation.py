@@ -352,3 +352,6 @@ fig = px.scatter(data_user, x='RetentionScaled', y='SalesScaled', color='Cluster
 fig.add_trace(go.Scatter(x=centroids[:, 0], y=centroids[:, 1], mode='markers',
                          marker_symbol='star', marker_size=10, marker_color='white',
                          showlegend=False))
+
+desc = data_user.groupby('Cluster')[['Retention', 'Sales']].describe()
+print(desc)
