@@ -341,7 +341,7 @@ kmeans.fit(data_scaled)
 
 data_user['Cluster'] = kmeans.labels_
 data_user['Cluster'] = data_user['Cluster'].astype(str)
-data_user.head()
+print(data_user.head())
 
 px.scatter(data_user, x='RetentionScaled', y='SalesScaled', color='Cluster',
            template='plotly_dark', width=950, title='KMeans - Wizualizacja klastrów')
