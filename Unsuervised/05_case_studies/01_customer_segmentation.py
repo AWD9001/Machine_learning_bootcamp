@@ -321,7 +321,7 @@ px.scatter(data_user, x='RetentionScaled', y='SalesScaled', template='plotly_dar
            title='Retencja vs. Sprzedaż')
 
 data_scaled = data_user[['RetentionScaled', 'SalesScaled']]
-data_scaled.head()
+print(data_scaled.head())
 
 wcss = []
 for i in range(1, 10):
