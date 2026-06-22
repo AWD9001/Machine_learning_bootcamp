@@ -355,3 +355,8 @@ fig.add_trace(go.Scatter(x=centroids[:, 0], y=centroids[:, 1], mode='markers',
 
 desc = data_user.groupby('Cluster')[['Retention', 'Sales']].describe()
 print(desc)
+
+tmp = pd.merge(desc['Retention'][['count', 'mean']].reset_index(),
+               desc['Sales'][['mean']].reset_index(), on='Cluster',
+               suffixes=('_Retention', '_Sales'))
+print(tmp)
