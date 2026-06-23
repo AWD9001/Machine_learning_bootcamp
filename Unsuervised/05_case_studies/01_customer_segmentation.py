@@ -360,3 +360,6 @@ tmp = pd.merge(desc['Retention'][['count', 'mean']].reset_index(),
                desc['Sales'][['mean']].reset_index(), on='Cluster',
                suffixes=('_Retention', '_Sales'))
 print(tmp)
+
+px.bar(tmp, x='count', y='Cluster', hover_data=['mean_Retention', 'mean_Sales'], template='plotly_dark',
+       width=950, orientation='h', title='Rozkład klastrów')
