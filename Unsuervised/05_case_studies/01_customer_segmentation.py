@@ -206,7 +206,7 @@ px.scatter(data_user, x='CustomerID', y='SalesScaled', template='plotly_dark',
            title='Sprzedaż w rozbiciu na klienta - dane przeskalowane')
 
 data_sales_scaled = data_user[['SalesScaled']]
-data_sales_scaled.head()
+print(data_sales_scaled.head())
 
 # Sprzedaż - KMeans
 wcss = []
