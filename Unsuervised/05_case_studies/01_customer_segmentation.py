@@ -189,10 +189,10 @@ px.scatter(data_user, x='CustomerID', y='Retention', color='Cluster', template='
 
 # Sprzedaż
 data_sales = data_uk.groupby('CustomerID')['Sales'].sum().reset_index()
-data_sales.head()
+print(data_sales.head())
 
 data_user = pd.merge(data_user, data_sales, on='CustomerID')
-data_user.head()
+print(data_user.head())
 
 scaler = StandardScaler()
 data_user['SalesScaled'] = scaler.fit_transform(data_user[['Sales']])
@@ -210,12 +210,12 @@ print(data_sales_scaled.head())
 
 # Sprzedaż - KMeans
 wcss = []
-for i in range(1, 10):
+for i ss.append(kmeans.inertia_)
+
+wcss = pd.Din range(1, 10):
     kmeans = KMeans(n_clusters=i, max_iter=1000)
     kmeans.fit(data_sales_scaled)
-    wcss.append(kmeans.inertia_)
-
-wcss = pd.DataFrame(data=np.c_[range(1, 10), wcss], columns=['NumberOfClusters', 'WCSS'])
+    wcataFrame(data=np.c_[range(1, 10), wcss], columns=['NumberOfClusters', 'WCSS'])
 print(wcss)
 
 px.line(wcss, x='NumberOfClusters', y='WCSS', template='plotly_dark', title='WCSS',
