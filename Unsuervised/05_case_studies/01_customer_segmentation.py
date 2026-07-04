@@ -133,7 +133,7 @@ px.scatter(data_user, x='CustomerID', y='RetentionScaled', template='plotly_dark
            color_discrete_sequence=['#03fcb5'])
 
 data_retention_scaled = data_user[['RetentionScaled']]
-data_retention_scaled.head()
+print(data_retention_scaled.head())
 
 # Retencja - KMeans
 from sklearn.cluster import KMeans
