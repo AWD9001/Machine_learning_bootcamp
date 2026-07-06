@@ -114,7 +114,7 @@ px.histogram(last_purchase, x='Retention', template='plotly_dark',
 # połaczenie CustomerID oraz retencji
 data_user = pd.merge(data_user, last_purchase, on='CustomerID')
 data_user = data_user[['CustomerID', 'Retention']]
-data_user.head()
+print(data_user.head())
 
 px.scatter(data_user, x='CustomerID', y='Retention', template='plotly_dark',
            width=950, color_discrete_sequence=['#03fcb5'])
