@@ -103,7 +103,7 @@ last_purchase['LastPurchaseDate'].min()
 # kupna klienta do maksymalnej (ostatniej) daty kupna w danych
 last_purchase['Retention'] = (last_purchase['LastPurchaseDate'].max() -
                               last_purchase['LastPurchaseDate']).dt.days
-last_purchase.head()
+print(last_purchase.head())
 
 last_purchase['Retention'].value_counts()
 
