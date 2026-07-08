@@ -93,7 +93,7 @@ data_user.head(3)
 # wydobycie daty ostatniego zakupu dla każdego klienta
 last_purchase = data_uk.groupby('CustomerID')['InvoiceDate'].max().reset_index()
 last_purchase.columns = ['CustomerID', 'LastPurchaseDate']
-last_purchase.head()
+print(last_purchase.head())
 
 last_purchase['LastPurchaseDate'].max()
 
