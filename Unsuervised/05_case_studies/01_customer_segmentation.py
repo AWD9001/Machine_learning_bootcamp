@@ -71,7 +71,7 @@ data_uk.head()
 # Łączna sprzedaż ze względu na datę
 tmp = data_uk.groupby(data_uk['InvoiceDate'].dt.date)['Sales'].sum().reset_index()
 tmp.columns = ['InvoiceDate', 'Sales']
-tmp.head()
+print(tmp.head())
 
 fig = make_subplots(rows=2, cols=1, shared_xaxes=True, vertical_spacing=0.02)
 
