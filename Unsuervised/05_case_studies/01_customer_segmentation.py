@@ -65,7 +65,7 @@ fig.update_layout(template='plotly_dark', title='Częstotliwość zakupów ze wz
                   width=950)
 fig.show()
 
-data_uk.head()
+print(data_uk.head())
 
 
 # Łączna sprzedaż ze względu na datę
