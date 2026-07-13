@@ -48,7 +48,7 @@ data_uk.head()
 # częstotliwość zakupów ze względu na datę
 tmp = data_uk.groupby(data_uk['InvoiceDate'].dt.date)['CustomerID'].count().reset_index()
 tmp.columns = ['InvoiceDate', 'Count']
-tmp.head()
+print(tmp.head())
 
 from plotly.subplots import make_subplots
 
