@@ -43,7 +43,7 @@ data_uk.head()
 
 # utworzenie nowej zmiennej Sales
 data_uk['Sales'] = data_uk['Quantity'] * data_uk['UnitPrice']
-data_uk.head()
+print(data_uk.head())
 
 # częstotliwość zakupów ze względu na datę
 tmp = data_uk.groupby(data_uk['InvoiceDate'].dt.date)['CustomerID'].count().reset_index()
