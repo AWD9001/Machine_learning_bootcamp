@@ -10,7 +10,7 @@ import plotly.graph_objects as go
 url = 'https://storage.googleapis.com/esmartdata-courses-files/ml-course/OnlineRetail.csv'
 raw_data = pd.read_csv(url, encoding='latin', parse_dates=['InvoiceDate'])
 data = raw_data.copy()
-data.head(3)
+print(data.head(3))
 
 # Eksploracja danych
 
