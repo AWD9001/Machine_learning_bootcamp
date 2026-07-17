@@ -4,6 +4,7 @@ import numpy as np
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
+from plotly.subplots import make_subplots
 
 # Załadowanie danych
 
@@ -49,8 +50,6 @@ print(data_uk.head())
 tmp = data_uk.groupby(data_uk['InvoiceDate'].dt.date)['CustomerID'].count().reset_index()
 tmp.columns = ['InvoiceDate', 'Count']
 print(tmp.head())
-
-from plotly.subplots import make_subplots
 
 fig = make_subplots(rows=2, cols=1, shared_xaxes=True, vertical_spacing=0.02)
 
