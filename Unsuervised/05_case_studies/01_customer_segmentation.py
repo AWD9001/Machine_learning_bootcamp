@@ -66,7 +66,6 @@ fig.show()
 
 print(data_uk.head())
 
-
 # Łączna sprzedaż ze względu na datę
 tmp = data_uk.groupby(data_uk['InvoiceDate'].dt.date)['Sales'].sum().reset_index()
 tmp.columns = ['InvoiceDate', 'Sales']
