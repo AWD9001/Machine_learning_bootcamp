@@ -156,7 +156,6 @@ print(data_user.head())
 tmp = data_user.groupby('Cluster')['Retention'].describe()
 print(tmp)
 
-
 tmp = tmp['mean'].reset_index()
 tmp.columns = ['Cluster', 'MeanRetention']
 px.bar(tmp, x='Cluster', y='MeanRetention', template='plotly_dark', width=950,
