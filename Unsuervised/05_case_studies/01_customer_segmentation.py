@@ -345,6 +345,7 @@ px.scatter(data_user, x='RetentionScaled', y='SalesScaled', color='Cluster',
 fig = px.scatter(data_user, x='RetentionScaled', y='SalesScaled', color='Cluster',
                  template='plotly_dark', width=900,
                  title='KMeans - Wizualizacja klastrów + centroidy')
+
 fig.add_trace(go.Scatter(x=centroids[:, 0], y=centroids[:, 1], mode='markers',
                          marker_symbol='star', marker_size=10, marker_color='white',
                          showlegend=False))
