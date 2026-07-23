@@ -319,6 +319,7 @@ px.scatter(data_user, x='RetentionScaled', y='SalesScaled', template='plotly_dar
 data_scaled = data_user[['RetentionScaled', 'SalesScaled']]
 print(data_scaled.head())
 
+
 wcss = []
 for i in range(1, 10):
     kmeans = KMeans(n_clusters=i, max_iter=1000)
