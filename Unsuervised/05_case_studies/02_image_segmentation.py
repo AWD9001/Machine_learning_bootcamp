@@ -11,3 +11,7 @@ https: // storage.googleapis.com / esmartdata - courses - files / ml - course / 
 https: // storage.googleapis.com / esmartdata - courses - files / ml - course / ski.jpg
 !wget
 https: // storage.googleapis.com / esmartdata - courses - files / ml - course / view.jpg
+
+# Eksploracja
+img = cv2.imread('ski.jpg')
+img.shape
