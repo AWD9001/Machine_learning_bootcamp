@@ -14,4 +14,6 @@ https: // storage.googleapis.com / esmartdata - courses - files / ml - course / 
 
 # Eksploracja
 img = cv2.imread('ski.jpg')
-img.shape
+print(img.shape)
+
+print(img)
