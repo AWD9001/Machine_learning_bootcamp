@@ -17,3 +17,5 @@ img = cv2.imread('ski.jpg')
 print(img.shape)
 
 print(img)
+
+print(cv2_imshow(img))
