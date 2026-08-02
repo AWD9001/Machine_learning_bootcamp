@@ -18,4 +18,9 @@ print(img.shape)
 
 print(img)
 
-print(cv2_imshow(img))
+cv2_imshow(img)
+
+# przygotowanie obrazu do modelu
+img_data = img.reshape((-1, 3))
+img_data = np.float32(img_data)
+print(img_data.shape)
