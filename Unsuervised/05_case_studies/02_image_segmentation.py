@@ -27,3 +27,6 @@ print(img_data.shape)
 
 df = pd.DataFrame(data=img_data, columns=['dim1', 'dim2', 'dim3'])
 df.head(3)
+
+# KMeans
+cv2.kmeans
