@@ -69,7 +69,6 @@ def make_kmeans(n_neighbor=2, img_name='ski.jpg'):
     res = res.reshape((img.shape))
     cv2_imshow(res)
 
-
 make_kmeans()
 
 make_kmeans(3, img_name='view.jpg')
