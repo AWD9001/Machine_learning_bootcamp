@@ -72,3 +72,5 @@ def make_kmeans(n_neighbor=2, img_name='ski.jpg'):
 make_kmeans()
 
 make_kmeans(3, img_name='view.jpg')
+
+make_kmeans(3, img_name='green.jpg')
