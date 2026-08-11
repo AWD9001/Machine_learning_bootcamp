@@ -29,7 +29,7 @@ df = pd.DataFrame(data=img_data, columns=['dim1', 'dim2', 'dim3'])
 df.head(3)
 
 # KMeans
-cv2.kmeans
+print(cv2.kmeans)
 
 _, label, center = cv2.kmeans(
     data=img_data,  # float32 data type
@@ -43,7 +43,6 @@ center = np.uint8(center)
 res = center[label.flatten()]
 res = res.reshape((img.shape))
 cv2_imshow(res)
-
 
 def make_kmeans(n_neighbor=2, img_name='ski.jpg'):
     # wczytanie zdjęcia
