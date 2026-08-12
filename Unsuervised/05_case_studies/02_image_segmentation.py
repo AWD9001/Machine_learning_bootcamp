@@ -35,7 +35,8 @@ _, label, center = cv2.kmeans(
     data=img_data,  # float32 data type
     K=2,            # liczba klastrów
     bestLabels=None,
-    criteria=(cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 10, 1.0),  # kryterium zatrzymania (typ, max_iter, eps)
+    criteria=(cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 10, 1.0),
+                                    # kryterium zatrzymania (typ, max_iter, eps)
     attempts=10,    # liczba uruchomień algorytmu
     flags=cv2.KMEANS_RANDOM_CENTERS)    # określenie inicjalizacji centroidów
 
