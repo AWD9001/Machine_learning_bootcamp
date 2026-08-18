@@ -12,3 +12,6 @@ np.random.seed(42)
 url = 'https://storage.googleapis.com/esmartdata-courses-files/ml-course/coronavirus.csv'
 data = pd.read_csv(url, parse_dates=['Date', 'Last Update'])
 data.head()
+
+# Eksploracja i przygotowanie danych
+data.info()
