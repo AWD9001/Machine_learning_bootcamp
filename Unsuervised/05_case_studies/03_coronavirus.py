@@ -15,3 +15,4 @@ data.head()
 
 # Eksploracja i przygotowanie danych
 data.info()
+data.isnull().sum()
