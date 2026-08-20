@@ -16,3 +16,8 @@ data.head()
 # Eksploracja i przygotowanie danych
 data.info()
 data.isnull().sum()
+
+# brak Province/State -> Country
+data['Province/State'] = np.where(data['Province/State'].isnull(), data['Country'],
+                                  data['Province/State'])
+data.isnull().sum()
