@@ -21,3 +21,5 @@ data.isnull().sum()
 data['Province/State'] = np.where(data['Province/State'].isnull(), data['Country'],
                                   data['Province/State'])
 data.isnull().sum()
+
+data['Country'].value_counts().nlargest(10)
