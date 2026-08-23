@@ -23,3 +23,6 @@ data['Province/State'] = np.where(data['Province/State'].isnull(), data['Country
 data.isnull().sum()
 
 data['Country'].value_counts().nlargest(10)
+
+data['Country'] = np.where(data['Country'] == 'Mainland China', 'China', data['Country'])
+data['Country'].value_counts().nlargest(10)
