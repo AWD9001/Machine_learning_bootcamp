@@ -26,3 +26,10 @@ data['Country'].value_counts().nlargest(10)
 
 data['Country'] = np.where(data['Country'] == 'Mainland China', 'China', data['Country'])
 data['Country'].value_counts().nlargest(10)
+
+tmp = data['Country'].value_counts().nlargest(15).reset_index()
+tmp.columns = ['Country', 'Count']
+tmp = tmp.sort_values(by=['Count', 'Country'], ascending=[False, True])
+tmp['iso_alpha'] = ['CHN', 'USA', 'AUS', 'CAN', 'JPN', 'KOR', 'THA', 'HKG',
+                    np.nan, 'SGP', 'TWN', 'VNM', 'FRA', 'MYS', 'NPL']
+print(tmp)
