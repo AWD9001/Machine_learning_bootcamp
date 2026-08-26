@@ -33,3 +33,8 @@ tmp = tmp.sort_values(by=['Count', 'Country'], ascending=[False, True])
 tmp['iso_alpha'] = ['CHN', 'USA', 'AUS', 'CAN', 'JPN', 'KOR', 'THA', 'HKG',
                     np.nan, 'SGP', 'TWN', 'VNM', 'FRA', 'MYS', 'NPL']
 print(tmp)
+
+px.scatter_geo(tmp, locations='iso_alpha', size='Count', size_max=40, template='plotly_dark',
+               color='Count', text='Country', projection='natural earth',
+               color_continuous_scale='reds', width=950,
+               title='Liczba przypadków Koronawirusa na świcie - TOP15')
