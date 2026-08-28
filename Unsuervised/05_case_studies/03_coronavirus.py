@@ -38,3 +38,8 @@ px.scatter_geo(tmp, locations='iso_alpha', size='Count', size_max=40, template='
                color='Count', text='Country', projection='natural earth',
                color_continuous_scale='reds', width=950,
                title='Liczba przypadków Koronawirusa na świcie - TOP15')
+
+px.scatter_geo(tmp, locations='iso_alpha', size='Count', size_max = 40, template='plotly_dark',
+               color='Count', text='Country', projection='natural earth',
+               color_continuous_scale='reds', scope='asia', width=950,
+               title='Liczba przypadków Koronawirusa - Azja (z TOP15 global)')
