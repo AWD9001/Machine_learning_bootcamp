@@ -47,3 +47,7 @@ px.scatter_geo(tmp, locations='iso_alpha', size='Count', size_max=40, template='
 px.bar(tmp, x='Country', y='Count', template='plotly_dark', width=950,
        color_discrete_sequence=['#42f5c8'],
        title='Liczba przypadków Koronawirusa w rozbiciu na kraje')
+
+
+px.bar(tmp.query("Country != 'China'"), x='Country', y='Count', template='plotly_dark', width=950,
+       color_discrete_sequence=['#42f5c8'], title='Liczba przypadków Koronawirusa w rozbiciu na kraje (poza Chinami)')
