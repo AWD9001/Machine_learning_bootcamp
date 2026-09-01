@@ -52,3 +52,6 @@ px.bar(tmp, x='Country', y='Count', template='plotly_dark', width=950,
 px.bar(tmp.query("Country != 'China'"), x='Country', y='Count', template='plotly_dark',
        width=950, color_discrete_sequence=['#42f5c8'],
        title='Liczba przypadków Koronawirusa w rozbiciu na kraje (poza Chinami)')
+
+tmp = data.groupby(by=data['Date'].dt.date)[['Confirmed', 'Deaths', 'Recovered']].sum().reset_index()
+print(tmp)
