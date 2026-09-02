@@ -53,5 +53,19 @@ px.bar(tmp.query("Country != 'China'"), x='Country', y='Count', template='plotly
        width=950, color_discrete_sequence=['#42f5c8'],
        title='Liczba przypadków Koronawirusa w rozbiciu na kraje (poza Chinami)')
 
-tmp = data.groupby(by=data['Date'].dt.date)[['Confirmed', 'Deaths', 'Recovered']].sum().reset_index()
+tmp = data.groupby(by=data['Date'].dt.date)[['Confirmed', 'Deaths',
+                                             'Recovered']].sum().reset_index()
 print(tmp)
+
+
+fig = go.Figure()
+
+trace1 = go.Scatter(x=tmp['Date'], y=tmp['Confirmed'], mode='markers+lines', name='Confirmed')
+trace2 = go.Scatter(x=tmp['Date'], y=tmp['Deaths'], mode='markers+lines', name='Deaths')
+trace3 = go.Scatter(x=tmp['Date'], y=tmp['Recovered'], mode='markers+lines', name='Recovered')
+
+fig.add_trace(trace1)
+fig.add_trace(trace2)
+fig.add_trace(trace3)
+
+fig.update_layout(template='plotly_dark', width=950, title='Koronawirus (22.01-17.02.2020)')
