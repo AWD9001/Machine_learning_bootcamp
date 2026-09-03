@@ -69,3 +69,7 @@ fig.add_trace(trace2)
 fig.add_trace(trace3)
 
 fig.update_layout(template='plotly_dark', width=950, title='Koronawirus (22.01-17.02.2020)')
+
+data_confirmed = tmp[['Date', 'Confirmed']]
+data_confirmed.columns = ['ds', 'y']
+data_confirmed.head()
