@@ -73,3 +73,9 @@ fig.update_layout(template='plotly_dark', width=950, title='Koronawirus (22.01-1
 data_confirmed = tmp[['Date', 'Confirmed']]
 data_confirmed.columns = ['ds', 'y']
 data_confirmed.head()
+
+
+fig = go.Figure()
+fig.add_trace(go.Scatter(x=data_confirmed['ds'], y=data_confirmed['y'], mode='markers+lines',
+                         name='Confirmed', fill='tozeroy'))
+fig.update_layout(template='plotly_dark', width=950, title='Liczba potwierdzonych przypadków (22.01-12.02)')
