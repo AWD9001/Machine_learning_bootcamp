@@ -57,7 +57,6 @@ tmp = data.groupby(by=data['Date'].dt.date)[['Confirmed', 'Deaths',
                                              'Recovered']].sum().reset_index()
 print(tmp)
 
-
 fig = go.Figure()
 
 trace1 = go.Scatter(x=tmp['Date'], y=tmp['Confirmed'], mode='markers+lines', name='Confirmed')
