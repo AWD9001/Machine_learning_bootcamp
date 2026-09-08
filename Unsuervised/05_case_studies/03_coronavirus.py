@@ -73,7 +73,6 @@ data_confirmed = tmp[['Date', 'Confirmed']]
 data_confirmed.columns = ['ds', 'y']
 data_confirmed.head()
 
-
 fig = go.Figure()
 fig.add_trace(go.Scatter(x=data_confirmed['ds'], y=data_confirmed['y'], mode='markers+lines',
                          name='Confirmed', fill='tozeroy'))
