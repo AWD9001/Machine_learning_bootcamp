@@ -55,6 +55,7 @@ px.bar(tmp.query("Country != 'China'"), x='Country', y='Count', template='plotly
 
 tmp = data.groupby(by=data['Date'].dt.date)[['Confirmed', 'Deaths',
                                              'Recovered']].sum().reset_index()
+
 print(tmp)
 
 fig = go.Figure()
