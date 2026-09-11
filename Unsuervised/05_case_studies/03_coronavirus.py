@@ -79,4 +79,4 @@ fig = go.Figure()
 fig.add_trace(go.Scatter(x=data_confirmed['ds'], y=data_confirmed['y'], mode='markers+lines',
                          name='Confirmed', fill='tozeroy'))
 fig.update_layout(template='plotly_dark', width=950,
-                  title='Liczba potwierdzonych przypadków (22.01-12.02)')
+                  title='Liczba potwierdzonych przypadków (22.01-12.021)')
