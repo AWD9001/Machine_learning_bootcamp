@@ -84,3 +84,7 @@ fig.update_layout(template='plotly_dark', width=950,
 # Budowa modelu
 from fbprophet import Prophet
 from fbprophet.plot import plot_plotly
+
+# dopasowanie modelu
+model = Prophet(yearly_seasonality=False, weekly_seasonality=False, daily_seasonality=False)
+model.fit(data_confirmed)
