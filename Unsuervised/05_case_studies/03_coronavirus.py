@@ -88,3 +88,8 @@ from fbprophet.plot import plot_plotly
 # dopasowanie modelu
 model = Prophet(yearly_seasonality=False, weekly_seasonality=False, daily_seasonality=False)
 model.fit(data_confirmed)
+
+# predykcja
+future = model.make_future_dataframe(periods=7, freq='D')
+forecast = model.predict(future)
+plot_plotly(model, forecast)
