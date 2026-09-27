@@ -81,7 +81,6 @@ fig.add_trace(go.Scatter(x=data_confirmed['ds'], y=data_confirmed['y'], mode='ma
 fig.update_layout(template='plotly_dark', width=950,
                   title='Liczba potwierdzonych przypadków (22.01-12.02)')
 
-
 # Budowa modelu
 from fbprophet import Prophet
 from fbprophet.plot import plot_plotly
