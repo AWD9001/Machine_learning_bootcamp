@@ -93,3 +93,4 @@ model.fit(data_confirmed)
 future = model.make_future_dataframe(periods=7, freq='D')
 forecast = model.predict(future)
 plot_plotly(model, forecast)
+
